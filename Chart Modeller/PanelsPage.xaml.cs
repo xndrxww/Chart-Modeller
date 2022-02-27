@@ -15,14 +15,15 @@ using System.Windows.Shapes;
 
 namespace Chart_Modeller
 {
-    public partial class MainWindow : Window
+    public partial class PanelsPage : Page
     {
-        public static Frame MainFrameInstance;
-        public MainWindow()
+        public PanelsPage()
         {
             InitializeComponent();
-            MainFrameInstance = MainFrame;
-            MainFrameInstance.Navigate(new ConnectDbPage());
+
+            //var table = new DataTable();
+            //new SqlDataAdapter("select name from sys.databases", connection).Fill(table);
+            //dbBox.ItemsSource = table.DefaultView;
         }
     }
 }

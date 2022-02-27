@@ -1,0 +1,19 @@
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart Modeller.csprojAssemblyReference.cache
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ConnectDbPage.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\MainWindow.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\App.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart Modeller_MarkupCompile.cache
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart Modeller_MarkupCompile.lref
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\Chart Modeller.exe.config
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\Chart Modeller.exe
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\Chart Modeller.pdb
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ConnectDbPage.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\MainWindow.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart Modeller.g.resources
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart_Modeller.Properties.Resources.resources
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart Modeller.csproj.GenerateResource.cache
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart Modeller.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart Modeller.exe
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart Modeller.pdb
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\PanelsPage.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\PanelsPage.baml
