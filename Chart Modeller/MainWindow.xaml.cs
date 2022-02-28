@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,12 +18,21 @@ namespace Chart_Modeller
 {
     public partial class MainWindow : Window
     {
+        private const string ServerFileName = "server.xml";
         public static Frame MainFrameInstance;
         public MainWindow()
         {
             InitializeComponent();
             MainFrameInstance = MainFrame;
-            MainFrameInstance.Navigate(new ConnectDbPage());
+            CheckServer();
+        }
+
+        private void CheckServer()
+        {
+            if (File.Exists(ServerFileName))
+                MainFrameInstance.Navigate(new PanelsPage());
+            else
+                MainFrameInstance.Navigate(new ConnectDbPage());
         }
     }
 }

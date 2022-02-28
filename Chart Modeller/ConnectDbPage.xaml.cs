@@ -47,12 +47,13 @@ namespace Chart_Modeller
 
         private void Serialization()
         {
-            var server = new Server()
+            Server server = new Server()
             {
                 ServerName = serverTxt.Text,
                 Login = loginTxt.Text,
                 Password = passwordTxt.Text
             };
+
 
             var serializer = new XmlSerializer(typeof(Server));
             using (var writer = new StreamWriter("server.xml"))

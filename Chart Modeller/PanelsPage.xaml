@@ -10,6 +10,7 @@
 
     <Grid>
         <TextBlock TextAlignment="Center" Margin="0,100,0,0" FontSize="20">Панели</TextBlock>
-        <ComboBox x:Name="dbBox" VerticalAlignment="Bottom" Width="200" Margin="0,0,0,30" DisplayMemberPath="name"></ComboBox>
+        <Button x:Name="addPanel" VerticalAlignment="Center" Width="200" Height="50">Новая панель</Button>
+        <ComboBox x:Name="dbBox" VerticalAlignment="Bottom" Width="200" Margin="0,0,0,30" DisplayMemberPath="name"/>
     </Grid>
 </Page>

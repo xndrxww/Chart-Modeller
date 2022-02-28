@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Server.cs" />
+    <Compile Include="Models\Server.cs" />
     <Page Include="ConnectDbPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

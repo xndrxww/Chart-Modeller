@@ -8,7 +8,7 @@
         Title="MainWindow" Height="1024 " Width="1440"  WindowStartupLocation="CenterScreen" >
     <Grid>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
-        <Grid VerticalAlignment="Bottom" Background="#202226" Height="60">
-        </Grid>
+        <!--<Grid VerticalAlignment="Bottom" Background="#202226" Height="60">
+        </Grid>-->
     </Grid>
 </Window>
