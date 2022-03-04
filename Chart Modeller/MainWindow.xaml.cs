@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chart_Modeller.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,11 +19,17 @@ namespace Chart_Modeller
 {
     public partial class MainWindow : Window
     {
-        private const string ServerFileName = "server.xml";
         public static Frame MainFrameInstance;
+
+        private const string ServerFileName = "server.xml";
+
+        public static List<Panels> PanelsList;
+
+
         public MainWindow()
         {
             InitializeComponent();
+            PanelsList = new List<Panels>();
             MainFrameInstance = MainFrame;
             CheckServer();
         }

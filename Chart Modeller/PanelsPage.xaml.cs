@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chart_Modeller.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -22,12 +23,16 @@ namespace Chart_Modeller
     public partial class PanelsPage : Page
     {
         private Server server = new Server();
+
+        public Button panel = new Button();
+
+        public int panelId = 0;
+
         public PanelsPage()
         {
             InitializeComponent();
-
             Deserialization();
-
+            GetPanels();
         }
 
         private void Deserialization()
@@ -49,6 +54,31 @@ namespace Chart_Modeller
                 var table = new DataTable();
                 new SqlDataAdapter("select name from sys.databases", connection).Fill(table);
                 dbBox.ItemsSource = table.DefaultView;
+            }
+        }
+
+        private void addPanel_Click(object sender, RoutedEventArgs e)
+        {
+            AddPanelWindow addPanelWindow = new AddPanelWindow();
+            addPanelWindow.Show();
+        }
+
+        public void GetPanels()
+        {
+            foreach (var item in MainWindow.PanelsList)
+            {
+                System.Windows.Controls.Button panel = new Button();
+
+                panel.Margin = new Thickness(0, 50, 0, 0);
+                panel.Width = 600;
+                panel.Height = 80;
+                panel.Content = item.Name;
+                panel.Click += (s, ev) =>
+                {
+                    MainWindow.MainFrameInstance.Navigate(new ChartsPage());
+                };
+
+                sp.Children.Add(panel);
             }
         }
     }

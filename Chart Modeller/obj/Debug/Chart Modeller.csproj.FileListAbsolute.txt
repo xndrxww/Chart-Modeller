@@ -17,3 +17,7 @@ C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart Modeller.pdb
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\PanelsPage.g.cs
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\PanelsPage.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\AddPanelWindow.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\AddPanelWindow.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChartsPage.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChartsPage.baml

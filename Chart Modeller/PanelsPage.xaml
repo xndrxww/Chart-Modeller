@@ -9,8 +9,10 @@
       Title="PanelsPage">
 
     <Grid>
-        <TextBlock TextAlignment="Center" Margin="0,100,0,0" FontSize="20">Панели</TextBlock>
-        <Button x:Name="addPanel" VerticalAlignment="Center" Width="200" Height="50">Новая панель</Button>
+        <TextBlock TextAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" FontSize="35">Панели</TextBlock>
+        <Button x:Name="addPanel" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" Height="50" Click="addPanel_Click" FontSize="20">Новая панель</Button>
+        <StackPanel x:Name="sp" VerticalAlignment="Center">
+        </StackPanel>
         <ComboBox x:Name="dbBox" VerticalAlignment="Bottom" Width="200" Margin="0,0,0,30" DisplayMemberPath="name"/>
     </Grid>
 </Page>
