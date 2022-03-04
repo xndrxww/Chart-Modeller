@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ArrayOfPanels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Panels>
+    <Id>1</Id>
+    <Name>1</Name>
+  </Panels>
+  <Panels>
+    <Id>1</Id>
+    <Name>2</Name>
+  </Panels>
+  <Panels>
+    <Id>1</Id>
+    <Name>3</Name>
+  </Panels>
+</ArrayOfPanels>

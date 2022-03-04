@@ -14,24 +14,36 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace Chart_Modeller
 {
     public partial class MainWindow : Window
     {
+        
         public static Frame MainFrameInstance;
 
+        //Сервер
         private const string ServerFileName = "server.xml";
 
-        public static List<Panels> PanelsList;
 
+        //Панели
+        public static List<Panels> PanelsList;
+        private const string PanelsFileName = "panels.xml";
+        private static readonly XmlSerializer PanelsSerializer = new XmlSerializer(typeof(List<Panels>));
 
         public MainWindow()
         {
             InitializeComponent();
-            PanelsList = new List<Panels>();
+            PanelsDeserialization();
             MainFrameInstance = MainFrame;
             CheckServer();
+
+            Closing += (sender, args) =>
+            {
+                PanelsSerializer.Serialize(File.Create(PanelsFileName), PanelsList);
+            };
+
         }
 
         private void CheckServer()
@@ -40,6 +52,19 @@ namespace Chart_Modeller
                 MainFrameInstance.Navigate(new PanelsPage());
             else
                 MainFrameInstance.Navigate(new ConnectDbPage());
+        }
+
+        private void PanelsDeserialization()
+        {
+            if (File.Exists(PanelsFileName))
+            {
+                using (FileStream stream = File.OpenRead(PanelsFileName))
+                {
+                    PanelsList = (List<Panels>)PanelsSerializer.Deserialize(stream);
+                }
+            }
+            else
+                PanelsList = new List<Panels>();
         }
     }
 }
