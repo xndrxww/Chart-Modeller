@@ -24,10 +24,6 @@ namespace Chart_Modeller
     {
         private Server server = new Server();
 
-        public Button panel = new Button();
-
-        public int panelId = 0;
-
         public PanelsPage()
         {
             InitializeComponent();
@@ -57,29 +53,36 @@ namespace Chart_Modeller
             }
         }
 
+        public void GetPanels()
+        {
+            foreach (var item in MainWindow.PanelsList)
+            {
+                System.Windows.Controls.Button panel = new Button
+                {
+                    Margin = new Thickness(0, 50, 0, 0),
+                    Width = 600,
+                    Height = 80,
+                    Content = item.Name + " Id = " + item.Id
+                };
+
+                panel.Click += (s, ev) =>
+                {
+                    MainWindow.MainFrameInstance.Navigate(new ChartsPage(panel.Content.ToString()));
+                };
+
+                sp.Children.Add(panel);
+            }
+        }
+
         private void addPanel_Click(object sender, RoutedEventArgs e)
         {
             AddPanelWindow addPanelWindow = new AddPanelWindow();
             addPanelWindow.Show();
         }
 
-        public void GetPanels()
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            foreach (var item in MainWindow.PanelsList)
-            {
-                System.Windows.Controls.Button panel = new Button();
-
-                panel.Margin = new Thickness(0, 50, 0, 0);
-                panel.Width = 600;
-                panel.Height = 80;
-                panel.Content = item.Name;
-                panel.Click += (s, ev) =>
-                {
-                    MainWindow.MainFrameInstance.Navigate(new ChartsPage());
-                };
-
-                sp.Children.Add(panel);
-            }
+            MainWindow.PanelName.Text = "Панели";
         }
     }
 }

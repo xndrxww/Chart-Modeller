@@ -19,6 +19,7 @@ namespace Chart_Modeller
     {
 
         private Panels panels;
+        private int countPanels;
 
         public AddPanelWindow()
         {
@@ -27,14 +28,18 @@ namespace Chart_Modeller
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
+            countPanels = MainWindow.PanelsList.Count();
+
+
             panels = new Panels()
             {
-                Id = 1,
+                Id = countPanels + 1,
                 Name = panelName.Text
             };
             MainWindow.PanelsList.Add(panels);
             this.Close();
             MainWindow.MainFrameInstance.Navigate(new PanelsPage());
         }
+
     }
 }

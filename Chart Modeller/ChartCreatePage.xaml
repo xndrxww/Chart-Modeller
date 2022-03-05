@@ -1,14 +1,14 @@
-﻿<Page x:Class="Chart_Modeller.ChartsPage"
+﻿<Page x:Class="Chart_Modeller.ChartCreatePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Chart_Modeller"
       mc:Ignorable="d" 
-      d:DesignHeight="1024" d:DesignWidth="1440 "
-      Title="ChartsPage" Loaded="Page_Loaded">
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ChartCreatePage" Loaded="Page_Loaded">
 
     <Grid>
-        <Button x:Name="addChart" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="50" Height="50" Click="addChart_Click" FontSize="20" Margin="15,0,0,10">+</Button>
+        
     </Grid>
 </Page>

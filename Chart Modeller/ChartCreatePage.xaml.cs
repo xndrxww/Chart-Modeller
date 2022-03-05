@@ -15,23 +15,16 @@ using System.Windows.Shapes;
 
 namespace Chart_Modeller
 {
-    public partial class ChartsPage : Page
+    public partial class ChartCreatePage : Page
     {
-        private string PanelName;
-        public ChartsPage(string panelName)
+        public ChartCreatePage()
         {
             InitializeComponent();
-            PanelName = panelName;
-        }
-
-        private void addChart_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.MainFrameInstance.Navigate(new ChartCreatePage());
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            MainWindow.PanelName.Text = PanelName;
+            MainWindow.PanelName.Text = "Создание графика";
         }
     }
 }

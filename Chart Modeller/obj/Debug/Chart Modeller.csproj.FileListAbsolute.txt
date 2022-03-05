@@ -21,3 +21,5 @@ C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\AddPa
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\AddPanelWindow.baml
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChartsPage.g.cs
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChartsPage.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChartCreatePage.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChartCreatePage.baml

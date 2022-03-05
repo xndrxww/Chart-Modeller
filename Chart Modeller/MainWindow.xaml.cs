@@ -20,7 +20,8 @@ namespace Chart_Modeller
 {
     public partial class MainWindow : Window
     {
-        
+        public static TextBlock PanelName;
+
         public static Frame MainFrameInstance;
 
         //Сервер
@@ -35,15 +36,15 @@ namespace Chart_Modeller
         public MainWindow()
         {
             InitializeComponent();
-            PanelsDeserialization();
             MainFrameInstance = MainFrame;
+            PanelName = pageName;
+            PanelsDeserialization();
             CheckServer();
 
             Closing += (sender, args) =>
             {
                 PanelsSerializer.Serialize(File.Create(PanelsFileName), PanelsList);
             };
-
         }
 
         private void CheckServer()
@@ -65,6 +66,15 @@ namespace Chart_Modeller
             }
             else
                 PanelsList = new List<Panels>();
+        }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainWindow.MainFrameInstance.CanGoBack)
+            {
+                MainWindow.MainFrameInstance.GoBack();
+            }
+            
         }
     }
 }

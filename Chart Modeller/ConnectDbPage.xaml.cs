@@ -61,5 +61,10 @@ namespace Chart_Modeller
                 serializer.Serialize(writer, server);
             }
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            MainWindow.PanelName.Text = "Подключение к серверу";
+        }
     }
 }

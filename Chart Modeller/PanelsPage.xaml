@@ -6,13 +6,12 @@
       xmlns:local="clr-namespace:Chart_Modeller"
       mc:Ignorable="d" 
       d:DesignHeight="1024" d:DesignWidth="1400"
-      Title="PanelsPage">
+      Title="PanelsPage" Loaded="Page_Loaded">
 
     <Grid>
-        <TextBlock TextAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" FontSize="35">Панели</TextBlock>
-        <Button x:Name="addPanel" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" Height="50" Click="addPanel_Click" FontSize="20">Новая панель</Button>
         <StackPanel x:Name="sp" VerticalAlignment="Center">
         </StackPanel>
-        <ComboBox x:Name="dbBox" VerticalAlignment="Bottom" Width="200" Margin="0,0,0,30" DisplayMemberPath="name"/>
+        <Button x:Name="addPanel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="50" Height="50" Click="addPanel_Click" FontSize="20" Margin="15,0,0,10">+</Button>
+        <ComboBox x:Name="dbBox" VerticalAlignment="Bottom" Width="200" Margin="0,0,0,20" DisplayMemberPath="name"/>
     </Grid>
 </Page>
