@@ -2,22 +2,38 @@
 <ArrayOfPanels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Panels>
     <Id>1</Id>
-    <Name>dadas</Name>
+    <Name>первый</Name>
   </Panels>
   <Panels>
     <Id>2</Id>
-    <Name>dadas</Name>
+    <Name>второй</Name>
   </Panels>
   <Panels>
     <Id>3</Id>
-    <Name>dadas</Name>
+    <Name>третий</Name>
   </Panels>
   <Panels>
     <Id>4</Id>
-    <Name>dadas</Name>
+    <Name>четвертый</Name>
   </Panels>
   <Panels>
     <Id>5</Id>
-    <Name>dadas</Name>
+    <Name>пятый</Name>
+  </Panels>
+  <Panels>
+    <Id>6</Id>
+    <Name>шестой</Name>
+  </Panels>
+  <Panels>
+    <Id>7</Id>
+    <Name>седьмой</Name>
+  </Panels>
+  <Panels>
+    <Id>8</Id>
+    <Name>восьмой</Name>
+  </Panels>
+  <Panels>
+    <Id>9</Id>
+    <Name />
   </Panels>
 </ArrayOfPanels>

@@ -24,6 +24,8 @@ namespace Chart_Modeller
         public AddPanelWindow()
         {
             InitializeComponent();
+            panelName.Focus();
+            //Keyboard.Focus(panelName);
         }
 
         private void okButton_Click(object sender, RoutedEventArgs e)

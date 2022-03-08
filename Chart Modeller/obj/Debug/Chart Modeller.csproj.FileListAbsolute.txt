@@ -23,3 +23,7 @@ C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChartsPage.baml
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChartCreatePage.g.cs
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChartCreatePage.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\HandyControl.dll
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\HandyControl.xml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\App.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart Modeller.csproj.CopyComplete

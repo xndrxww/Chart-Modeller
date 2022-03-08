@@ -50,6 +50,7 @@ namespace Chart_Modeller
                 var table = new DataTable();
                 new SqlDataAdapter("select name from sys.databases", connection).Fill(table);
                 dbBox.ItemsSource = table.DefaultView;
+                dbBox.SelectedIndex = dbBox.Items.Count - 1;
             }
         }
 
@@ -62,7 +63,9 @@ namespace Chart_Modeller
                     Margin = new Thickness(0, 50, 0, 0),
                     Width = 600,
                     Height = 80,
-                    Content = item.Name + " Id = " + item.Id
+                    Content = item.Name + " Id = " + item.Id,
+                    Background = new SolidColorBrush(Color.FromRgb(32, 34, 38)),
+                    Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255))
                 };
 
                 panel.Click += (s, ev) =>

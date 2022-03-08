@@ -9,8 +9,9 @@
       Title="PanelsPage" Loaded="Page_Loaded">
 
     <Grid>
-        <StackPanel x:Name="sp" VerticalAlignment="Center">
-        </StackPanel>
+        <ScrollViewer Margin="0,50,0,105">
+            <StackPanel x:Name="sp" Orientation="Vertical"/>
+        </ScrollViewer>
         <Button x:Name="addPanel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="50" Height="50" Click="addPanel_Click" FontSize="20" Margin="15,0,0,10">+</Button>
         <ComboBox x:Name="dbBox" VerticalAlignment="Bottom" Width="200" Margin="0,0,0,20" DisplayMemberPath="name"/>
     </Grid>
