@@ -56,36 +56,50 @@ namespace Chart_Modeller
 
         public void GetPanels()
         {
-            foreach (var item in MainWindow.PanelsList)
+            sp.Children.Clear();
+
+
+            foreach (var item in MainWindow.DatabasesList)
             {
-                System.Windows.Controls.Button panel = new Button
+                if (item.Name == dbBox.SelectedValue.ToString())
                 {
-                    Margin = new Thickness(0, 50, 0, 0),
-                    Width = 600,
-                    Height = 80,
-                    Content = item.Name + " Id = " + item.Id,
-                    Background = new SolidColorBrush(Color.FromRgb(32, 34, 38)),
-                    Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255))
-                };
+                    foreach (var item1 in item.Panels)
+                    {
+                        System.Windows.Controls.Button panel = new Button
+                        {
+                            Margin = new Thickness(0, 50, 0, 0),
+                            Width = 600,
+                            Height = 80,
+                            Content = item1.Name + " Id = " + item1.Id,
+                            Background = new SolidColorBrush(Color.FromRgb(32, 34, 38)),
+                            Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255))
+                        };
 
-                panel.Click += (s, ev) =>
-                {
-                    MainWindow.MainFrameInstance.Navigate(new ChartsPage(panel.Content.ToString()));
-                };
+                        panel.Click += (s, ev) =>
+                        {
+                            MainWindow.MainFrameInstance.Navigate(new ChartsPage(panel.Content.ToString()));
+                        };
 
-                sp.Children.Add(panel);
+                        sp.Children.Add(panel);
+                    }
+                }
             }
         }
 
         private void addPanel_Click(object sender, RoutedEventArgs e)
         {
-            AddPanelWindow addPanelWindow = new AddPanelWindow();
+            AddPanelWindow addPanelWindow = new AddPanelWindow(dbBox.Text);
             addPanelWindow.Show();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             MainWindow.PanelName.Text = "Панели";
+        }
+
+        private void dbBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            GetPanels();
         }
     }
 }

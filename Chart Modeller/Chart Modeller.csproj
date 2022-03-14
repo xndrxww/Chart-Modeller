@@ -38,6 +38,12 @@
     <Reference Include="HandyControl, Version=3.3.0.0, Culture=neutral, PublicKeyToken=45be8712787a1e5b, processorArchitecture=MSIL">
       <HintPath>..\packages\HandyControl.3.3.0\lib\net472\HandyControl.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -67,7 +73,11 @@
     <Compile Include="ChartsPage.xaml.cs">
       <DependentUpon>ChartsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Panels.cs" />
+    <Compile Include="ChooseChartWindow.xaml.cs">
+      <DependentUpon>ChooseChartWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Database.cs" />
+    <Compile Include="Models\Panel.cs" />
     <Compile Include="Models\Server.cs" />
     <Page Include="AddPanelWindow.xaml">
       <SubType>Designer</SubType>
@@ -78,6 +88,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ChartsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChooseChartWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,6 +148,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\columnSeries.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\lineSeries.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\stackSeries.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\heatSeries.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pieSeries.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\angulargaugeSeries.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

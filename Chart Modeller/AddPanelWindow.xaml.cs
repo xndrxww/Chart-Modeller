@@ -17,31 +17,56 @@ namespace Chart_Modeller
 {
     public partial class AddPanelWindow : Window
     {
+        private string dbName;
 
-        private Panels panels;
+        private Models.Panel panels;
         private int countPanels;
 
-        public AddPanelWindow()
+        private Database database;
+
+        public AddPanelWindow(string currentDb)
         {
             InitializeComponent();
             panelName.Focus();
-            //Keyboard.Focus(panelName);
+            dbName = currentDb;
+
         }
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
-            countPanels = MainWindow.PanelsList.Count();
+            //countPanels = MainWindow.PanelsList.Count();
 
-
-            panels = new Panels()
+            panels = new Models.Panel()
             {
                 Id = countPanels + 1,
                 Name = panelName.Text
             };
-            MainWindow.PanelsList.Add(panels);
-            this.Close();
-            MainWindow.MainFrameInstance.Navigate(new PanelsPage());
-        }
 
+            int i = 0;
+
+
+            if (MainWindow.DatabasesList.Count > 0)
+            {
+                foreach (var item in MainWindow.DatabasesList.ToArray())
+                {
+                    if (item.Name == dbName)
+                    {
+                        item.Panels.Add(panels);
+                        i++;
+                        this.Close();
+                        MainWindow.MainFrameInstance.Navigate(new PanelsPage());
+                    }
+                }
+            }
+            if (i == 0)
+            {
+                database = new Database();
+                database.Name = dbName;
+                database.Panels.Add(panels);
+                MainWindow.DatabasesList.Add(database);
+                this.Close();
+                MainWindow.MainFrameInstance.Navigate(new PanelsPage());
+            }
+        }
     }
 }

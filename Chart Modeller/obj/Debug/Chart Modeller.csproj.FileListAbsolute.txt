@@ -27,3 +27,11 @@ C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\Handy
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\HandyControl.xml
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\App.baml
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart Modeller.csproj.CopyComplete
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\LiveCharts.dll
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\LiveCharts.pdb
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\LiveCharts.xml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChooseChartWindow.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChooseChartWindow.baml

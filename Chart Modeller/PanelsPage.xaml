@@ -13,6 +13,6 @@
             <StackPanel x:Name="sp" Orientation="Vertical"/>
         </ScrollViewer>
         <Button x:Name="addPanel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="50" Height="50" Click="addPanel_Click" FontSize="20" Margin="15,0,0,10">+</Button>
-        <ComboBox x:Name="dbBox" VerticalAlignment="Bottom" Width="200" Margin="0,0,0,20" DisplayMemberPath="name"/>
+        <ComboBox x:Name="dbBox" VerticalAlignment="Bottom" Width="200" Margin="0,0,0,20" DisplayMemberPath="name" SelectedValuePath="name" SelectionChanged="dbBox_SelectionChanged"/>
     </Grid>
 </Page>

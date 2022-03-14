@@ -29,13 +29,19 @@ namespace Chart_Modeller
 
 
         //Панели
-        public static List<Panels> PanelsList;
+        public static List<Models.Panel> PanelsList;
         private const string PanelsFileName = "panels.xml";
-        private static readonly XmlSerializer PanelsSerializer = new XmlSerializer(typeof(List<Panels>));
+        private static readonly XmlSerializer PanelsSerializer = new XmlSerializer(typeof(List<Models.Panel>));
+
+        //новое
+        public static List<Database> DatabasesList;
+        private const string DatabaseFileName = "database.xml";
+        private static readonly XmlSerializer DatabaseSerializer = new XmlSerializer(typeof(List<Database>));
 
         public MainWindow()
         {
             InitializeComponent();
+
             MainFrameInstance = MainFrame;
             PanelName = pageName;
             PanelsDeserialization();
@@ -43,7 +49,7 @@ namespace Chart_Modeller
 
             Closing += (sender, args) =>
             {
-                PanelsSerializer.Serialize(File.Create(PanelsFileName), PanelsList);
+                DatabaseSerializer.Serialize(File.Create(DatabaseFileName), DatabasesList);
             };
         }
 
@@ -57,24 +63,21 @@ namespace Chart_Modeller
 
         private void PanelsDeserialization()
         {
-            if (File.Exists(PanelsFileName))
+            if (File.Exists(DatabaseFileName))
             {
-                using (FileStream stream = File.OpenRead(PanelsFileName))
+                using (FileStream stream = File.OpenRead(DatabaseFileName))
                 {
-                    PanelsList = (List<Panels>)PanelsSerializer.Deserialize(stream);
+                    DatabasesList = (List<Database>)DatabaseSerializer.Deserialize(stream);
                 }
             }
             else
-                PanelsList = new List<Panels>();
+                DatabasesList = new List<Database>();
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
             if (MainWindow.MainFrameInstance.CanGoBack)
-            {
                 MainWindow.MainFrameInstance.GoBack();
-            }
-            
         }
     }
 }

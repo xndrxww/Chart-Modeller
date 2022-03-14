@@ -13,6 +13,7 @@ namespace Chart_Modeller
         {
             
         }
+
         public Server(string serverName, string login, string password)
         {
             ServerName = serverName;

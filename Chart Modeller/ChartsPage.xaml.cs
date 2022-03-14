@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace Chart_Modeller
 {
@@ -22,16 +12,40 @@ namespace Chart_Modeller
         {
             InitializeComponent();
             PanelName = panelName;
+            
+            SeriesCollection seriesCollection = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Values = new ChartValues<double> { 3, 5, 7, 4 }
+                },
+                new LineSeries
+                {
+                    Values = new ChartValues<double> { 13, 25, 17, 24 }
+                },
+            };
+
+            chart.Series = seriesCollection;
         }
 
         private void addChart_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.MainFrameInstance.Navigate(new ChartCreatePage());
+            ChooseChartWindow chooseChartWindow = new ChooseChartWindow();
+            chooseChartWindow.Show();
+            //MainWindow.MainFrameInstance.Navigate(new ChartCreatePage());
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             MainWindow.PanelName.Text = PanelName;
         }
+
+        private void deletePanel_Click(object sender, RoutedEventArgs e)
+        {
+            //MainWindow.PanelsList.RemoveAt(PanelId-1);
+            //MainWindow.MainFrameInstance.Navigate(new PanelsPage());
+        }
+
+
     }
 }
