@@ -5,12 +5,12 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Chart_Modeller"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="1024" d:DesignWidth="1440"
       Title="CreateChartsPage" Loaded="Page_Loaded">
 
     <Grid>
-        <DataGrid x:Name="dataGrid" VerticalAlignment="Top" HorizontalAlignment="Center" Width="600" Margin="0,100,0,0">
-            
-        </DataGrid>
+        <DataGrid x:Name="dataGrid" VerticalAlignment="Top" HorizontalAlignment="Center" Width="800" Margin="100"/>
+
+        <ComboBox Name="tablesBox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" DisplayMemberPath="TABLE_NAME" SelectedValuePath="TABLE_NAME"  Margin="0,0,0,20" SelectionChanged="tablesBox_SelectionChanged" />
     </Grid>
 </Page>
