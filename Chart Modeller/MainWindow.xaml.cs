@@ -2,25 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml.Serialization;
 
 namespace Chart_Modeller
 {
     public partial class MainWindow : Window
     {
-        public static TextBlock PanelName;
+        public static TextBlock PageName;
 
         public static Frame MainFrameInstance;
 
@@ -28,12 +18,7 @@ namespace Chart_Modeller
         private const string ServerFileName = "server.xml";
 
 
-        //Панели
-        public static List<Models.Panel> PanelsList;
-        private const string PanelsFileName = "panels.xml";
-        private static readonly XmlSerializer PanelsSerializer = new XmlSerializer(typeof(List<Models.Panel>));
-
-        //новое
+        //База данных + панели
         public static List<Database> DatabasesList;
         private const string DatabaseFileName = "database.xml";
         private static readonly XmlSerializer DatabaseSerializer = new XmlSerializer(typeof(List<Database>));
@@ -43,8 +28,8 @@ namespace Chart_Modeller
             InitializeComponent();
 
             MainFrameInstance = MainFrame;
-            PanelName = pageName;
-            PanelsDeserialization();
+            PageName = pageName;
+            DatabaseDeserialization();
             CheckServer();
 
             Closing += (sender, args) =>
@@ -61,7 +46,7 @@ namespace Chart_Modeller
                 MainFrameInstance.Navigate(new ConnectDbPage());
         }
 
-        private void PanelsDeserialization()
+        private void DatabaseDeserialization()
         {
             if (File.Exists(DatabaseFileName))
             {

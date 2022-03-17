@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,10 +17,34 @@ namespace Chart_Modeller
         {
             InitializeComponent();
         }
-
-        private void backButton_Click(object sender, RoutedEventArgs e)
+        private void lineSerriesButton_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.MainFrameInstance.Navigate(new CreateChartsPage("Создание линейного графика"));
             this.Close();
+        }
+
+        private void heatSeriesButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrameInstance.Navigate(new CreateChartsPage("Создание теплового графика"));
+        }
+        private void pieSiriesButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrameInstance.Navigate(new CreateChartsPage("Создание круговой диаграммы"));
+        }
+
+        private void columnSeriesButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrameInstance.Navigate(new CreateChartsPage("Создание гистограммы"));
+        }
+
+        private void stackSeriesButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrameInstance.Navigate(new CreateChartsPage("Создание диаграммы-области"));
+        }
+
+        private void solidGaugeSeriesButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrameInstance.Navigate(new CreateChartsPage("Создание манометрической диаграммы"));
         }
     }
 }

@@ -1,28 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Chart_Modeller
 {
-    /// <summary>
-    /// Логика взаимодействия для CreateChartsPage.xaml
-    /// </summary>
     public partial class CreateChartsPage : Page
     {
-        public CreateChartsPage()
+        private string ChartName;
+        public CreateChartsPage(string pageName)
         {
+
             InitializeComponent();
+            ChartName = pageName;
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            MainWindow.PageName.Text = ChartName;
+
+            //string connectionString = $@"Data Source={serverTxt.Text};Initial Catalog=master;Persist Security Info=True;User ID={loginTxt.Text};Password={passwordTxt.Text}";
+            //using (SqlConnection connection = new SqlConnection(connectionString))
+            //{
+            //    try
+            //    {
+            //        connection.Open();
+            //        Serialization();
+            //        MainWindow.MainFrameInstance.Navigate(new PanelsPage());
+            //    }
+            //    catch (SqlException)
+            //    {
+            //        MessageBox.Show("Не удалось подключиться к серверу");
+            //    }
+            //}
         }
     }
 }

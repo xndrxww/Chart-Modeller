@@ -1,26 +1,14 @@
 <?xml version="1.0"?>
 <ArrayOfDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Database Name="F.I.T">
+  <Database Name="DBAtools">
     <Panels>
       <Panel>
         <Id>1</Id>
-        <Name>Первая панель</Name>
+        <Name>панель</Name>
       </Panel>
       <Panel>
         <Id>1</Id>
-        <Name>Вторая панель</Name>
-      </Panel>
-    </Panels>
-  </Database>
-  <Database Name="Karting">
-    <Panels>
-      <Panel>
-        <Id>1</Id>
-        <Name>Тест</Name>
-      </Panel>
-      <Panel>
-        <Id>1</Id>
-        <Name>Тест2</Name>
+        <Name>фвфывфыв</Name>
       </Panel>
     </Panels>
   </Database>

@@ -35,3 +35,40 @@ C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\LiveC
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChooseChartWindow.g.cs
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChooseChartWindow.baml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\Chart Modeller.exe.config
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\Chart Modeller.exe
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\Chart Modeller.pdb
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\HandyControl.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\LiveCharts.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\HandyControl.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\LiveCharts.pdb
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\LiveCharts.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\Chart Modeller.csproj.AssemblyReference.cache
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\AddPanelWindow.g.cs
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\ChartsPage.g.cs
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\ChooseChartWindow.g.cs
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\ConnectDbPage.g.cs
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\CreateChartsPage.g.cs
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\MainWindow.g.cs
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\PanelsPage.g.cs
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\App.g.cs
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\Chart Modeller_MarkupCompile.cache
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\Chart Modeller_MarkupCompile.lref
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\App.baml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\AddPanelWindow.baml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\ChartsPage.baml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\ChooseChartWindow.baml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\ConnectDbPage.baml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\CreateChartsPage.baml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\MainWindow.baml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\PanelsPage.baml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\Chart Modeller.g.resources
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\Chart_Modeller.Properties.Resources.resources
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\Chart Modeller.csproj.GenerateResource.cache
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\Chart Modeller.csproj.CoreCompileInputs.cache
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\Chart Modeller.csproj.CopyComplete
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\Chart Modeller.exe
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\Chart Modeller.pdb

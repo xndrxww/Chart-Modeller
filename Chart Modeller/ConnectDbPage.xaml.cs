@@ -3,18 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml.Serialization;
 
 namespace Chart_Modeller
@@ -25,7 +17,6 @@ namespace Chart_Modeller
         {
             InitializeComponent();
         }
-
 
         private void connectButton_Click(object sender, RoutedEventArgs e)
         {
@@ -54,7 +45,6 @@ namespace Chart_Modeller
                 Password = passwordTxt.Text
             };
 
-
             var serializer = new XmlSerializer(typeof(Server));
             using (var writer = new StreamWriter("server.xml"))
             {
@@ -64,7 +54,7 @@ namespace Chart_Modeller
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            MainWindow.PanelName.Text = "Подключение к серверу";
+            MainWindow.PageName.Text = "Подключение к серверу";
         }
     }
 }

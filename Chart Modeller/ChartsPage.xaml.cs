@@ -32,12 +32,11 @@ namespace Chart_Modeller
         {
             ChooseChartWindow chooseChartWindow = new ChooseChartWindow();
             chooseChartWindow.Show();
-            //MainWindow.MainFrameInstance.Navigate(new ChartCreatePage());
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            MainWindow.PanelName.Text = PanelName;
+            MainWindow.PageName.Text = PanelName;
         }
 
         private void deletePanel_Click(object sender, RoutedEventArgs e)

@@ -6,9 +6,11 @@
       xmlns:local="clr-namespace:Chart_Modeller"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="CreateChartsPage">
+      Title="CreateChartsPage" Loaded="Page_Loaded">
 
     <Grid>
-        
+        <DataGrid x:Name="dataGrid" VerticalAlignment="Top" HorizontalAlignment="Center" Width="600" Margin="0,100,0,0">
+            
+        </DataGrid>
     </Grid>
 </Page>

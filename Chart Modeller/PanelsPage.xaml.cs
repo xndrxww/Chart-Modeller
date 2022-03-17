@@ -1,21 +1,10 @@
-﻿using Chart_Modeller.Models;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml.Serialization;
 
 namespace Chart_Modeller
@@ -58,14 +47,13 @@ namespace Chart_Modeller
         {
             sp.Children.Clear();
 
-
             foreach (var item in MainWindow.DatabasesList)
             {
                 if (item.Name == dbBox.SelectedValue.ToString())
                 {
                     foreach (var item1 in item.Panels)
                     {
-                        System.Windows.Controls.Button panel = new Button
+                        Button panel = new Button
                         {
                             Margin = new Thickness(0, 50, 0, 0),
                             Width = 600,
@@ -94,7 +82,7 @@ namespace Chart_Modeller
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            MainWindow.PanelName.Text = "Панели";
+            MainWindow.PageName.Text = "Панели";
         }
 
         private void dbBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

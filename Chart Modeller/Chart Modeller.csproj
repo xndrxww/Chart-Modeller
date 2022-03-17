@@ -162,10 +162,10 @@
     <Resource Include="Images\heatSeries.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\pieSeries.jpg" />
+    <Resource Include="Images\solidGaugeSeries.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\angulargaugeSeries.jpg" />
+    <Resource Include="Images\pieSeries.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
