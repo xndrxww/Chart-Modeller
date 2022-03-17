@@ -27,7 +27,7 @@ namespace Chart_Modeller
         public AddPanelWindow(string currentDb)
         {
             InitializeComponent();
-            panelName.Focus();
+            panelNameTxt.Focus();
             dbName = currentDb;
 
         }
@@ -39,7 +39,7 @@ namespace Chart_Modeller
             panels = new Models.Panel()
             {
                 Id = countPanels + 1,
-                Name = panelName.Text
+                Name = panelNameTxt.Text
             };
 
             int i = 0;

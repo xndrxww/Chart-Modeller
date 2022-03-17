@@ -5,50 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chart_Modeller"
         mc:Ignorable="d"
-        Title="ChooseChartWindow" Height="512" Width="720" WindowStartupLocation="CenterScreen">
+        Title="ChooseChartWindow" Height="580" Width="720" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBlock Text="Тип диаграммы" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0" FontSize="25"/>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,80,0,0">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,10,0,0">
             <Button Margin="30" Width="170" Height="150" >
                 <StackPanel>
                     <Image Source="Images/lineSeries.jpg"/>
-                    <TextBlock HorizontalAlignment="Center">Blablabla</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">1</TextBlock>
                 </StackPanel>
             </Button>
             <Button Margin="30" Width="170" Height="150" >
                 <StackPanel>
                     <Image Source="Images/heatSeries.jpg"/>
-                    <TextBlock HorizontalAlignment="Center">Blablabla</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">2</TextBlock>
                 </StackPanel>
             </Button>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,80,0,0">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
             <Button Margin="30" Width="170" Height="150" >
                 <StackPanel>
                     <Image Source="Images/columnSeries.jpg"/>
-                    <TextBlock HorizontalAlignment="Center">Blablabla</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">3</TextBlock>
                 </StackPanel>
             </Button>
             <Button Margin="30" Width="170" Height="150" >
                 <StackPanel>
                     <Image Source="Images/pieSeries.jpg" Width="120"/>
-                    <TextBlock HorizontalAlignment="Center">Blablabla</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">4</TextBlock>
                 </StackPanel>
             </Button>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,80,30,0">
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,10,30,0">
             <Button Margin="30" Width="170" Height="150">
                 <StackPanel>
                     <Image Source="Images/stackSeries.jpg" Height="90"/>
-                    <TextBlock HorizontalAlignment="Center">Blablabla</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">5</TextBlock>
                 </StackPanel>
             </Button>
             <Button Margin="30" Width="170" Height="150" >
                 <StackPanel>
                     <Image Source="Images/angulargaugeSeries.jpg" Width="100"/>
-                    <TextBlock HorizontalAlignment="Center">Blablabla</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">6</TextBlock>
                 </StackPanel>
             </Button>
         </StackPanel>
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,40,10" Background="#202226" Foreground="White">Далее</Button>
+        <Button x:Name="backButton" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,140,10" Click="backButton_Click">Назад</Button>
     </Grid>
 </Window>

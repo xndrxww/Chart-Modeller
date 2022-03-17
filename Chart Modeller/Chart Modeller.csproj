@@ -67,23 +67,19 @@
     <Compile Include="AddPanelWindow.xaml.cs">
       <DependentUpon>AddPanelWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ChartCreatePage.xaml.cs">
-      <DependentUpon>ChartCreatePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ChartsPage.xaml.cs">
       <DependentUpon>ChartsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ChooseChartWindow.xaml.cs">
       <DependentUpon>ChooseChartWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateChartsPage.xaml.cs">
+      <DependentUpon>CreateChartsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Database.cs" />
     <Compile Include="Models\Panel.cs" />
     <Compile Include="Models\Server.cs" />
     <Page Include="AddPanelWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ChartCreatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -96,6 +92,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ConnectDbPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateChartsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

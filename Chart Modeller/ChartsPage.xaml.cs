@@ -45,7 +45,5 @@ namespace Chart_Modeller
             //MainWindow.PanelsList.RemoveAt(PanelId-1);
             //MainWindow.MainFrameInstance.Navigate(new PanelsPage());
         }
-
-
     }
 }

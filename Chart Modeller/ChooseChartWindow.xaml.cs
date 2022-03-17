@@ -20,5 +20,10 @@ namespace Chart_Modeller
         {
             InitializeComponent();
         }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

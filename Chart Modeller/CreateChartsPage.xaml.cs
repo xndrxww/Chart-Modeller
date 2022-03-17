@@ -15,16 +15,14 @@ using System.Windows.Shapes;
 
 namespace Chart_Modeller
 {
-    public partial class ChartCreatePage : Page
+    /// <summary>
+    /// Логика взаимодействия для CreateChartsPage.xaml
+    /// </summary>
+    public partial class CreateChartsPage : Page
     {
-        public ChartCreatePage()
+        public CreateChartsPage()
         {
             InitializeComponent();
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            MainWindow.PanelName.Text = "Создание графика";
         }
     }
 }
