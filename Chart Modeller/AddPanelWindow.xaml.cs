@@ -7,8 +7,7 @@ namespace Chart_Modeller
     {
         private string dbName;
 
-        private Models.Panel panels;
-        private int countPanels;
+        private Panel panels;
 
         private Database database;
 
@@ -17,16 +16,13 @@ namespace Chart_Modeller
             InitializeComponent();
             panelNameTxt.Focus();
             dbName = currentDb;
-
         }
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
-            //countPanels = MainWindow.PanelsList.Count();
 
-            panels = new Models.Panel()
+            panels = new Panel()
             {
-                Id = countPanels + 1,
                 Name = panelNameTxt.Text
             };
 

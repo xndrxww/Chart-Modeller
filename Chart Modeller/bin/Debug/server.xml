@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Server xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ServerName>SPH-Monitoring</ServerName>
+  <ServerName>LAPTOP-VAME4LJ4\KUZNETSOV</ServerName>
   <Login>sa</Login>
-  <Password>111111@N</Password>
+  <Password>3232</Password>
 </Server>

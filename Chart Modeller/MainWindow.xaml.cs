@@ -20,6 +20,7 @@ namespace Chart_Modeller
 
         //База данных + панели
         public static List<Database> DatabasesList;
+        public static Database Database;
         private const string DatabaseFileName = "database.xml";
         private static readonly XmlSerializer DatabaseSerializer = new XmlSerializer(typeof(List<Database>));
 
@@ -29,6 +30,8 @@ namespace Chart_Modeller
 
             MainFrameInstance = MainFrame;
             PageName = pageName;
+            Database = new Database();
+
             DatabaseDeserialization();
             CheckServer();
 

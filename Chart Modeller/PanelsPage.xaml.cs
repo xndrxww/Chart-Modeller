@@ -17,6 +17,7 @@ namespace Chart_Modeller
         {
             InitializeComponent();
             Deserialization();
+            FillDbBox();
             GetPanels();
         }
 
@@ -27,8 +28,6 @@ namespace Chart_Modeller
             {
                 server = (Server)serializer.Deserialize(stream);
             }
-
-            FillDbBox();
         }
 
         private void FillDbBox()
@@ -66,6 +65,7 @@ namespace Chart_Modeller
                         panel.Click += (s, ev) =>
                         {
                             MainWindow.MainFrameInstance.Navigate(new ChartsPage(panel.Content.ToString()));
+                            MainWindow.Database.Name = dbBox.SelectedValue.ToString();
                         };
 
                         sp.Children.Add(panel);

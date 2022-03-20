@@ -26,25 +26,30 @@ namespace Chart_Modeller
         private void heatSeriesButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrameInstance.Navigate(new CreateChartsPage("Создание теплового графика"));
+            this.Close();
         }
         private void pieSiriesButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrameInstance.Navigate(new CreateChartsPage("Создание круговой диаграммы"));
+            this.Close();
         }
 
         private void columnSeriesButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrameInstance.Navigate(new CreateChartsPage("Создание гистограммы"));
+            this.Close();
         }
 
         private void stackSeriesButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrameInstance.Navigate(new CreateChartsPage("Создание диаграммы-области"));
+            this.Close();
         }
 
         private void solidGaugeSeriesButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrameInstance.Navigate(new CreateChartsPage("Создание манометрической диаграммы"));
+            this.Close();
         }
     }
 }

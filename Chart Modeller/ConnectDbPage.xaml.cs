@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Xml.Serialization;
+using HandyControl.Controls;
 
 namespace Chart_Modeller
 {
@@ -31,7 +32,8 @@ namespace Chart_Modeller
                 }
                 catch (SqlException)
                 {
-                    MessageBox.Show("Не удалось подключиться к серверу");
+                    System.Windows.MessageBox.Show("Не удалось подключиться к серверу");
+                    //HandyControl.Controls.MessageBox.Show("Не удалось подключиться к серверу", "Ошибка подключения", MessageBoxButton.OK);
                 }
             }
         }

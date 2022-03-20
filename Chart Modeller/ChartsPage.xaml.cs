@@ -11,6 +11,7 @@ namespace Chart_Modeller
         public ChartsPage(string panelName)
         {
             InitializeComponent();
+
             PanelName = panelName;
             
             SeriesCollection seriesCollection = new SeriesCollection
@@ -37,6 +38,7 @@ namespace Chart_Modeller
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             MainWindow.PageName.Text = PanelName;
+            dbText.Text = MainWindow.Database.Name;
         }
 
         private void deletePanel_Click(object sender, RoutedEventArgs e)
