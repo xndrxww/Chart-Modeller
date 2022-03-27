@@ -15,14 +15,13 @@ namespace Chart_Modeller
         public static Frame MainFrameInstance;
 
         //Сервер
-        private const string ServerFileName = "server.xml";
-
-
-        //База данных + панели
-        public static List<Database> DatabasesList;
+        public static List<Server> ServersList;
+        public static Server Server;
         public static Database Database;
-        private const string DatabaseFileName = "database.xml";
-        private static readonly XmlSerializer DatabaseSerializer = new XmlSerializer(typeof(List<Database>));
+        private const string ServerFileName = "server.xml";
+        private static readonly XmlSerializer ServerSerializer = new XmlSerializer(typeof(List<Server>));
+
+
 
         public MainWindow()
         {
@@ -31,13 +30,15 @@ namespace Chart_Modeller
             MainFrameInstance = MainFrame;
             PageName = pageName;
             Database = new Database();
+            Server = new Server();
 
-            DatabaseDeserialization();
+            Deserialization();
+
             CheckServer();
 
             Closing += (sender, args) =>
             {
-                DatabaseSerializer.Serialize(File.Create(DatabaseFileName), DatabasesList);
+                ServerSerializer.Serialize(File.Create(ServerFileName), ServersList);
             };
         }
 
@@ -49,23 +50,29 @@ namespace Chart_Modeller
                 MainFrameInstance.Navigate(new ConnectDbPage());
         }
 
-        private void DatabaseDeserialization()
-        {
-            if (File.Exists(DatabaseFileName))
-            {
-                using (FileStream stream = File.OpenRead(DatabaseFileName))
-                {
-                    DatabasesList = (List<Database>)DatabaseSerializer.Deserialize(stream);
-                }
-            }
-            else
-                DatabasesList = new List<Database>();
-        }
-
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
             if (MainWindow.MainFrameInstance.CanGoBack)
                 MainWindow.MainFrameInstance.GoBack();
+        }
+
+        private void Deserialization()
+        {
+            if (File.Exists(ServerFileName))
+            {
+                using (FileStream stream = File.OpenRead(ServerFileName))
+                {
+                    ServersList = (List<Server>)ServerSerializer.Deserialize(stream);
+                }
+                foreach (var item in ServersList)
+                {
+                    Server.ServerName = item.ServerName;
+                    Server.Login = item.Login;
+                    Server.Password = item.Password;
+                }
+            }
+            else
+                ServersList = new List<Server>();
         }
     }
 }

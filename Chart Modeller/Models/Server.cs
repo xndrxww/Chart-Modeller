@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chart_Modeller.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,8 +22,15 @@ namespace Chart_Modeller
             Password = password;
         }
 
+        [XmlAttribute]
         public string ServerName { get; set; }
+
+        [XmlAttribute]
         public string Login { get; set; }
+
+        [XmlAttribute]
         public string Password { get; set; }
+
+        public List<Database> Databases  = new List<Database>();
     }
 }

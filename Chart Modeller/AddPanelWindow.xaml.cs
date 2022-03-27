@@ -28,25 +28,37 @@ namespace Chart_Modeller
 
             int i = 0;
 
-            if (MainWindow.DatabasesList.Count > 0)
+            foreach (var item in MainWindow.ServersList)
             {
-                foreach (var item in MainWindow.DatabasesList.ToArray())
+                if (item.Databases.Count > 0)
                 {
-                    if (item.Name == dbName)
+                    foreach (var item2 in item.Databases.ToArray())
                     {
-                        item.Panels.Add(panels);
-                        i++;
-                        this.Close();
-                        MainWindow.MainFrameInstance.Navigate(new PanelsPage());
+                        if (item2.Name == dbName)
+                        {
+                            item2.Panels.Add(panels);
+                            i++;
+                            this.Close();
+                            MainWindow.MainFrameInstance.Navigate(new PanelsPage());
+                        }
                     }
                 }
             }
+
             if (i == 0)
             {
                 database = new Database();
                 database.Name = dbName;
                 database.Panels.Add(panels);
-                MainWindow.DatabasesList.Add(database);
+
+                foreach (var item in MainWindow.ServersList)
+                {
+                    if (MainWindow.Server.ServerName == item.ServerName)
+                    {
+                        item.Databases.Add(database);
+                    }
+                }
+
                 this.Close();
                 MainWindow.MainFrameInstance.Navigate(new PanelsPage());
             }

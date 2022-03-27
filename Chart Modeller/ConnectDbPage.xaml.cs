@@ -27,7 +27,7 @@ namespace Chart_Modeller
                 try
                 {
                     connection.Open();
-                    Serialization();
+                    AddServer();
                     MainWindow.MainFrameInstance.Navigate(new PanelsPage());
                 }
                 catch (SqlException)
@@ -38,25 +38,20 @@ namespace Chart_Modeller
             }
         }
 
-        private void Serialization()
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            Server server = new Server()
+            MainWindow.PageName.Text = "Подключение к серверу";
+        }
+
+        private void AddServer()
+        {
+            MainWindow.Server = new Server()
             {
                 ServerName = serverTxt.Text,
                 Login = loginTxt.Text,
                 Password = passwordTxt.Text
             };
-
-            var serializer = new XmlSerializer(typeof(Server));
-            using (var writer = new StreamWriter("server.xml"))
-            {
-                serializer.Serialize(writer, server);
-            }
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            MainWindow.PageName.Text = "Подключение к серверу";
+            MainWindow.ServersList.Add(MainWindow.Server);
         }
     }
 }

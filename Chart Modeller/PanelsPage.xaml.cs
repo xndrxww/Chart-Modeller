@@ -11,28 +11,15 @@ namespace Chart_Modeller
 {
     public partial class PanelsPage : Page
     {
-        private Server server = new Server();
-
         public PanelsPage()
         {
             InitializeComponent();
-            Deserialization();
             FillDbBox();
             GetPanels();
         }
-
-        private void Deserialization()
-        {
-            var serializer = new XmlSerializer(typeof(Server));
-            using (FileStream stream = File.OpenRead("server.xml"))
-            {
-                server = (Server)serializer.Deserialize(stream);
-            }
-        }
-
         private void FillDbBox()
         {
-            string connectionString = $@"Data Source={server.ServerName};Initial Catalog=master;Persist Security Info=True;User ID={server.Login};Password={server.Password}";
+            string connectionString = $@"Data Source={MainWindow.Server.ServerName};Initial Catalog=master;Persist Security Info=True;User ID={MainWindow.Server.Login};Password={MainWindow.Server.Password}";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 var table = new DataTable();
@@ -46,29 +33,33 @@ namespace Chart_Modeller
         {
             sp.Children.Clear();
 
-            foreach (var item in MainWindow.DatabasesList)
+            foreach (var item in MainWindow.ServersList)
             {
-                if (item.Name == dbBox.SelectedValue.ToString())
+                foreach (var item1 in item.Databases)
                 {
-                    foreach (var item1 in item.Panels)
+                    if (item1.Name == dbBox.SelectedValue.ToString())
                     {
-                        Button panel = new Button
+                        foreach (var item2 in item1.Panels)
                         {
-                            Margin = new Thickness(0, 50, 0, 0),
-                            Width = 600,
-                            Height = 80,
-                            Content = item1.Name + " Id = " + item1.Id,
-                            Background = new SolidColorBrush(Color.FromRgb(32, 34, 38)),
-                            Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255))
-                        };
+                            Button panel = new Button
+                            {
+                                Margin = new Thickness(0, 50, 0, 0),
+                                Width = 600,
+                                Height = 80,
+                                Content = item2.Name,
+                                Background = new SolidColorBrush(Color.FromRgb(32, 34, 38)),
+                                Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255)),
+                                FontSize = 22
+                            };
 
-                        panel.Click += (s, ev) =>
-                        {
-                            MainWindow.MainFrameInstance.Navigate(new ChartsPage(panel.Content.ToString()));
-                            MainWindow.Database.Name = dbBox.SelectedValue.ToString();
-                        };
+                            panel.Click += (s, ev) =>
+                            {
+                                MainWindow.MainFrameInstance.Navigate(new ChartsPage(panel.Content.ToString()));
+                                MainWindow.Database.Name = dbBox.SelectedValue.ToString();
+                            };
 
-                        sp.Children.Add(panel);
+                            sp.Children.Add(panel);
+                        }
                     }
                 }
             }
@@ -87,7 +78,7 @@ namespace Chart_Modeller
 
         private void dbBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            GetPanels();
+            GetPanels(); 
         }
     }
 }

@@ -1,6 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Server xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ServerName>LAPTOP-VAME4LJ4\KUZNETSOV</ServerName>
-  <Login>sa</Login>
-  <Password>3232</Password>
-</Server>
+<?xml version="1.0"?>
+<ArrayOfServer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Server ServerName="LAPTOP-VAME4LJ4\KUZNETSOV" Login="sa" Password="3232">
+    <Databases>
+      <Database Name="chart">
+        <Panels>
+          <Panel Name="пример">
+            <Id>0</Id>
+          </Panel>
+        </Panels>
+      </Database>
+      <Database Name="Karting">
+        <Panels>
+          <Panel Name="погода">
+            <Id>0</Id>
+          </Panel>
+        </Panels>
+      </Database>
+      <Database Name="Marathon_skills">
+        <Panels>
+          <Panel Name="sdffsd">
+            <Id>0</Id>
+          </Panel>
+        </Panels>
+      </Database>
+    </Databases>
+  </Server>
+</ArrayOfServer>

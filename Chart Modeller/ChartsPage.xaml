@@ -20,7 +20,7 @@
                 <lvc:PieSeries Values="35"/>
             </lvc:PieChart.Series>
         </lvc:PieChart>
-        <Button x:Name="addChart" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="50" Height="50" Click="addChart_Click" FontSize="20" Margin="15,0,0,10" Content="+"/>
+        <Button x:Name="addChart" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="210" Height="40" Click="addChart_Click" FontSize="20" Margin="15,0,0,15" Background="#202226" Foreground="White" HorizontalContentAlignment="Center">+ Создание графика</Button>
         <TextBlock x:Name="dbText" VerticalAlignment="Bottom" Width="200" Margin="0,0,0,20" HorizontalAlignment="Center" TextAlignment="Center" Foreground="White" FontSize="20">FIT</TextBlock>
     </Grid>
 </Page>

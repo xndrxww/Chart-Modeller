@@ -29,12 +29,6 @@ namespace Chart_Modeller
             chart.Series = seriesCollection;
         }
 
-        private void addChart_Click(object sender, RoutedEventArgs e)
-        {
-            ChooseChartWindow chooseChartWindow = new ChooseChartWindow();
-            chooseChartWindow.Show();
-        }
-
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             MainWindow.PageName.Text = PanelName;
@@ -45,6 +39,12 @@ namespace Chart_Modeller
         {
             //MainWindow.PanelsList.RemoveAt(PanelId-1);
             //MainWindow.MainFrameInstance.Navigate(new PanelsPage());
+        }
+
+        private void addChart_Click(object sender, RoutedEventArgs e)
+        {
+            ChooseChartWindow chooseChartWindow = new ChooseChartWindow();
+            chooseChartWindow.Show();
         }
     }
 }

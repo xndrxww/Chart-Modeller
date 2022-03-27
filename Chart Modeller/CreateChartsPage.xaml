@@ -11,9 +11,11 @@
 
     <Grid>
         <DataGrid x:Name="dataGrid" VerticalAlignment="Top" HorizontalAlignment="Center" Width="800" MaxHeight="400" Margin="0,100,0,0"/>
-        <ComboBox x:Name="tablesBox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" DisplayMemberPath="TABLE_NAME" SelectedValuePath="TABLE_NAME"  Margin="0,0,0,20" SelectionChanged="tablesBox_SelectionChanged" />
-        <hc:CheckComboBox x:Name="columnsBox" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="0,110,50,0" Width="200" SelectedIndex="-1"/>
+        <hc:ComboBox  x:Name="tablesBox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" DisplayMemberPath="TABLE_NAME" SelectedValuePath="TABLE_NAME"  Margin="0,0,0,20" SelectionChanged="tablesBox_SelectionChanged"/>
         <lvc:CartesianChart x:Name="chart" Width="800" Height="300" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,100"/>
-        <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,40,40" Click="Button_Click" Panel.ZIndex="1">Нажать</Button>
+        <Grid HorizontalAlignment="Right" Width="250" Height="800" VerticalAlignment="Center" Background="#202226">
+            <hc:CheckComboBox x:Name="columnsBox" VerticalAlignment="Top" Margin="0,50,0,0" Width="200" SelectedIndex="-1"/>
+            <Button x:Name="createButton" VerticalAlignment="Bottom" Margin="20" Width="130" Background="#202226" Foreground="White" Click="createButton_Click">Добавить значения</Button>
+        </Grid>
     </Grid>
 </Page>
