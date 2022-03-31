@@ -55,8 +55,9 @@ namespace Chart_Modeller
 
                             panel.Click += (s, ev) =>
                             {
-                                MainWindow.MainFrameInstance.Navigate(new ChartsPage(panel.Content.ToString()));
+                                MainWindow.MainFrameInstance.Navigate(new ChartsPage());
                                 MainWindow.Database.Name = dbBox.SelectedValue.ToString();
+                                MainWindow.Panel.Name = panel.Content.ToString();
                             };
 
                             sp.Children.Add(panel);

@@ -32,6 +32,7 @@ namespace Chart_Modeller
             PageName = pageName;
             Database = new Database();
             Server = new Server();
+            Panel = new Models.Panel();
 
             Deserialization();
 

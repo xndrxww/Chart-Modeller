@@ -24,7 +24,7 @@ namespace Chart_Modeller
 
         public List<string> LabelsList { get; set; }
 
-        //private Chart Chart = new Chart();
+        private Chart Chart = new Chart();
 
         public CreateChartsPage(string pageName)
         {
@@ -92,7 +92,6 @@ namespace Chart_Modeller
 
             chart.Series = SeriesCollection;
 
-            AddChart();
             //тестик
             //chart.Background = new SolidColorBrush(Color.FromRgb(32, 34, 38));
         }
@@ -187,8 +186,29 @@ namespace Chart_Modeller
 
         private void AddChart()
         {
-            //Chart.SeriesCollection = SeriesCollection;
+            Chart.MySeriesSerializable = SeriesCollection;
             //MainWindow.Panel.Charts.Add(Chart);
+            foreach (var server in MainWindow.ServersList)
+            {
+                foreach (var database in server.Databases)
+                {
+                    if (database.Name == MainWindow.Database.Name)
+                    {
+                        foreach (var panel in database.Panels)
+                        {
+                            if (panel.Name == MainWindow.Panel.Name)
+                            {
+                                panel.Charts.Add(Chart);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void addButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddChart();
         }
     }
 }

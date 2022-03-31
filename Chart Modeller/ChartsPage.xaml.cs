@@ -8,25 +8,25 @@ namespace Chart_Modeller
     public partial class ChartsPage : Page
     {
         private string PanelName;
-        public ChartsPage(string panelName)
+        public ChartsPage()
         {
             InitializeComponent();
 
-            PanelName = panelName;
-            
-            SeriesCollection seriesCollection = new SeriesCollection
-            {
-                new LineSeries
-                {
-                    Values = new ChartValues<double> { 3, 5, 7, 4 }
-                },
-                new LineSeries
-                {
-                    Values = new ChartValues<double> { 13, 25, 17, 24 }
-                },
-            };
+            PanelName = MainWindow.Panel.Name;
 
-            chart.Series = seriesCollection;
+            //SeriesCollection seriesCollection = new SeriesCollection
+            //{
+            //    new LineSeries
+            //    {
+            //        Values = new ChartValues<double> { 3, 5, 7, 4 }
+            //    },
+            //    new LineSeries
+            //    {
+            //        Values = new ChartValues<double> { 13, 25, 17, 24 }
+            //    },
+            //};
+
+            //chart.Series = seriesCollection;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -63,6 +63,34 @@ namespace Chart_Modeller
             {
                 ChooseChartWindow newwindow = new ChooseChartWindow();
                 newwindow.Show();
+            }
+        }
+
+        private void GetCharts()
+        {
+            sp.Children.Clear();
+
+            foreach (var server in MainWindow.ServersList)
+            {
+                foreach (var database in server.Databases)
+                {
+                    if (database.Name == MainWindow.Database.Name)
+                    {
+                        foreach (var panel in database.Panels)
+                        {
+                            if (panel.Name == MainWindow.Panel.Name)
+                            {
+                                foreach (var chart in panel.Charts)
+                                {
+                                    CartesianChart cartesianChart = new CartesianChart();
+                                    cartesianChart.Series = chart.SeriesCollection;
+
+                                    sp.Children.Add(cartesianChart);
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

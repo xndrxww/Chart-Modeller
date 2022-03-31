@@ -22,7 +22,22 @@ namespace Chart_Modeller.Models
 
         [XmlAttribute]
         public string Name { get; set; }
-        
+
         //public SeriesCollection SeriesCollection { get; set; }
+
+        private SeriesCollection seriesCollection;
+        [XmlIgnore]
+        public SeriesCollection SeriesCollection
+        {
+            get { return seriesCollection; }
+            set { seriesCollection = value; }
+        }
+
+        [XmlElement("SeriesCollection")]
+        public object MySeriesSerializable
+        {
+            get { return SeriesCollection; }
+            set { SeriesCollection = value as SeriesCollection; }
+        }
     }
 }

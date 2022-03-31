@@ -25,7 +25,8 @@
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,280,0,0" FontSize="15" Foreground="White">Название линии</TextBlock>
             <TextBox x:Name="lineNameTxt" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,310,0,0" Width="200"></TextBox>
             <hc:ColorPicker Name="colorPicker" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,400,0,0" Height="180"/>
-            <Button x:Name="createButton" VerticalAlignment="Bottom" Margin="20" Width="130" Background="#131C26" Foreground="White" Click="createButton_Click">Добавить значения</Button>
+            <Button x:Name="createButton" VerticalAlignment="Bottom" Margin="20" Width="130" Background="#131C26" Foreground="White" Click="createButton_Click" HorizontalAlignment="Left">Добавить значения</Button>
+            <Button x:Name="addButton" VerticalAlignment="Bottom" Margin="20" Width="20" Background="#131C26" Foreground="White" HorizontalAlignment="Right" Click="addButton_Click">+</Button>
         </Grid>
         <Button x:Name="clearButton" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120" Margin="100,0,0,500" Click="clearButton_Click">
             <Grid>

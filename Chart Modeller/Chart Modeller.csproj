@@ -46,6 +46,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -167,9 +168,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\pieSeries.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="bin.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\bin.png" />
