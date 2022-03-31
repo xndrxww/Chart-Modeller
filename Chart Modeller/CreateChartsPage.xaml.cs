@@ -1,4 +1,5 @@
-﻿using LiveCharts;
+﻿using Chart_Modeller.Models;
+using LiveCharts;
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
@@ -18,12 +19,12 @@ namespace Chart_Modeller
         private string connectionString;
         private DataTable Table;
 
-        private static List<string> ColumnsList = new List<string>();
-
         private LineSeries LineSeries;
         private SeriesCollection SeriesCollection = new SeriesCollection();
 
+        public List<string> LabelsList { get; set; }
 
+        //private Chart Chart = new Chart();
 
         public CreateChartsPage(string pageName)
         {
@@ -57,10 +58,10 @@ namespace Chart_Modeller
                 dataGrid.ItemsSource = Table.DefaultView;
             }
 
-            FillColumnsBox();
+            FillBox();
         }
 
-        private void FillColumnsBox()
+        private void FillBox()
         {
             columnsBox.Items.Clear();
 
@@ -68,38 +69,21 @@ namespace Chart_Modeller
             {
                 columnsBox.Items.Add(item.Header.ToString());
             }
+
+            xBox.Items.Clear();
+            foreach (var item in dataGrid.Columns)
+            {
+                xBox.Items.Add(item.Header.ToString());
+            }
         }
 
-        private void GetChartsData()
+        private void GetChartsData(ComboBox comboBox)
         {
-            foreach (var item in columnsBox.SelectedItems)
-            {
-                ColumnsList.Add(item.ToString());
-            }
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 Table = new DataTable();
-                new SqlDataAdapter($"select {Columns()} from [{MainWindow.Database.Name}].[dbo].[{tablesBox.SelectedValue}]", connection).Fill(Table);
-
-                //dataGrid.ItemsSource = Table.DefaultView;
+                new SqlDataAdapter($"select {comboBox.SelectedItem} from [{MainWindow.Database.Name}].[dbo].[{tablesBox.SelectedValue}]", connection).Fill(Table);
             }
-        }
-
-        private string Columns()
-        {
-            string columns = "";
-            string result = "";
-
-            foreach (var item in ColumnsList)
-            {
-                columns += "[" + item + "], ";
-            }
-            result = columns.Remove(columns.Length - 2);
-
-            ColumnsList.Clear();
-            columnsBox.Items.Clear();
-
-            return result;
         }
 
         private void CreateChart()
@@ -107,9 +91,10 @@ namespace Chart_Modeller
             SeriesCollection.Add(CreateLineSeries());
 
             chart.Series = SeriesCollection;
-            
+
+            AddChart();
             //тестик
-            chart.Background = new SolidColorBrush(Color.FromRgb(32, 34, 38));
+            //chart.Background = new SolidColorBrush(Color.FromRgb(32, 34, 38));
         }
 
         private LineSeries CreateLineSeries()
@@ -147,12 +132,63 @@ namespace Chart_Modeller
                     LineSeries.Values = new ChartValues<double>(valuesDouble);
                 }
             }
+
+            SetLineDecoration();
+
             return LineSeries;
         }
         private void createButton_Click(object sender, RoutedEventArgs e)
         {
-            GetChartsData();
-            CreateChart();
+            if (columnsBox.SelectedItem != null)
+            {
+                GetChartsData(columnsBox);
+                CreateChart();
+            }
+        }
+
+        private void SetLineDecoration()
+        {
+            LineSeries.Title = lineNameTxt.Text;
+
+            if (colorPicker.SelectedBrush.Color.R != 255 && colorPicker.SelectedBrush.Color.G != 255 && colorPicker.SelectedBrush.Color.B != 255)
+            {
+                LineSeries.Stroke = new SolidColorBrush(Color.FromRgb(colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B));
+                LineSeries.Fill = new SolidColorBrush(Color.FromArgb(123, colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B));
+            }
+
+            //LineSeries.StrokeDashArray = "2";
+            if (xBox.SelectedItem != null)
+            {
+                GetChartsData(xBox);
+                SetLabels();
+            }
+        }
+
+        private void SetLabels()
+        {
+            LabelsList = new List<string>();
+            LabelsList.Clear();
+            foreach (DataColumn column in Table.Columns)
+            {
+                foreach (DataRow row in Table.Rows)
+                {
+                    LabelsList.Add((string)row[column.ColumnName]);
+                };
+            }
+
+            LineSeries.DataLabels = true;
+            DataContext = this;
+        }
+
+        private void clearButton_Click(object sender, RoutedEventArgs e)
+        {
+            SeriesCollection.Clear();
+        }
+
+        private void AddChart()
+        {
+            //Chart.SeriesCollection = SeriesCollection;
+            //MainWindow.Panel.Charts.Add(Chart);
         }
     }
 }

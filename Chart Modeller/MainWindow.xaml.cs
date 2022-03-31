@@ -18,6 +18,7 @@ namespace Chart_Modeller
         public static List<Server> ServersList;
         public static Server Server;
         public static Database Database;
+        public static Models.Panel Panel;
         private const string ServerFileName = "server.xml";
         private static readonly XmlSerializer ServerSerializer = new XmlSerializer(typeof(List<Server>));
 

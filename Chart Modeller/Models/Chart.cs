@@ -4,24 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using LiveCharts;
 
 namespace Chart_Modeller.Models
 {
-    public class Panel
+    public class Chart
     {
-        public Panel()
+        public Chart()
         {
 
         }
 
-        public Panel(string name)
+        public Chart(string name)
         {
             Name = name;
         }
 
         [XmlAttribute]
         public string Name { get; set; }
-
-        public List<Chart> Charts = new List<Chart>();
+        
+        //public SeriesCollection SeriesCollection { get; set; }
     }
 }

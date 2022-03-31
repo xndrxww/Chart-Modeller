@@ -5,23 +5,23 @@ namespace Chart_Modeller
 {
     public partial class AddPanelWindow : Window
     {
-        private string dbName;
+        private string DbName;
 
-        private Panel panels;
+        private Panel Panels;
 
-        private Database database;
+        private Database Database;
 
         public AddPanelWindow(string currentDb)
         {
             InitializeComponent();
             panelNameTxt.Focus();
-            dbName = currentDb;
+            DbName = currentDb;
         }
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
 
-            panels = new Panel()
+            Panels = new Panel()
             {
                 Name = panelNameTxt.Text
             };
@@ -34,9 +34,9 @@ namespace Chart_Modeller
                 {
                     foreach (var item2 in item.Databases.ToArray())
                     {
-                        if (item2.Name == dbName)
+                        if (item2.Name == DbName)
                         {
-                            item2.Panels.Add(panels);
+                            item2.Panels.Add(Panels);
                             i++;
                             this.Close();
                             MainWindow.MainFrameInstance.Navigate(new PanelsPage());
@@ -47,15 +47,15 @@ namespace Chart_Modeller
 
             if (i == 0)
             {
-                database = new Database();
-                database.Name = dbName;
-                database.Panels.Add(panels);
+                Database = new Database();
+                Database.Name = DbName;
+                Database.Panels.Add(Panels);
 
                 foreach (var item in MainWindow.ServersList)
                 {
                     if (MainWindow.Server.ServerName == item.ServerName)
                     {
-                        item.Databases.Add(database);
+                        item.Databases.Add(Database);
                     }
                 }
 

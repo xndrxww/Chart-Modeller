@@ -43,8 +43,27 @@ namespace Chart_Modeller
 
         private void addChart_Click(object sender, RoutedEventArgs e)
         {
-            ChooseChartWindow chooseChartWindow = new ChooseChartWindow();
-            chooseChartWindow.Show();
+            OpenWindow();
+        }
+
+        private void OpenWindow()
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is ChooseChartWindow)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                ChooseChartWindow newwindow = new ChooseChartWindow();
+                newwindow.Show();
+            }
         }
     }
 }

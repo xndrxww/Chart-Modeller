@@ -10,12 +10,28 @@
       Title="CreateChartsPage" Loaded="Page_Loaded">
 
     <Grid>
-        <DataGrid x:Name="dataGrid" VerticalAlignment="Top" HorizontalAlignment="Center" Width="800" MaxHeight="400" Margin="0,100,0,0"/>
+        <DataGrid x:Name="dataGrid" VerticalAlignment="Top" HorizontalAlignment="Left" Width="900" MaxHeight="350" Margin="50,100,0,0"/>
         <hc:ComboBox  x:Name="tablesBox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" DisplayMemberPath="TABLE_NAME" SelectedValuePath="TABLE_NAME"  Margin="0,0,0,20" SelectionChanged="tablesBox_SelectionChanged"/>
-        <lvc:CartesianChart x:Name="chart" Width="800" Height="300" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,100"/>
-        <Grid HorizontalAlignment="Right" Width="250" Height="800" VerticalAlignment="Center" Background="#202226">
-            <hc:CheckComboBox x:Name="columnsBox" VerticalAlignment="Top" Margin="0,50,0,0" Width="200" SelectedIndex="-1"/>
-            <Button x:Name="createButton" VerticalAlignment="Bottom" Margin="20" Width="130" Background="#202226" Foreground="White" Click="createButton_Click">Добавить значения</Button>
+        <lvc:CartesianChart x:Name="chart" Width="1050" Height="400" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="50,0,0,100">
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Labels="{Binding LabelsList}" />
+            </lvc:CartesianChart.AxisX>
+        </lvc:CartesianChart>
+        <Grid HorizontalAlignment="Right" Width="250" Height="800" VerticalAlignment="Center" Background="#131C26" Margin="50">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontSize="15" Foreground="White">Выберите столбец</TextBlock>
+            <ComboBox x:Name="columnsBox" VerticalAlignment="Top" Margin="0,50,0,0" Width="200" SelectedIndex="-1"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,150,0,0" FontSize="15" Foreground="White">Выберите столбец</TextBlock>
+            <ComboBox x:Name="xBox" VerticalAlignment="Top" Margin="0,180,0,0" Width="200" SelectedIndex="-1"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,280,0,0" FontSize="15" Foreground="White">Название линии</TextBlock>
+            <TextBox x:Name="lineNameTxt" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,310,0,0" Width="200"></TextBox>
+            <hc:ColorPicker Name="colorPicker" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,400,0,0" Height="180"/>
+            <Button x:Name="createButton" VerticalAlignment="Bottom" Margin="20" Width="130" Background="#131C26" Foreground="White" Click="createButton_Click">Добавить значения</Button>
         </Grid>
+        <Button x:Name="clearButton" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120" Margin="100,0,0,500" Click="clearButton_Click">
+            <Grid>
+                <TextBlock  VerticalAlignment="Center" Margin="8,0,-8,0">Очистить график</TextBlock>
+                <Image Source="/Images/bin.png" VerticalAlignment="Center"  Margin="-11,0,89,0" Width="15"/>
+            </Grid>
+        </Button>
     </Grid>
 </Page>

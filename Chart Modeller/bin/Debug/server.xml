@@ -2,24 +2,24 @@
 <ArrayOfServer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Server ServerName="LAPTOP-VAME4LJ4\KUZNETSOV" Login="sa" Password="3232">
     <Databases>
-      <Database Name="chart">
-        <Panels>
-          <Panel Name="пример">
-            <Id>0</Id>
-          </Panel>
-        </Panels>
-      </Database>
       <Database Name="Karting">
         <Panels>
-          <Panel Name="погода">
-            <Id>0</Id>
+          <Panel Name="Панель - Картинг">
+            <Charts />
           </Panel>
         </Panels>
       </Database>
-      <Database Name="Marathon_skills">
+      <Database Name="Car_Showroom">
         <Panels>
-          <Panel Name="sdffsd">
-            <Id>0</Id>
+          <Panel Name="Стоимость автомобилей">
+            <Charts />
+          </Panel>
+        </Panels>
+      </Database>
+      <Database Name="chart">
+        <Panels>
+          <Panel Name="Пример">
+            <Charts />
           </Panel>
         </Panels>
       </Database>

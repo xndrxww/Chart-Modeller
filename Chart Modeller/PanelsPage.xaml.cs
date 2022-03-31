@@ -11,6 +11,7 @@ namespace Chart_Modeller
 {
     public partial class PanelsPage : Page
     {
+
         public PanelsPage()
         {
             InitializeComponent();
@@ -47,7 +48,7 @@ namespace Chart_Modeller
                                 Width = 600,
                                 Height = 80,
                                 Content = item2.Name,
-                                Background = new SolidColorBrush(Color.FromRgb(32, 34, 38)),
+                                Background = new SolidColorBrush(Color.FromRgb(19, 28, 38)),
                                 Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255)),
                                 FontSize = 22
                             };
@@ -67,8 +68,7 @@ namespace Chart_Modeller
 
         private void addPanel_Click(object sender, RoutedEventArgs e)
         {
-            AddPanelWindow addPanelWindow = new AddPanelWindow(dbBox.Text);
-            addPanelWindow.Show();
+            OpenWindow();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -79,6 +79,26 @@ namespace Chart_Modeller
         private void dbBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             GetPanels(); 
+        }
+
+        private void OpenWindow()
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is AddPanelWindow)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                AddPanelWindow newwindow = new AddPanelWindow(dbBox.Text);
+                newwindow.Show();
+            }
         }
     }
 }

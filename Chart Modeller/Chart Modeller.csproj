@@ -76,6 +76,7 @@
     <Compile Include="CreateChartsPage.xaml.cs">
       <DependentUpon>CreateChartsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Chart.cs" />
     <Compile Include="Models\Database.cs" />
     <Compile Include="Models\Panel.cs" />
     <Compile Include="Models\Server.cs" />
@@ -166,6 +167,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\pieSeries.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
