@@ -23,21 +23,10 @@ namespace Chart_Modeller.Models
         [XmlAttribute]
         public string Name { get; set; }
 
-        //public SeriesCollection SeriesCollection { get; set; }
+        //public List<int>  ValuesInt = new List<int>();
 
-        private SeriesCollection seriesCollection;
-        [XmlIgnore]
-        public SeriesCollection SeriesCollection
-        {
-            get { return seriesCollection; }
-            set { seriesCollection = value; }
-        }
+        //public List<decimal> ValuesDecimal = new List<decimal>();
 
-        [XmlElement("SeriesCollection")]
-        public object MySeriesSerializable
-        {
-            get { return SeriesCollection; }
-            set { SeriesCollection = value as SeriesCollection; }
-        }
+        //public List<double> ValuesDouble = new List<double>();
     }
 }

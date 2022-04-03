@@ -11,18 +11,18 @@
       Title="ChartsPage" Loaded="Page_Loaded">
 
     <Grid>
-        <Button x:Name="deletePanel"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,120,30,0" Click="deletePanel_Click" Content="Удалить"/>
+        <Button x:Name="deletePanel"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,120,30,0" Click="deletePanel_Click" Content="Удалить" Panel.ZIndex="1"/>
         <!--<lvc:CartesianChart x:Name="chart" Width="1000" Height="700" HorizontalAlignment="Left" Margin="20,0,0,0"/>-->
         <ScrollViewer Margin="0,50,0,105">
             <StackPanel x:Name="sp" Orientation="Vertical"/>
         </ScrollViewer>
-        <lvc:PieChart Margin="522,338,-522,386">
+        <!--<lvc:PieChart Margin="522,338,-522,386">
             <lvc:PieChart.Series>
                 <lvc:PieSeries Values="20"/>
                 <lvc:PieSeries Values="25"/>
                 <lvc:PieSeries Values="35"/>
             </lvc:PieChart.Series>
-        </lvc:PieChart>
+        </lvc:PieChart>-->
         <Button x:Name="addChart" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="210" Height="40" Click="addChart_Click" FontSize="20" Margin="15,0,0,15" Background="#131C26" Foreground="White" HorizontalContentAlignment="Center">
             <Grid>
                 <TextBlock  VerticalAlignment="Center" Margin="8,-2,-8,0">Создание графика</TextBlock>

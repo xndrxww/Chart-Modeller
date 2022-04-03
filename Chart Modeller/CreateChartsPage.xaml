@@ -12,7 +12,7 @@
     <Grid>
         <DataGrid x:Name="dataGrid" VerticalAlignment="Top" HorizontalAlignment="Left" Width="900" MaxHeight="350" Margin="50,100,0,0"/>
         <hc:ComboBox  x:Name="tablesBox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" DisplayMemberPath="TABLE_NAME" SelectedValuePath="TABLE_NAME"  Margin="0,0,0,20" SelectionChanged="tablesBox_SelectionChanged"/>
-        <lvc:CartesianChart x:Name="chart" Width="1050" Height="400" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="50,0,0,100">
+        <lvc:CartesianChart x:Name="chart" Width="1050" Height="420" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="50,0,0,100">
             <lvc:CartesianChart.AxisX>
                 <lvc:Axis Labels="{Binding LabelsList}" />
             </lvc:CartesianChart.AxisX>

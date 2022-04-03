@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ArrayOfServer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Server ServerName="LAPTOP-VAME4LJ4\KUZNETSOV" Login="sa" Password="3232">
+    <Databases>
+      <Database Name="Car_Showroom">
+        <Panels>
+          <Panel Name="панелька">
+            <Charts>
+              <Chart />
+            </Charts>
+          </Panel>
+        </Panels>
+      </Database>
+      <Database Name="chart">
+        <Panels />
+      </Database>
+    </Databases>
+  </Server>
+</ArrayOfServer>
