@@ -4,15 +4,154 @@
     <Databases>
       <Database Name="Car_Showroom">
         <Panels>
-          <Panel Name="панелька">
+          <Panel Name="Панель">
             <Charts>
-              <Chart />
+              <Chart Name="График максимальной скорости" Type="LineSeries">
+                <ValuesList>
+                  <anyType xsi:type="ArrayOfAnyType">
+                    <anyType xsi:type="xsd:int">250</anyType>
+                    <anyType xsi:type="xsd:int">213</anyType>
+                    <anyType xsi:type="xsd:int">250</anyType>
+                    <anyType xsi:type="xsd:int">185</anyType>
+                    <anyType xsi:type="xsd:int">250</anyType>
+                    <anyType xsi:type="xsd:int">324</anyType>
+                  </anyType>
+                </ValuesList>
+                <StrokeColor>
+                  <A>255</A>
+                  <R>25</R>
+                  <G>210</G>
+                  <B>181</B>
+                  <ScA>1</ScA>
+                  <ScR>0.009721218</ScR>
+                  <ScG>0.6444797</ScG>
+                  <ScB>0.462077</ScB>
+                </StrokeColor>
+                <FillColor>
+                  <A>123</A>
+                  <R>25</R>
+                  <G>210</G>
+                  <B>181</B>
+                  <ScA>0.482352942</ScA>
+                  <ScR>0.009721218</ScR>
+                  <ScG>0.6444797</ScG>
+                  <ScB>0.462077</ScB>
+                </FillColor>
+              </Chart>
+              <Chart Name="Прикольчик" Type="ColumnSeries">
+                <ValuesList>
+                  <anyType xsi:type="ArrayOfAnyType">
+                    <anyType xsi:type="xsd:int">1</anyType>
+                    <anyType xsi:type="xsd:int">2</anyType>
+                    <anyType xsi:type="xsd:int">3</anyType>
+                    <anyType xsi:type="xsd:int">5</anyType>
+                    <anyType xsi:type="xsd:int">7</anyType>
+                    <anyType xsi:type="xsd:int">9</anyType>
+                    <anyType xsi:type="xsd:int">11</anyType>
+                    <anyType xsi:type="xsd:int">12</anyType>
+                    <anyType xsi:type="xsd:int">13</anyType>
+                  </anyType>
+                </ValuesList>
+                <StrokeColor>
+                  <A>255</A>
+                  <R>40</R>
+                  <G>170</G>
+                  <B>163</B>
+                  <ScA>1</ScA>
+                  <ScR>0.02121901</ScR>
+                  <ScG>0.401977777</ScG>
+                  <ScB>0.3662526</ScB>
+                </StrokeColor>
+                <FillColor>
+                  <A>123</A>
+                  <R>40</R>
+                  <G>170</G>
+                  <B>163</B>
+                  <ScA>0.482352942</ScA>
+                  <ScR>0.02121901</ScR>
+                  <ScG>0.401977777</ScG>
+                  <ScB>0.3662526</ScB>
+                </FillColor>
+              </Chart>
+              <Chart Name="график" Type="StackedAreaSeries">
+                <ValuesList>
+                  <anyType xsi:type="ArrayOfAnyType">
+                    <anyType xsi:type="xsd:int">1500</anyType>
+                    <anyType xsi:type="xsd:int">1000</anyType>
+                    <anyType xsi:type="xsd:int">11000</anyType>
+                    <anyType xsi:type="xsd:int">1150</anyType>
+                    <anyType xsi:type="xsd:int">1600</anyType>
+                    <anyType xsi:type="xsd:int">234</anyType>
+                  </anyType>
+                  <anyType xsi:type="ArrayOfAnyType">
+                    <anyType xsi:type="xsd:int">250</anyType>
+                    <anyType xsi:type="xsd:int">213</anyType>
+                    <anyType xsi:type="xsd:int">250</anyType>
+                    <anyType xsi:type="xsd:int">185</anyType>
+                    <anyType xsi:type="xsd:int">250</anyType>
+                    <anyType xsi:type="xsd:int">324</anyType>
+                  </anyType>
+                </ValuesList>
+                <Title>тест</Title>
+                <StrokeColor>
+                  <A>255</A>
+                  <R>182</R>
+                  <G>85</G>
+                  <B>135</B>
+                  <ScA>1</ScA>
+                  <ScR>0.4677838</ScR>
+                  <ScG>0.09084171</ScG>
+                  <ScB>0.242281124</ScB>
+                </StrokeColor>
+                <FillColor>
+                  <A>123</A>
+                  <R>182</R>
+                  <G>85</G>
+                  <B>135</B>
+                  <ScA>0.482352942</ScA>
+                  <ScR>0.4677838</ScR>
+                  <ScG>0.09084171</ScG>
+                  <ScB>0.242281124</ScB>
+                </FillColor>
+              </Chart>
+              <Chart Name="проверка" Type="LineSeries">
+                <ValuesList>
+                  <anyType xsi:type="ArrayOfAnyType">
+                    <anyType xsi:type="xsd:int">14</anyType>
+                    <anyType xsi:type="xsd:int">90</anyType>
+                    <anyType xsi:type="xsd:int">7</anyType>
+                  </anyType>
+                  <anyType xsi:type="ArrayOfAnyType">
+                    <anyType xsi:type="xsd:int">20</anyType>
+                    <anyType xsi:type="xsd:int">19</anyType>
+                    <anyType xsi:type="xsd:int">11</anyType>
+                  </anyType>
+                </ValuesList>
+                <Title>второй</Title>
+                <StrokeColor>
+                  <A>255</A>
+                  <R>33</R>
+                  <G>149</G>
+                  <B>16</B>
+                  <ScA>1</ScA>
+                  <ScR>0.0152085144</ScR>
+                  <ScG>0.300543785</ScG>
+                  <ScB>0.00518151652</ScB>
+                </StrokeColor>
+                <FillColor>
+                  <A>123</A>
+                  <R>33</R>
+                  <G>149</G>
+                  <B>16</B>
+                  <ScA>0.482352942</ScA>
+                  <ScR>0.0152085144</ScR>
+                  <ScG>0.300543785</ScG>
+                  <ScB>0.00518151652</ScB>
+                </FillColor>
+              </Chart>
             </Charts>
           </Panel>
         </Panels>
-      </Database>
-      <Database Name="chart">
-        <Panels />
       </Database>
     </Databases>
   </Server>

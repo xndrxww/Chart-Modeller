@@ -28,7 +28,7 @@ namespace Chart_Modeller
         private StepLineSeries StepLineSeries;
         private SeriesCollection SeriesCollection = new SeriesCollection();
 
-        private ArrayList values;
+        private ArrayList Values;
         public List<string> LabelsList { get; set; }
 
         private Chart Chart = new Chart();
@@ -108,26 +108,32 @@ namespace Chart_Modeller
             if (PageName == "Создание линейного графика")
             {
                 SeriesCollection.Add(CreateSeries(LineSeries));
+                Chart.Type = "LineSeries";
             }
             else if (PageName == "Создание гистограммы")
             {
                 SeriesCollection.Add(CreateSeries(ColumnSeries));
+                Chart.Type = "ColumnSeries";
             }
             else if (PageName == "Создание диаграммы-области")
             {
                 SeriesCollection.Add(CreateSeries(StackedAreaSeries));
+                Chart.Type = "StackedAreaSeries";
             }
             else if (PageName == "Создание теплового графика")
             {
                 SeriesCollection.Add(CreateSeries(HeatSeries));
+                Chart.Type = "HeatSeries";
             }
             else if (PageName == "Создание круговой диаграммы")
             {
                 SeriesCollection.Add(CreateSeries(PieSeries));
+                Chart.Type = "PieSeries";
             }
             else if (PageName == "Создание манометрической диаграммы")
             {
                 SeriesCollection.Add(CreateSeries(StepLineSeries));
+                Chart.Type = "StepLineSeries";
             }
 
             chart.Series = SeriesCollection;
@@ -135,36 +141,39 @@ namespace Chart_Modeller
 
         private Series CreateSeries(Series series)
         {
-            values = new ArrayList();
-
+            Values = new ArrayList();
+            
             foreach (DataColumn column in Table.Columns)
             {
                 if (Table.Columns[0].DataType == typeof(int))
                 {
                     foreach (DataRow row in Table.Rows)
                     {
-                        values.Add((int)row[column.ColumnName]);
+                        Values.Add((int)row[column.ColumnName]);
                     };
-                    series.Values = new ChartValues<int>(values.OfType<int>());
+                    series.Values = new ChartValues<int>(Values.OfType<int>());
                 }
                 else if (Table.Columns[0].DataType == typeof(decimal))
                 {
                     foreach (DataRow row in Table.Rows)
                     {
-                        values.Add((decimal)row[column.ColumnName]);
+                        Values.Add((decimal)row[column.ColumnName]);
                     };
-                    series.Values = new ChartValues<decimal>(values.OfType<decimal>());
+                    series.Values = new ChartValues<decimal>(Values.OfType<decimal>());
                 }
                 else if (Table.Columns[0].DataType == typeof(double))
                 {
                     foreach (DataRow row in Table.Rows)
                     {
-                        values.Add((double)row[column.ColumnName]);
+                        Values.Add((double)row[column.ColumnName]);
                     };
-                    series.Values = new ChartValues<double>(values.OfType<double>());
+                    series.Values = new ChartValues<double>(Values.OfType<double>());
                 }
             }
 
+            Chart.Name = "asdas";
+            Chart.ValuesList.Add(Values);
+            
             SetDecoration(series);
 
             return series;
@@ -181,12 +190,16 @@ namespace Chart_Modeller
         private void SetDecoration(Series series)
         {
             series.Title = lineNameTxt.Text;
+            Chart.Title = series.Title;
 
             if (colorPicker.SelectedBrush.Color.R != 255 && colorPicker.SelectedBrush.Color.G != 255 && colorPicker.SelectedBrush.Color.B != 255)
             {
                 series.Stroke = new SolidColorBrush(Color.FromRgb(colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B));
                 series.Fill = new SolidColorBrush(Color.FromArgb(123, colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B));
             }
+
+            Chart.StrokeColor = Color.FromRgb(colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B);
+            Chart.FillColor = Color.FromArgb(123, colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B);
 
             //LineSeries.StrokeDashArray = "2";
             if (xBox.SelectedItem != null)
@@ -239,7 +252,9 @@ namespace Chart_Modeller
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
+            Chart.Name = chartNameTxt.Text;
             AddChart();
+            MainWindow.MainFrameInstance.Navigate(new ChartsPage());
         }
     }
 }

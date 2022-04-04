@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using System.Xml.Serialization;
 using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace Chart_Modeller.Models
 {
@@ -22,11 +25,14 @@ namespace Chart_Modeller.Models
 
         [XmlAttribute]
         public string Name { get; set; }
+        
+        [XmlAttribute]
+        public string Type { get; set; }
 
-        //public List<int>  ValuesInt = new List<int>();
+        public string Title { get; set; } //сделать лист
+        public Color StrokeColor { get; set; } //сделать лист
+        public Color FillColor { get; set; } //сделать лист
 
-        //public List<decimal> ValuesDecimal = new List<decimal>();
-
-        //public List<double> ValuesDouble = new List<double>();
+        public ArrayList ValuesList = new ArrayList();
     }
 }

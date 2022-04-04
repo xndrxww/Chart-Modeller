@@ -18,15 +18,17 @@
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
         <Grid HorizontalAlignment="Right" Width="250" Height="800" VerticalAlignment="Center" Background="#131C26" Margin="50">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontSize="15" Foreground="White">Выберите столбец</TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontSize="15" Foreground="White">Значение</TextBlock>
             <ComboBox x:Name="columnsBox" VerticalAlignment="Top" Margin="0,50,0,0" Width="200" SelectedIndex="-1"/>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,150,0,0" FontSize="15" Foreground="White">Выберите столбец</TextBlock>
-            <ComboBox x:Name="xBox" VerticalAlignment="Top" Margin="0,180,0,0" Width="200" SelectedIndex="-1"/>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,280,0,0" FontSize="15" Foreground="White">Название линии</TextBlock>
-            <TextBox x:Name="lineNameTxt" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,310,0,0" Width="200"></TextBox>
-            <hc:ColorPicker Name="colorPicker" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,400,0,0" Height="180"/>
-            <Button x:Name="createButton" VerticalAlignment="Bottom" Margin="20" Width="130" Background="#131C26" Foreground="White" Click="createButton_Click" HorizontalAlignment="Left">Добавить значения</Button>
-            <Button x:Name="addButton" VerticalAlignment="Bottom" Margin="20" Width="20" Background="#131C26" Foreground="White" HorizontalAlignment="Right" Click="addButton_Click">+</Button>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,120,0,0" FontSize="15" Foreground="White">Подпись</TextBlock>
+            <ComboBox x:Name="xBox" VerticalAlignment="Top" Margin="0,150,0,0" Width="200" SelectedIndex="-1"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,220,0,0" FontSize="15" Foreground="White">Название значения</TextBlock>
+            <TextBox x:Name="lineNameTxt" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,250,0,0" Width="200"></TextBox>
+            <hc:ColorPicker Name="colorPicker" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,320,0,0" Height="180"/>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,550,0,0" FontSize="15" Foreground="White">Название графика</TextBlock>
+            <TextBox x:Name="chartNameTxt" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,580,0,0" Width="200"></TextBox>
+            <Button x:Name="createButton" VerticalAlignment="Bottom" Margin="10,0,0,20" Width="130" Background="#131C26" Foreground="White" Click="createButton_Click" HorizontalAlignment="Left">Добавить значения</Button>
+            <Button x:Name="addButton" VerticalAlignment="Bottom" Margin="0,0,10,20" Width="80" Background="White" Foreground="#131C26" HorizontalAlignment="Right" Click="addButton_Click">Сохранить</Button>
         </Grid>
         <Button x:Name="clearButton" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120" Margin="100,0,0,500" Click="clearButton_Click">
             <Grid>
