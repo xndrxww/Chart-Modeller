@@ -11,7 +11,6 @@ namespace Chart_Modeller
 {
     public partial class PanelsPage : Page
     {
-
         public PanelsPage()
         {
             InitializeComponent();
@@ -97,9 +96,10 @@ namespace Chart_Modeller
 
             if (!isWindowOpen)
             {
-                AddPanelWindow newwindow = new AddPanelWindow(dbBox.Text);
+                AddPanelWindow newwindow = new AddPanelWindow(dbBox.Text, dbBox.SelectedIndex);
                 newwindow.Show();
             }
         }
+
     }
 }

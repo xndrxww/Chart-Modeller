@@ -6,21 +6,25 @@ namespace Chart_Modeller
     public partial class AddPanelWindow : Window
     {
         private string DbName;
+        private int DbIndex;
+
+        private PanelsPage panelsPage;
 
         private Panel Panels;
 
         private Database Database;
 
-        public AddPanelWindow(string currentDb)
+        public AddPanelWindow(string currentDb, int currentDbIndex)
         {
             InitializeComponent();
+
             panelNameTxt.Focus();
             DbName = currentDb;
+            DbIndex = currentDbIndex;
         }
 
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
-
             Panels = new Panel()
             {
                 Name = panelNameTxt.Text
@@ -39,7 +43,9 @@ namespace Chart_Modeller
                             item2.Panels.Add(Panels);
                             i++;
                             this.Close();
-                            MainWindow.MainFrameInstance.Navigate(new PanelsPage());
+                            panelsPage = new PanelsPage();
+                            panelsPage.dbBox.SelectedIndex = DbIndex;
+                            MainWindow.MainFrameInstance.Navigate(panelsPage);
                         }
                     }
                 }
@@ -60,7 +66,9 @@ namespace Chart_Modeller
                 }
 
                 this.Close();
-                MainWindow.MainFrameInstance.Navigate(new PanelsPage());
+                panelsPage = new PanelsPage();
+                panelsPage.dbBox.SelectedIndex = DbIndex;
+                MainWindow.MainFrameInstance.Navigate(panelsPage);
             }
         }
     }

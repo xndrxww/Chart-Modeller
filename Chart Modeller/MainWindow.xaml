@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chart_Modeller"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1024 " Width="1440"  WindowStartupLocation="CenterScreen">
+        Title="Chart Modeller" Height="1024 " Width="1440"  WindowStartupLocation="CenterScreen">
     <Grid>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
         <Grid VerticalAlignment="Top" Background="White" Height="105"></Grid>
