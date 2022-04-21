@@ -9,9 +9,7 @@
         Title="Chart Modeller" Height="1024 " Width="1440"  WindowStartupLocation="CenterScreen">
     <Grid>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
-        <Grid VerticalAlignment="Top" Background="White" Height="105"></Grid>
         <TextBlock x:Name="pageName" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,30,0,0" FontSize="40" Foreground="#131C26"/>
-        <Button x:Name="backButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Click="backButton_Click" Foreground="#131C26">Назад</Button>
         <Grid VerticalAlignment="Bottom" Background="#131C26" Height="70" Panel.ZIndex="-1"></Grid>
     </Grid>
 </Window>

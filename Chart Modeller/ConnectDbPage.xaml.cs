@@ -32,8 +32,7 @@ namespace Chart_Modeller
                 }
                 catch (SqlException)
                 {
-                    System.Windows.MessageBox.Show("Не удалось подключиться к серверу");
-                    //HandyControl.Controls.MessageBox.Show("Не удалось подключиться к серверу", "Ошибка подключения", MessageBoxButton.OK);
+                    OpenWindow();
                 }
             }
         }
@@ -52,6 +51,26 @@ namespace Chart_Modeller
                 Password = passwordTxt.Text
             };
             MainWindow.ServersList.Add(MainWindow.Server);
+        }
+
+        private void OpenWindow()
+        {
+            bool isWindowOpen = false;
+
+            foreach (System.Windows.Window w in Application.Current.Windows)
+            {
+                if (w is ErrorWindow)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                ErrorWindow newwindow = new ErrorWindow("Ошибка при подключении к серверу");
+                newwindow.Show();
+            }
         }
     }
 }

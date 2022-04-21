@@ -1,0 +1,39 @@
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Release\Chart Modeller.exe.config
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Release\Chart Modeller.exe
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Release\Chart Modeller.pdb
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Release\HandyControl.dll
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Release\LiveCharts.dll
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Release\LiveCharts.Wpf.dll
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Release\HandyControl.xml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Release\LiveCharts.pdb
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Release\LiveCharts.xml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Release\LiveCharts.Wpf.pdb
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Release\LiveCharts.Wpf.xml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\Chart Modeller.csprojAssemblyReference.cache
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\AddPanelWindow.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\ChartsPage.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\ChooseChartWindow.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\ConnectDbPage.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\CreateChartsPage.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\ErrorWindow.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\MainWindow.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\PanelsPage.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\App.g.cs
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\Chart Modeller_MarkupCompile.cache
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\Chart Modeller_MarkupCompile.lref
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\App.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\AddPanelWindow.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\ChartsPage.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\ChooseChartWindow.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\ConnectDbPage.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\CreateChartsPage.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\ErrorWindow.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\MainWindow.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\PanelsPage.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\Chart Modeller.g.resources
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\Chart_Modeller.Properties.Resources.resources
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\Chart Modeller.csproj.GenerateResource.cache
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\Chart Modeller.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\Chart Modeller.csproj.CopyComplete
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\Chart Modeller.exe
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Release\Chart Modeller.pdb

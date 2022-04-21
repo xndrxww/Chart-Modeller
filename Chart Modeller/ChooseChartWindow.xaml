@@ -45,10 +45,10 @@
                     <TextBlock HorizontalAlignment="Center"><Run Text="Диаграмма-область"/></TextBlock>
                 </StackPanel>
             </Button>
-            <Button x:Name="solidGaugeSeriesButton" Margin="30" Width="200" Height="150" Click="solidGaugeSeriesButton_Click" >
+            <Button x:Name="stepLineSeries" Margin="30" Width="200" Height="150" Click="stepLineSeries_Click">
                 <StackPanel>
-                    <Image Source="Images\solidGaugeSeries.png" Width="125"/>
-                    <TextBlock HorizontalAlignment="Center"><Run Text="Манометрическая диаграмма"/></TextBlock>
+                    <Image Source="Images\steplineSeries.jpg" Width="168"/>
+                    <TextBlock HorizontalAlignment="Center"><Run Text="Ступенчатая диаграмма"/></TextBlock>
                 </StackPanel>
             </Button>
         </StackPanel>

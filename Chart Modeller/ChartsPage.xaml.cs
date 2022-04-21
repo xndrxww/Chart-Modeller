@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using Chart_Modeller.Models;
 using LiveCharts;
 using LiveCharts.Wpf;
@@ -21,6 +23,7 @@ namespace Chart_Modeller
         private HeatSeries HeatSeries;
         private PieSeries PieSeries;
         private StepLineSeries StepLineSeries;
+
 
         public ChartsPage()
         {
@@ -49,7 +52,11 @@ namespace Chart_Modeller
                             if (panel.Name == PanelName)
                             {
                                 database.Panels.Remove(panel);
-                                MainWindow.MainFrameInstance.Navigate(new PanelsPage());
+
+                                PanelsPage panelsPage = new PanelsPage();
+                                panelsPage.dbBox.SelectedIndex = MainWindow.DbIndex;
+                                MainWindow.MainFrameInstance.Navigate(panelsPage);
+
                                 break;
                             }
                         }
@@ -136,55 +143,110 @@ namespace Chart_Modeller
                 FontSize = 25
             };
 
+            Button deleteButton = new Button
+            {
+                Width = 70,
+                Height = 35,
+                Margin = new Thickness(950,0,0,0),
+                ToolTip = "Удалить " + chartName.Text
+            };
+
+            deleteButton.Content = new Image
+            {
+                Source = new BitmapImage(new Uri("/Images/delete.png", UriKind.RelativeOrAbsolute)),
+                Width = 18
+            };
+
+            deleteButton.Click += (s, ev) =>
+            {
+                foreach (var server in MainWindow.ServersList)
+                {
+                    foreach (var database in server.Databases)
+                    {
+                        if (database.Name == MainWindow.Database.Name)
+                        {
+                            foreach (var panel in database.Panels)
+                            {
+                                if (panel.Name == PanelName)
+                                {
+                                    foreach (var item in panel.Charts)
+                                    {
+                                        if (item.Name == chart.Name)
+                                        {
+                                            panel.Charts.Remove(item);
+                                            MainWindow.MainFrameInstance.Navigate(new ChartsPage());
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
             CartesianChart cartesianChart = new CartesianChart
             {
-                Margin = new Thickness(0,0,0,80),
+                Margin = new Thickness(0, 0, 0, 80),
                 Width = 1050,
-                Height = 420,
+                Height = 420
             };
 
             SeriesCollection = new SeriesCollection();
 
-            foreach (ArrayList values in chart.ValuesList)
+
+            foreach (ArrayList value in chart.ValuesList)
             {
-                if (chart.Type == "LineSeries")
+                for (int i = 0; i < chart.ValuesList.Count; i++)
                 {
-                    series = new LineSeries();
-                }
-                else if (chart.Type == "ColumnSeries")
-                {
-                    series = new ColumnSeries();
-                }
-                else if (chart.Type == "StackedAreaSeries")
-                {
-                    series = new StackedAreaSeries();
-                }
-                else if (chart.Type == "HeatSeries")
-                {
-                    series = new HeatSeries();
-                }
-                else if (chart.Type == "PieSeries")
-                {
-                    ///
-                }
-                else if (chart.Type == "StepLineSeries")
-                {
-                    series = new StepLineSeries();
-                }
+                    if (chart.Type == "LineSeries")
+                    {
+                        series = new LineSeries();
+                    }
+                    else if (chart.Type == "ColumnSeries")
+                    {
+                        series = new ColumnSeries();
+                    }
+                    else if (chart.Type == "StackedAreaSeries")
+                    {
+                        series = new StackedAreaSeries();
+                    }
+                    else if (chart.Type == "HeatSeries")
+                    {
+                        series = new HeatSeries();
+                    }
+                    else if (chart.Type == "PieSeries")
+                    {
+                        ///
+                    }
+                    else if (chart.Type == "StepLineSeries")
+                    {
+                        series = new StepLineSeries();
+                    }
 
-                series.Values = new ChartValues<int>(values.OfType<int>());
-                series.Stroke = new SolidColorBrush(chart.StrokeColor);
-                series.Fill = new SolidColorBrush(chart.FillColor);
-                series.Title = chart.Title;
+                    series.Values = new ChartValues<int>(value.OfType<int>());
+                    //series.Stroke = new SolidColorBrush(chart.StrokeColor[i]);
+                    //series.Fill = new SolidColorBrush(chart.FillColor[i]);
+                    series.Stroke = new SolidColorBrush(chart.StrokeColor);
+                    series.Fill = new SolidColorBrush(chart.FillColor);
+                    series.Title = chart.Title;
 
-
-                SeriesCollection.Add(series);
+                    SeriesCollection.Add(series);
+                }
             }
 
             cartesianChart.Series = SeriesCollection;
 
             sp.Children.Add(chartName);
+            sp.Children.Add(deleteButton);
             sp.Children.Add(cartesianChart);
+        }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            PanelsPage panelsPage = new PanelsPage();
+            panelsPage.dbBox.SelectedIndex = MainWindow.DbIndex;
+            MainWindow.MainFrameInstance.Navigate(panelsPage);
         }
     }
 }

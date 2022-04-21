@@ -10,9 +10,12 @@
       Title="ConnectDbPage" Loaded="Page_Loaded">
 
     <Grid>
-        <TextBox x:Name="serverTxt" HorizontalAlignment="Center" Text="LAPTOP-VAME4LJ4\KUZNETSOV" VerticalAlignment="Top" Margin="0,300,0,0" Width="300" Height="40" FontSize="20" TextAlignment="Center"/>
-        <TextBox x:Name="loginTxt" HorizontalAlignment="Center" Text="sa" VerticalAlignment="Top" Margin="0,400,0,0" Width="300" Height="40" FontSize="20" TextAlignment="Center"/>
-        <TextBox x:Name="passwordTxt" HorizontalAlignment="Center" Text="3232" VerticalAlignment="Top" Margin="0,500,0,0" Width="300" Height="40" FontSize="20" TextAlignment="Center"/>
+        <TextBlock Text="Имя сервера" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0" FontSize="20"/>
+        <TextBox x:Name="serverTxt" HorizontalAlignment="Center" Text="" VerticalAlignment="Top" Margin="0,240,0,0" Width="300" Height="40" FontSize="20" TextAlignment="Center"/>
+        <TextBlock Text="Логин" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,360,0,0" FontSize="20"/>
+        <TextBox x:Name="loginTxt" HorizontalAlignment="Center" Text="" VerticalAlignment="Top" Margin="0,400,0,0" Width="300" Height="40" FontSize="20" TextAlignment="Center"/>
+        <TextBlock Text="Пароль" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,520,0,0" FontSize="20"/>
+        <TextBox x:Name="passwordTxt" HorizontalAlignment="Center" Text="" VerticalAlignment="Top" Margin="0,560,0,0" Width="300" Height="40" FontSize="20" TextAlignment="Center"/>
         <Button x:Name="connectButton" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,700,0,0" Width="150" Height="40" FontSize="20" Click="connectButton_Click" Content="Войти"/>
     </Grid>
 </Page>

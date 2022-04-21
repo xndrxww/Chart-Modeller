@@ -39,6 +39,11 @@ namespace Chart_Modeller
             PageName = pageName;
 
             connectionString = $@"Data Source={MainWindow.Server.ServerName};Initial Catalog={MainWindow.Database.Name};Persist Security Info=True;User ID={MainWindow.Server.Login};Password={MainWindow.Server.Password}";
+
+            if (PageName == "Создание круговой диаграммы")
+            {
+                chart.Visibility = Visibility.Hidden;
+            }
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -105,44 +110,48 @@ namespace Chart_Modeller
             PieSeries = new PieSeries();
             StepLineSeries = new StepLineSeries();
 
-            if (PageName == "Создание линейного графика")
+            if (PageName != "Создание круговой диаграммы")
             {
-                SeriesCollection.Add(CreateSeries(LineSeries));
-                Chart.Type = "LineSeries";
+                if (PageName == "Создание линейного графика")
+                {
+                    SeriesCollection.Add(CreateSeries(LineSeries));
+                    Chart.Type = "LineSeries";
+                }
+                else if (PageName == "Создание гистограммы")
+                {
+                    SeriesCollection.Add(CreateSeries(ColumnSeries));
+                    Chart.Type = "ColumnSeries";
+                }
+                else if (PageName == "Создание диаграммы-области")
+                {
+                    SeriesCollection.Add(CreateSeries(StackedAreaSeries));
+                    Chart.Type = "StackedAreaSeries";
+                }
+                else if (PageName == "Создание теплового графика")
+                {
+                    SeriesCollection.Add(CreateSeries(HeatSeries));
+                    Chart.Type = "HeatSeries";
+                }
+                else if (PageName == "Создание ступенчатой диаграммы")
+                {
+                    SeriesCollection.Add(CreateSeries(StepLineSeries));
+                    Chart.Type = "StepLineSeries";
+                }
+
+                chart.Series = SeriesCollection;
             }
-            else if (PageName == "Создание гистограммы")
-            {
-                SeriesCollection.Add(CreateSeries(ColumnSeries));
-                Chart.Type = "ColumnSeries";
-            }
-            else if (PageName == "Создание диаграммы-области")
-            {
-                SeriesCollection.Add(CreateSeries(StackedAreaSeries));
-                Chart.Type = "StackedAreaSeries";
-            }
-            else if (PageName == "Создание теплового графика")
-            {
-                SeriesCollection.Add(CreateSeries(HeatSeries));
-                Chart.Type = "HeatSeries";
-            }
-            else if (PageName == "Создание круговой диаграммы")
+            else
             {
                 SeriesCollection.Add(CreateSeries(PieSeries));
                 Chart.Type = "PieSeries";
+                pieChart.Series = SeriesCollection;
             }
-            else if (PageName == "Создание манометрической диаграммы")
-            {
-                SeriesCollection.Add(CreateSeries(StepLineSeries));
-                Chart.Type = "StepLineSeries";
-            }
-
-            chart.Series = SeriesCollection;
         }
 
         private Series CreateSeries(Series series)
         {
             Values = new ArrayList();
-            
+
             foreach (DataColumn column in Table.Columns)
             {
                 if (Table.Columns[0].DataType == typeof(int))
@@ -171,9 +180,8 @@ namespace Chart_Modeller
                 }
             }
 
-            Chart.Name = "asdas";
             Chart.ValuesList.Add(Values);
-            
+
             SetDecoration(series);
 
             return series;
@@ -185,6 +193,8 @@ namespace Chart_Modeller
                 GetChartsData(columnsBox);
                 CreateChart();
             }
+            else
+                OpenWindow();
         }
 
         private void SetDecoration(Series series)
@@ -201,7 +211,6 @@ namespace Chart_Modeller
             Chart.StrokeColor = Color.FromRgb(colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B);
             Chart.FillColor = Color.FromArgb(123, colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B);
 
-            //LineSeries.StrokeDashArray = "2";
             if (xBox.SelectedItem != null)
             {
                 GetChartsData(xBox);
@@ -221,6 +230,8 @@ namespace Chart_Modeller
                 };
             }
 
+            Chart.LabelsList = this.LabelsList;
+
             series.DataLabels = true;
             DataContext = this;
         }
@@ -228,6 +239,7 @@ namespace Chart_Modeller
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
             SeriesCollection.Clear();
+            Chart.ValuesList.Clear();
         }
 
         private void AddChart()
@@ -249,12 +261,47 @@ namespace Chart_Modeller
                 }
             }
         }
-
+       
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            Chart.Name = chartNameTxt.Text;
-            AddChart();
+            if (columnsBox.SelectedItem != null)
+            {
+                if (chartNameTxt.Text == "")
+                {
+                    chartNameTxt.Text = "Без названия";
+                }
+
+                Chart.Name = chartNameTxt.Text;
+                AddChart();
+                MainWindow.MainFrameInstance.Navigate(new ChartsPage());
+            }
+            else
+                OpenWindow();
+        }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
             MainWindow.MainFrameInstance.Navigate(new ChartsPage());
+        }
+
+        private void OpenWindow()
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is ErrorWindow)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                ErrorWindow newwindow = new ErrorWindow("Выберите значения для визуализации");
+                newwindow.Show();
+            }
         }
     }
 }

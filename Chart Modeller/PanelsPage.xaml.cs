@@ -44,7 +44,7 @@ namespace Chart_Modeller
                             Button panel = new Button
                             {
                                 Margin = new Thickness(0, 50, 0, 0),
-                                Width = 600,
+                                Width = 700,
                                 Height = 80,
                                 Content = item2.Name,
                                 Background = new SolidColorBrush(Color.FromRgb(19, 28, 38)),
@@ -56,6 +56,7 @@ namespace Chart_Modeller
                             {
                                 MainWindow.Database.Name = dbBox.SelectedValue.ToString();
                                 MainWindow.Panel.Name = panel.Content.ToString();
+                                MainWindow.DbIndex = dbBox.SelectedIndex;
                                 MainWindow.MainFrameInstance.Navigate(new ChartsPage());
                             };
 
@@ -94,12 +95,12 @@ namespace Chart_Modeller
                 }
             }
 
+            MainWindow.DbIndex = dbBox.SelectedIndex;
             if (!isWindowOpen)
             {
-                AddPanelWindow newwindow = new AddPanelWindow(dbBox.Text, dbBox.SelectedIndex);
+                AddPanelWindow newwindow = new AddPanelWindow(dbBox.Text);
                 newwindow.Show();
             }
         }
-
     }
 }

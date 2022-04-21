@@ -21,7 +21,7 @@ namespace Chart_Modeller
         public static Models.Panel Panel;
         private const string ServerFileName = "server.xml";
         private static readonly XmlSerializer ServerSerializer = new XmlSerializer(typeof(List<Server>));
-
+        public static int DbIndex;
 
 
         public MainWindow()
@@ -50,12 +50,6 @@ namespace Chart_Modeller
                 MainFrameInstance.Navigate(new PanelsPage());
             else
                 MainFrameInstance.Navigate(new ConnectDbPage());
-        }
-
-        private void backButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (MainWindow.MainFrameInstance.CanGoBack)
-                MainWindow.MainFrameInstance.GoBack();
         }
 
         private void Deserialization()

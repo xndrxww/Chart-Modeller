@@ -46,9 +46,9 @@ namespace Chart_Modeller
             this.Close();
         }
 
-        private void solidGaugeSeriesButton_Click(object sender, RoutedEventArgs e)
+        private void stepLineSeries_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.MainFrameInstance.Navigate(new CreateChartsPage("Создание манометрической диаграммы"));
+            MainWindow.MainFrameInstance.Navigate(new CreateChartsPage("Создание ступенчатой диаграммы"));
             this.Close();
         }
     }

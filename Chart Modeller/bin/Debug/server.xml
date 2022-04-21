@@ -2,322 +2,78 @@
 <ArrayOfServer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Server ServerName="LAPTOP-VAME4LJ4\KUZNETSOV" Login="sa" Password="3232">
     <Databases>
-      <Database Name="Car_Showroom">
+      <Database Name="Сars_DB">
         <Panels>
-          <Panel Name="Панель">
-            <Charts>
-              <Chart Name="кормашововово" Type="LineSeries">
-                <ValuesList>
-                  <anyType xsi:type="ArrayOfAnyType">
-                    <anyType xsi:type="xsd:int">1500</anyType>
-                    <anyType xsi:type="xsd:int">1000</anyType>
-                    <anyType xsi:type="xsd:int">11000</anyType>
-                    <anyType xsi:type="xsd:int">1150</anyType>
-                    <anyType xsi:type="xsd:int">1600</anyType>
-                    <anyType xsi:type="xsd:int">234</anyType>
-                  </anyType>
-                  <anyType xsi:type="ArrayOfAnyType">
-                    <anyType xsi:type="xsd:int">250</anyType>
-                    <anyType xsi:type="xsd:int">213</anyType>
-                    <anyType xsi:type="xsd:int">250</anyType>
-                    <anyType xsi:type="xsd:int">185</anyType>
-                    <anyType xsi:type="xsd:int">250</anyType>
-                    <anyType xsi:type="xsd:int">324</anyType>
-                  </anyType>
-                </ValuesList>
-                <Title>аывавыаыв</Title>
-                <StrokeColor>
-                  <A>255</A>
-                  <R>29</R>
-                  <G>176</G>
-                  <B>113</B>
-                  <ScA>1</ScA>
-                  <ScR>0.012286488</ScR>
-                  <ScG>0.434153646</ScG>
-                  <ScB>0.1651322</ScB>
-                </StrokeColor>
-                <FillColor>
-                  <A>123</A>
-                  <R>29</R>
-                  <G>176</G>
-                  <B>113</B>
-                  <ScA>0.482352942</ScA>
-                  <ScR>0.012286488</ScR>
-                  <ScG>0.434153646</ScG>
-                  <ScB>0.1651322</ScB>
-                </FillColor>
-              </Chart>
-              <Chart Name="">
-                <ValuesList />
-                <StrokeColor>
-                  <A>0</A>
-                  <R>0</R>
-                  <G>0</G>
-                  <B>0</B>
-                  <ScA>0</ScA>
-                  <ScR>0</ScR>
-                  <ScG>0</ScG>
-                  <ScB>0</ScB>
-                </StrokeColor>
-                <FillColor>
-                  <A>0</A>
-                  <R>0</R>
-                  <G>0</G>
-                  <B>0</B>
-                  <ScA>0</ScA>
-                  <ScR>0</ScR>
-                  <ScG>0</ScG>
-                  <ScB>0</ScB>
-                </FillColor>
-              </Chart>
-              <Chart Name="" Type="ColumnSeries">
-                <ValuesList>
-                  <anyType xsi:type="ArrayOfAnyType">
-                    <anyType xsi:type="xsd:int">1</anyType>
-                    <anyType xsi:type="xsd:int">2</anyType>
-                    <anyType xsi:type="xsd:int">3</anyType>
-                  </anyType>
-                </ValuesList>
-                <Title />
-                <StrokeColor>
-                  <A>255</A>
-                  <R>48</R>
-                  <G>114</G>
-                  <B>239</B>
-                  <ScA>1</ScA>
-                  <ScR>0.0295568351</ScR>
-                  <ScG>0.1682694</ScG>
-                  <ScB>0.8631572</ScB>
-                </StrokeColor>
-                <FillColor>
-                  <A>123</A>
-                  <R>48</R>
-                  <G>114</G>
-                  <B>239</B>
-                  <ScA>0.482352942</ScA>
-                  <ScR>0.0295568351</ScR>
-                  <ScG>0.1682694</ScG>
-                  <ScB>0.8631572</ScB>
-                </FillColor>
-              </Chart>
-              <Chart Name="" Type="LineSeries">
-                <ValuesList>
-                  <anyType xsi:type="ArrayOfAnyType">
-                    <anyType xsi:type="xsd:int">1</anyType>
-                    <anyType xsi:type="xsd:int">2</anyType>
-                    <anyType xsi:type="xsd:int">3</anyType>
-                  </anyType>
-                </ValuesList>
-                <Title />
-                <StrokeColor>
-                  <A>255</A>
-                  <R>56</R>
-                  <G>214</G>
-                  <B>169</B>
-                  <ScA>1</ScA>
-                  <ScR>0.0395462364</ScR>
-                  <ScG>0.672443151</ScG>
-                  <ScB>0.396755219</ScB>
-                </StrokeColor>
-                <FillColor>
-                  <A>123</A>
-                  <R>56</R>
-                  <G>214</G>
-                  <B>169</B>
-                  <ScA>0.482352942</ScA>
-                  <ScR>0.0395462364</ScR>
-                  <ScG>0.672443151</ScG>
-                  <ScB>0.396755219</ScB>
-                </FillColor>
-              </Chart>
-            </Charts>
-          </Panel>
-          <Panel Name="Погода">
+          <Panel Name="пример">
             <Charts />
           </Panel>
-          <Panel Name="Автомобили">
+        </Panels>
+      </Database>
+      <Database Name="Car_Showroom">
+        <Panels>
+          <Panel Name="пример">
             <Charts>
-              <Chart Name="Скорость и масса автомобиля" Type="LineSeries">
+              <Chart Name="график" Type="LineSeries">
+                <LabelsList>
+                  <string>Ежегодный</string>
+                  <string>По беремености</string>
+                  <string>Квартальный</string>
+                </LabelsList>
                 <ValuesList>
                   <anyType xsi:type="ArrayOfAnyType">
-                    <anyType xsi:type="xsd:int">250</anyType>
-                    <anyType xsi:type="xsd:int">213</anyType>
-                    <anyType xsi:type="xsd:int">250</anyType>
-                    <anyType xsi:type="xsd:int">185</anyType>
-                    <anyType xsi:type="xsd:int">250</anyType>
-                    <anyType xsi:type="xsd:int">324</anyType>
-                  </anyType>
-                  <anyType xsi:type="ArrayOfAnyType">
-                    <anyType xsi:type="xsd:int">1500</anyType>
-                    <anyType xsi:type="xsd:int">1000</anyType>
-                    <anyType xsi:type="xsd:int">11000</anyType>
-                    <anyType xsi:type="xsd:int">1150</anyType>
-                    <anyType xsi:type="xsd:int">1600</anyType>
-                    <anyType xsi:type="xsd:int">234</anyType>
+                    <anyType xsi:type="xsd:int">1</anyType>
+                    <anyType xsi:type="xsd:int">2</anyType>
+                    <anyType xsi:type="xsd:int">3</anyType>
                   </anyType>
                 </ValuesList>
-                <Title>значение</Title>
+                <Title>выаывавыа</Title>
                 <StrokeColor>
                   <A>255</A>
-                  <R>53</R>
-                  <G>134</G>
-                  <B>193</B>
+                  <R>34</R>
+                  <G>176</G>
+                  <B>201</B>
                   <ScA>1</ScA>
-                  <ScR>0.0356013142</ScR>
-                  <ScG>0.238397568</ScG>
-                  <ScB>0.5332764</ScB>
+                  <ScR>0.0159962941</ScR>
+                  <ScG>0.434153646</ScG>
+                  <ScB>0.584078431</ScB>
                 </StrokeColor>
                 <FillColor>
                   <A>123</A>
-                  <R>53</R>
-                  <G>134</G>
-                  <B>193</B>
+                  <R>34</R>
+                  <G>176</G>
+                  <B>201</B>
                   <ScA>0.482352942</ScA>
-                  <ScR>0.0356013142</ScR>
-                  <ScG>0.238397568</ScG>
-                  <ScB>0.5332764</ScB>
+                  <ScR>0.0159962941</ScR>
+                  <ScG>0.434153646</ScG>
+                  <ScB>0.584078431</ScB>
                 </FillColor>
               </Chart>
             </Charts>
           </Panel>
-          <Panel Name="Тестовая панель">
+        </Panels>
+      </Database>
+      <Database Name="SphereOrganization">
+        <Panels>
+          <Panel Name="asdasd">
             <Charts />
           </Panel>
           <Panel Name="1">
             <Charts />
           </Panel>
-          <Panel Name="2">
+        </Panels>
+      </Database>
+      <Database Name="model">
+        <Panels>
+          <Panel Name="asdasddsa">
             <Charts />
           </Panel>
         </Panels>
       </Database>
       <Database Name="F.I.T">
-        <Panels>
-          <Panel Name="sad">
-            <Charts />
-          </Panel>
-          <Panel Name="asdsad">
-            <Charts />
-          </Panel>
-          <Panel Name="3">
-            <Charts />
-          </Panel>
-          <Panel Name="wesdf">
-            <Charts />
-          </Panel>
-          <Panel Name="ssad">
-            <Charts />
-          </Panel>
-          <Panel Name="21213">
-            <Charts />
-          </Panel>
-        </Panels>
+        <Panels />
       </Database>
-      <Database Name="15.02">
-        <Panels>
-          <Panel Name="1">
-            <Charts />
-          </Panel>
-          <Panel Name="2">
-            <Charts />
-          </Panel>
-          <Panel Name="3">
-            <Charts />
-          </Panel>
-          <Panel Name="4">
-            <Charts />
-          </Panel>
-          <Panel Name="5">
-            <Charts />
-          </Panel>
-        </Panels>
-      </Database>
-      <Database Name="Karting">
-        <Panels>
-          <Panel Name="sdad">
-            <Charts />
-          </Panel>
-          <Panel Name="2e231">
-            <Charts />
-          </Panel>
-        </Panels>
-      </Database>
-      <Database Name="chart">
-        <Panels>
-          <Panel Name="1">
-            <Charts />
-          </Panel>
-          <Panel Name="weqewq">
-            <Charts />
-          </Panel>
-          <Panel Name="sadsad">
-            <Charts />
-          </Panel>
-          <Panel Name="22">
-            <Charts />
-          </Panel>
-          <Panel Name="123213213213">
-            <Charts />
-          </Panel>
-          <Panel Name="213213">
-            <Charts />
-          </Panel>
-          <Panel Name="2312">
-            <Charts />
-          </Panel>
-          <Panel Name="55555">
-            <Charts />
-          </Panel>
-          <Panel Name="666666">
-            <Charts />
-          </Panel>
-        </Panels>
-      </Database>
-      <Database Name="test">
-        <Panels>
-          <Panel Name="1">
-            <Charts />
-          </Panel>
-          <Panel Name="asdasdasd">
-            <Charts />
-          </Panel>
-          <Panel Name="sadsad">
-            <Charts />
-          </Panel>
-          <Panel Name="22323">
-            <Charts />
-          </Panel>
-        </Panels>
-      </Database>
-      <Database Name="Cafe">
-        <Panels>
-          <Panel Name="sadasdas">
-            <Charts />
-          </Panel>
-          <Panel Name="qweqwe">
-            <Charts />
-          </Panel>
-        </Panels>
-      </Database>
-      <Database Name="tempdb">
-        <Panels>
-          <Panel Name="21321321321">
-            <Charts />
-          </Panel>
-          <Panel Name="asdasd">
-            <Charts />
-          </Panel>
-        </Panels>
-      </Database>
-      <Database Name="session">
-        <Panels>
-          <Panel Name="232323">
-            <Charts />
-          </Panel>
-          <Panel Name="324234234">
-            <Charts />
-          </Panel>
-        </Panels>
+      <Database Name="Library">
+        <Panels />
       </Database>
     </Databases>
   </Server>
