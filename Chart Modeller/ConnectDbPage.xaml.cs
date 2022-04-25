@@ -27,8 +27,7 @@ namespace Chart_Modeller
                 try
                 {
                     connection.Open();
-                    AddServer();
-                    MainWindow.MainFrameInstance.Navigate(new PanelsPage());
+                    CheckServer();
                 }
                 catch (SqlException)
                 {
@@ -51,6 +50,18 @@ namespace Chart_Modeller
                 Password = passwordTxt.Text
             };
             MainWindow.ServersList.Add(MainWindow.Server);
+        }
+
+        private void CheckServer()
+        {
+            foreach (var server in MainWindow.ServersList)
+            {
+                if (server.ServerName != serverTxt.Text || server.Login != loginTxt.Text || server.Password != passwordTxt.Text)
+                {
+                    AddServer();
+                }
+                MainWindow.MainFrameInstance.Navigate(new PanelsPage());
+            }
         }
 
         private void OpenWindow()

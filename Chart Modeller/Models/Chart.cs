@@ -29,15 +29,8 @@ namespace Chart_Modeller.Models
         [XmlAttribute]
         public string Type { get; set; }
 
-        public string Title { get; set; } //сделать лист
-        //public List<Color> StrokeColor = new List<Color>(); //сделать лист
-        //public List<Color> FillColor = new List<Color>(); //сделать лист
-
-        public Color StrokeColor { get; set; }
-        public Color FillColor { get; set; }
-
         public List<string> LabelsList = new List<string>(); 
 
-        public ArrayList ValuesList = new ArrayList();
+        public List<Value> Values = new List<Value>();
     }
 }

@@ -16,6 +16,7 @@ namespace Chart_Modeller
             InitializeComponent();
             FillDbBox();
             GetPanels();
+            this.DataContext = MainWindow.Server;
         }
         private void FillDbBox()
         {
@@ -33,34 +34,34 @@ namespace Chart_Modeller
         {
             sp.Children.Clear();
 
-            foreach (var item in MainWindow.ServersList)
+            foreach (var server in MainWindow.ServersList)
             {
-                foreach (var item1 in item.Databases)
+                foreach (var database in server.Databases)
                 {
-                    if (item1.Name == dbBox.SelectedValue.ToString())
+                    if (database.Name == dbBox.SelectedValue.ToString())
                     {
-                        foreach (var item2 in item1.Panels)
+                        foreach (var panel in database.Panels)
                         {
-                            Button panel = new Button
+                            Button panelButton = new Button
                             {
                                 Margin = new Thickness(0, 50, 0, 0),
                                 Width = 700,
                                 Height = 80,
-                                Content = item2.Name,
+                                Content = panel.Name,
                                 Background = new SolidColorBrush(Color.FromRgb(19, 28, 38)),
                                 Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255)),
                                 FontSize = 22
                             };
 
-                            panel.Click += (s, ev) =>
+                            panelButton.Click += (s, ev) =>
                             {
                                 MainWindow.Database.Name = dbBox.SelectedValue.ToString();
-                                MainWindow.Panel.Name = panel.Content.ToString();
+                                MainWindow.Panel.Name = panelButton.Content.ToString();
                                 MainWindow.DbIndex = dbBox.SelectedIndex;
                                 MainWindow.MainFrameInstance.Navigate(new ChartsPage());
                             };
 
-                            sp.Children.Add(panel);
+                            sp.Children.Add(panelButton);
                         }
                     }
                 }
@@ -101,6 +102,11 @@ namespace Chart_Modeller
                 AddPanelWindow newwindow = new AddPanelWindow(dbBox.Text);
                 newwindow.Show();
             }
+        }
+
+        private void exitButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrameInstance.Navigate(new ConnectDbPage());
         }
     }
 }

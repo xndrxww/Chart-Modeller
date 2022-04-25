@@ -147,7 +147,7 @@ namespace Chart_Modeller
             {
                 Width = 70,
                 Height = 35,
-                Margin = new Thickness(950,0,0,0),
+                Margin = new Thickness(950, 0, 0, 0),
                 ToolTip = "Удалить " + chartName.Text
             };
 
@@ -195,44 +195,62 @@ namespace Chart_Modeller
             SeriesCollection = new SeriesCollection();
 
 
-            foreach (ArrayList value in chart.ValuesList)
+            foreach (var value in chart.Values)
             {
-                for (int i = 0; i < chart.ValuesList.Count; i++)
+                if (chart.Type == "LineSeries")
                 {
-                    if (chart.Type == "LineSeries")
-                    {
-                        series = new LineSeries();
-                    }
-                    else if (chart.Type == "ColumnSeries")
-                    {
-                        series = new ColumnSeries();
-                    }
-                    else if (chart.Type == "StackedAreaSeries")
-                    {
-                        series = new StackedAreaSeries();
-                    }
-                    else if (chart.Type == "HeatSeries")
-                    {
-                        series = new HeatSeries();
-                    }
-                    else if (chart.Type == "PieSeries")
-                    {
-                        ///
-                    }
-                    else if (chart.Type == "StepLineSeries")
-                    {
-                        series = new StepLineSeries();
-                    }
-
-                    series.Values = new ChartValues<int>(value.OfType<int>());
-                    //series.Stroke = new SolidColorBrush(chart.StrokeColor[i]);
-                    //series.Fill = new SolidColorBrush(chart.FillColor[i]);
-                    series.Stroke = new SolidColorBrush(chart.StrokeColor);
-                    series.Fill = new SolidColorBrush(chart.FillColor);
-                    series.Title = chart.Title;
-
-                    SeriesCollection.Add(series);
+                    series = new LineSeries();
                 }
+                else if (chart.Type == "ColumnSeries")
+                {
+                    series = new ColumnSeries();
+                }
+                else if (chart.Type == "StackedAreaSeries")
+                {
+                    series = new StackedAreaSeries();
+                }
+                else if (chart.Type == "HeatSeries")
+                {
+                    series = new HeatSeries();
+                }
+                else if (chart.Type == "PieSeries")
+                {
+                    ///
+                }
+                else if (chart.Type == "StepLineSeries")
+                {
+                    series = new StepLineSeries();
+                }
+
+
+                if (value.ValuesList.Count.GetType() == typeof(int))
+                {
+                    foreach (ArrayList values in value.ValuesList)
+                    {
+                        series.Values = new ChartValues<int>(values.OfType<int>());
+                    }
+                }
+                else if (value.ValuesList.Count.GetType() == typeof(decimal))
+                {
+                    foreach (ArrayList values in value.ValuesList)
+                    {
+                        series.Values = new ChartValues<decimal>(values.OfType<decimal>());
+                    }
+                }
+                else if (value.ValuesList.Count.GetType() == typeof(double))
+                {
+                    foreach (ArrayList values in value.ValuesList)
+                    {
+                        series.Values = new ChartValues<double>(values.OfType<double>());
+                    }
+                }
+
+                
+                series.Title = value.Title;
+                series.Stroke = new SolidColorBrush(value.StrokeColor);
+                series.Fill = new SolidColorBrush(value.FillColor);
+
+                SeriesCollection.Add(series);
             }
 
             cartesianChart.Series = SeriesCollection;

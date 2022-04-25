@@ -22,8 +22,8 @@
         </ScrollViewer>
         <Button x:Name="addChart" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="210" Height="40" Click="addChart_Click" FontSize="18" Margin="15,0,0,15" Background="#131C26" Foreground="White" HorizontalContentAlignment="Center">
             <Grid>
-                <TextBlock  VerticalAlignment="Center" Margin="8,-2,-8,0">Создание графика</TextBlock>
-                <Image Source="/Images/plus.png" Width="18" Margin="-17,6,161,6" VerticalAlignment="Center"/>
+                <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="45,0,15,0">Создать график</TextBlock>
+                <Image Source="/Images/plus.png" Width="18" Margin="15,3,155,3" VerticalAlignment="Center"/>
             </Grid>
         </Button>
         <TextBlock x:Name="dbText" VerticalAlignment="Bottom" Width="200" Margin="0,0,0,20" HorizontalAlignment="Center" TextAlignment="Center" Foreground="White" FontSize="20">FIT</TextBlock>

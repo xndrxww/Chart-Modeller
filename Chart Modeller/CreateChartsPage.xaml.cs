@@ -32,6 +32,7 @@ namespace Chart_Modeller
         public List<string> LabelsList { get; set; }
 
         private Chart Chart = new Chart();
+        private Value Value;
 
         public CreateChartsPage(string pageName)
         {
@@ -151,6 +152,7 @@ namespace Chart_Modeller
         private Series CreateSeries(Series series)
         {
             Values = new ArrayList();
+            Value = new Value();
 
             foreach (DataColumn column in Table.Columns)
             {
@@ -180,7 +182,7 @@ namespace Chart_Modeller
                 }
             }
 
-            Chart.ValuesList.Add(Values);
+            Value.ValuesList.Add(Values);
 
             SetDecoration(series);
 
@@ -200,7 +202,7 @@ namespace Chart_Modeller
         private void SetDecoration(Series series)
         {
             series.Title = lineNameTxt.Text;
-            Chart.Title = series.Title;
+            Value.Title = series.Title;
 
             if (colorPicker.SelectedBrush.Color.R != 255 && colorPicker.SelectedBrush.Color.G != 255 && colorPicker.SelectedBrush.Color.B != 255)
             {
@@ -208,8 +210,10 @@ namespace Chart_Modeller
                 series.Fill = new SolidColorBrush(Color.FromArgb(123, colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B));
             }
 
-            Chart.StrokeColor = Color.FromRgb(colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B);
-            Chart.FillColor = Color.FromArgb(123, colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B);
+            Value.StrokeColor = Color.FromRgb(colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B);
+            Value.FillColor = Color.FromArgb(123, colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B);
+
+            Chart.Values.Add(Value);
 
             if (xBox.SelectedItem != null)
             {
@@ -222,6 +226,7 @@ namespace Chart_Modeller
         {
             LabelsList = new List<string>();
             LabelsList.Clear();
+
             foreach (DataColumn column in Table.Columns)
             {
                 foreach (DataRow row in Table.Rows)
@@ -239,7 +244,9 @@ namespace Chart_Modeller
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
             SeriesCollection.Clear();
-            Chart.ValuesList.Clear();
+            Value.ValuesList.Clear();
+            DataContext = null;
+            Chart = new Chart();
         }
 
         private void AddChart()

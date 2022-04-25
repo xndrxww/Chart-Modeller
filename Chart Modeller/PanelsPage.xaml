@@ -13,10 +13,16 @@
         <ScrollViewer Margin="0,50,0,105">
             <StackPanel x:Name="sp" Orientation="Vertical"/>
         </ScrollViewer>
-        <Button x:Name="addPanel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="210" Height="40" Click="addPanel_Click" FontSize="20" Margin="15,0,0,15" Background="#131C26" Foreground="White" HorizontalContentAlignment="Center">
+        <Button x:Name="addPanel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="210" Height="40" Click="addPanel_Click" FontSize="18" Margin="15,0,0,15" Background="#131C26" Foreground="White" HorizontalContentAlignment="Center">
             <Grid>
-                <TextBlock  VerticalAlignment="Center" Margin="8,-2,-8,0">Создание панели</TextBlock>
-                <Image Source="/Images/plus.png" Width="15" Margin="-20,6,164,6" VerticalAlignment="Center"/>
+                <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="45,0,15,0">Создать панель</TextBlock>
+                <Image Source="/Images/plus.png" Width="18" Margin="15,3,155,3" VerticalAlignment="Center"/>
+            </Grid>
+        </Button>
+        <Button x:Name="exitButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" FontSize="18" Margin="0,0,15,15" HorizontalContentAlignment="Center" Click="exitButton_Click" ToolTip="{Binding Path=ServerName}">
+            <Grid>
+                <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="34,0,12,0">Выход</TextBlock>
+                <Image Source="/Images/exit.png" Width="18" Margin="11,3,69,3" VerticalAlignment="Center"/>
             </Grid>
         </Button>
         <hc:ComboBox x:Name="dbBox" VerticalAlignment="Bottom" Width="200" Margin="0,0,0,20" DisplayMemberPath="name" SelectedValuePath="name" SelectionChanged="dbBox_SelectionChanged"/>

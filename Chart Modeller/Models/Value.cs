@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using System.Xml.Serialization;
 
 namespace Chart_Modeller.Models
 {
@@ -18,5 +19,8 @@ namespace Chart_Modeller.Models
         public ArrayList ValuesList = new ArrayList();
         public Color StrokeColor { get; set; }
         public Color FillColor { get; set; }
+        
+        [XmlAttribute]
+        public string Title { get; set; }
     }
 }
