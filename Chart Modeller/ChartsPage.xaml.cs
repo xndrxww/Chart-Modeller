@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -245,15 +246,22 @@ namespace Chart_Modeller
                     }
                 }
 
-                
                 series.Title = value.Title;
-                series.Stroke = new SolidColorBrush(value.StrokeColor);
-                series.Fill = new SolidColorBrush(value.FillColor);
+
+                if (value.StrokeColor != Color.FromRgb(0, 0, 0) && value.FillColor != Color.FromArgb(0,0,0,0))
+                {
+                    series.Stroke = new SolidColorBrush(value.StrokeColor);
+                    series.Fill = new SolidColorBrush(value.FillColor);
+                }
 
                 SeriesCollection.Add(series);
             }
 
             cartesianChart.Series = SeriesCollection;
+
+            Axis axis = new Axis();
+            axis.Labels = chart.LabelsList;
+            cartesianChart.AxisX.Add(axis);
 
             sp.Children.Add(chartName);
             sp.Children.Add(deleteButton);

@@ -188,30 +188,21 @@ namespace Chart_Modeller
 
             return series;
         }
-        private void createButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (columnsBox.SelectedItem != null)
-            {
-                GetChartsData(columnsBox);
-                CreateChart();
-            }
-            else
-                OpenWindow();
-        }
 
         private void SetDecoration(Series series)
         {
             series.Title = lineNameTxt.Text;
             Value.Title = series.Title;
+            chartName.Text = chartNameTxt.Text;
 
             if (colorPicker.SelectedBrush.Color.R != 255 && colorPicker.SelectedBrush.Color.G != 255 && colorPicker.SelectedBrush.Color.B != 255)
             {
                 series.Stroke = new SolidColorBrush(Color.FromRgb(colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B));
                 series.Fill = new SolidColorBrush(Color.FromArgb(123, colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B));
-            }
 
-            Value.StrokeColor = Color.FromRgb(colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B);
-            Value.FillColor = Color.FromArgb(123, colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B);
+                Value.StrokeColor = Color.FromRgb(colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B);
+                Value.FillColor = Color.FromArgb(123, colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B);
+            }
 
             Chart.Values.Add(Value);
 
@@ -225,7 +216,6 @@ namespace Chart_Modeller
         private void SetLabels(Series series)
         {
             LabelsList = new List<string>();
-            LabelsList.Clear();
 
             foreach (DataColumn column in Table.Columns)
             {
@@ -247,6 +237,7 @@ namespace Chart_Modeller
             Value.ValuesList.Clear();
             DataContext = null;
             Chart = new Chart();
+            chartName.Text = "";
         }
 
         private void AddChart()
@@ -267,23 +258,6 @@ namespace Chart_Modeller
                     }
                 }
             }
-        }
-       
-        private void addButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (columnsBox.SelectedItem != null)
-            {
-                if (chartNameTxt.Text == "")
-                {
-                    chartNameTxt.Text = "Без названия";
-                }
-
-                Chart.Name = chartNameTxt.Text;
-                AddChart();
-                MainWindow.MainFrameInstance.Navigate(new ChartsPage());
-            }
-            else
-                OpenWindow();
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)
@@ -309,6 +283,34 @@ namespace Chart_Modeller
                 ErrorWindow newwindow = new ErrorWindow("Выберите значения для визуализации");
                 newwindow.Show();
             }
+        }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (columnsBox.SelectedItem != null)
+            {
+                if (chartName.Text == "")
+                {
+                    chartName.Text = "Без названия";
+                }
+
+                Chart.Name = chartName.Text;
+                AddChart();
+                MainWindow.MainFrameInstance.Navigate(new ChartsPage());
+            }
+            else
+                OpenWindow();
+        }
+
+        private void addButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (columnsBox.SelectedItem != null)
+            {
+                GetChartsData(columnsBox);
+                CreateChart();
+            }
+            else
+                OpenWindow();
         }
     }
 }

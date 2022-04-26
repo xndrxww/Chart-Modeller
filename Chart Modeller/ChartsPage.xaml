@@ -17,7 +17,7 @@
                 <Image Source="/Images/back.png" VerticalAlignment="Center" Margin="-18,0,18,0" Height="14"/>
             </Grid>
         </Button>
-        <ScrollViewer Margin="0,170,0,105">
+        <ScrollViewer Margin="0,170,0,105" Grid.ColumnSpan="2">
             <StackPanel x:Name="sp" Orientation="Vertical"/>
         </ScrollViewer>
         <Button x:Name="addChart" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="210" Height="40" Click="addChart_Click" FontSize="18" Margin="15,0,0,15" Background="#131C26" Foreground="White" HorizontalContentAlignment="Center">
@@ -26,7 +26,7 @@
                 <Image Source="/Images/plus.png" Width="18" Margin="15,3,155,3" VerticalAlignment="Center"/>
             </Grid>
         </Button>
-        <TextBlock x:Name="dbText" VerticalAlignment="Bottom" Width="200" Margin="0,0,0,20" HorizontalAlignment="Center" TextAlignment="Center" Foreground="White" FontSize="20">FIT</TextBlock>
+        <TextBlock x:Name="dbText" VerticalAlignment="Bottom" Width="200" Margin="620,0,557,20" HorizontalAlignment="Center" TextAlignment="Center" Foreground="White" FontSize="20">FIT</TextBlock>
         <Button x:Name="deletePanel"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,15,15" Height="40" FontSize="18" Click="deletePanel_Click">
             <Grid>
                 <TextBlock  VerticalAlignment="Center" Margin="21,1,-14,1">Удалить панель</TextBlock>

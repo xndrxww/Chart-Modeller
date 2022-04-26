@@ -301,6 +301,226 @@
                   </Value>
                 </Values>
               </Chart>
+              <Chart Name="zcxzxczxc" Type="StepLineSeries">
+                <LabelsList>
+                  <string>Ежегодный</string>
+                  <string>По беремености</string>
+                  <string>Квартальный</string>
+                </LabelsList>
+                <Values>
+                  <Value Title="zxczxc">
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">1</anyType>
+                        <anyType xsi:type="xsd:int">2</anyType>
+                        <anyType xsi:type="xsd:int">3</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>0</A>
+                      <R>0</R>
+                      <G>0</G>
+                      <B>0</B>
+                      <ScA>0</ScA>
+                      <ScR>0</ScR>
+                      <ScG>0</ScG>
+                      <ScB>0</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>0</A>
+                      <R>0</R>
+                      <G>0</G>
+                      <B>0</B>
+                      <ScA>0</ScA>
+                      <ScR>0</ScR>
+                      <ScG>0</ScG>
+                      <ScB>0</ScB>
+                    </FillColor>
+                  </Value>
+                </Values>
+              </Chart>
+              <Chart Name="Название графика)" Type="StepLineSeries">
+                <LabelsList>
+                  <string>BMW M5</string>
+                  <string>BMW X3</string>
+                  <string>Toyota Supra</string>
+                  <string>Huyndai Solaris</string>
+                  <string>Audi TT</string>
+                  <string>Scoda Octavia</string>
+                </LabelsList>
+                <Values>
+                  <Value Title="авыаыв">
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">1500</anyType>
+                        <anyType xsi:type="xsd:int">1000</anyType>
+                        <anyType xsi:type="xsd:int">11000</anyType>
+                        <anyType xsi:type="xsd:int">1150</anyType>
+                        <anyType xsi:type="xsd:int">1600</anyType>
+                        <anyType xsi:type="xsd:int">1230</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>255</A>
+                      <R>37</R>
+                      <G>203</G>
+                      <B>73</B>
+                      <ScA>1</ScA>
+                      <ScR>0.01850022</ScR>
+                      <ScG>0.597201765</ScG>
+                      <ScB>0.06662594</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>123</A>
+                      <R>37</R>
+                      <G>203</G>
+                      <B>73</B>
+                      <ScA>0.482352942</ScA>
+                      <ScR>0.01850022</ScR>
+                      <ScG>0.597201765</ScG>
+                      <ScB>0.06662594</ScB>
+                    </FillColor>
+                  </Value>
+                </Values>
+              </Chart>
+              <Chart Name="zXxxxxxxxx" Type="HeatSeries">
+                <LabelsList />
+                <Values>
+                  <Value Title="jhgkjg">
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">21</anyType>
+                        <anyType xsi:type="xsd:int">22</anyType>
+                        <anyType xsi:type="xsd:int">23</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>255</A>
+                      <R>50</R>
+                      <G>176</G>
+                      <B>141</B>
+                      <ScA>1</ScA>
+                      <ScR>0.0318960324</ScR>
+                      <ScG>0.434153646</ScG>
+                      <ScB>0.2663556</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>123</A>
+                      <R>50</R>
+                      <G>176</G>
+                      <B>141</B>
+                      <ScA>0.482352942</ScA>
+                      <ScR>0.0318960324</ScR>
+                      <ScG>0.434153646</ScG>
+                      <ScB>0.2663556</ScB>
+                    </FillColor>
+                  </Value>
+                  <Value Title="jhgkjg">
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">2</anyType>
+                        <anyType xsi:type="xsd:int">10</anyType>
+                        <anyType xsi:type="xsd:int">5</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>255</A>
+                      <R>50</R>
+                      <G>176</G>
+                      <B>141</B>
+                      <ScA>1</ScA>
+                      <ScR>0.0318960324</ScR>
+                      <ScG>0.434153646</ScG>
+                      <ScB>0.2663556</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>123</A>
+                      <R>50</R>
+                      <G>176</G>
+                      <B>141</B>
+                      <ScA>0.482352942</ScA>
+                      <ScR>0.0318960324</ScR>
+                      <ScG>0.434153646</ScG>
+                      <ScB>0.2663556</ScB>
+                    </FillColor>
+                  </Value>
+                  <Value Title="jhgkjg">
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">18</anyType>
+                        <anyType xsi:type="xsd:int">12</anyType>
+                        <anyType xsi:type="xsd:int">11</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>255</A>
+                      <R>50</R>
+                      <G>176</G>
+                      <B>141</B>
+                      <ScA>1</ScA>
+                      <ScR>0.0318960324</ScR>
+                      <ScG>0.434153646</ScG>
+                      <ScB>0.2663556</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>123</A>
+                      <R>50</R>
+                      <G>176</G>
+                      <B>141</B>
+                      <ScA>0.482352942</ScA>
+                      <ScR>0.0318960324</ScR>
+                      <ScG>0.434153646</ScG>
+                      <ScB>0.2663556</ScB>
+                    </FillColor>
+                  </Value>
+                </Values>
+              </Chart>
+            </Charts>
+          </Panel>
+          <Panel Name="Панель 2">
+            <Charts>
+              <Chart Name="Зарплата сотрудников" Type="ColumnSeries">
+                <LabelsList>
+                  <string>Консультант</string>
+                  <string>Начальник</string>
+                  <string>Главный директор</string>
+                  <string>Менеджер по продажам</string>
+                  <string>Кассир</string>
+                </LabelsList>
+                <Values>
+                  <Value Title="Зарплата">
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">30000</anyType>
+                        <anyType xsi:type="xsd:int">70000</anyType>
+                        <anyType xsi:type="xsd:int">50000</anyType>
+                        <anyType xsi:type="xsd:int">40000</anyType>
+                        <anyType xsi:type="xsd:int">40000</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>255</A>
+                      <R>46</R>
+                      <G>214</G>
+                      <B>29</B>
+                      <ScA>1</ScA>
+                      <ScR>0.0273208916</ScR>
+                      <ScG>0.672443151</ScG>
+                      <ScB>0.012286488</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>123</A>
+                      <R>46</R>
+                      <G>214</G>
+                      <B>29</B>
+                      <ScA>0.482352942</ScA>
+                      <ScR>0.0273208916</ScR>
+                      <ScG>0.672443151</ScG>
+                      <ScB>0.012286488</ScB>
+                    </FillColor>
+                  </Value>
+                </Values>
+              </Chart>
             </Charts>
           </Panel>
         </Panels>

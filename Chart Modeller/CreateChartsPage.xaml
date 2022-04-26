@@ -35,8 +35,8 @@
             <hc:ColorPicker Name="colorPicker" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,320,0,0" Height="180"/>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,550,0,0" FontSize="15" Foreground="White">Название графика</TextBlock>
             <TextBox x:Name="chartNameTxt" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,580,0,0" Width="200" MaxLength="50"></TextBox>
-            <Button x:Name="createButton" VerticalAlignment="Bottom" Margin="10,0,0,20" Width="130" Background="#131C26" Foreground="White" Click="createButton_Click" HorizontalAlignment="Left">Добавить значения</Button>
-            <Button x:Name="addButton" VerticalAlignment="Bottom" Margin="0,0,10,20" Width="80" Background="White" Foreground="#131C26" HorizontalAlignment="Right" Click="addButton_Click">Сохранить</Button>
+            <Button x:Name="addButton" VerticalAlignment="Bottom" Margin="10,0,0,20" Width="130" Background="#131C26" Foreground="White" HorizontalAlignment="Left" Click="addButton_Click">Добавить значения</Button>
+            <Button x:Name="saveButton" VerticalAlignment="Bottom" Margin="0,0,10,20" Width="80" Background="White" Foreground="#131C26" HorizontalAlignment="Right" Click="saveButton_Click">Сохранить</Button>
         </Grid>
         <Button x:Name="clearButton" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120" Margin="100,0,0,500" Click="clearButton_Click">
             <Grid>
@@ -44,5 +44,6 @@
                 <Image Source="/Images/delete.png" VerticalAlignment="Center"  Margin="-11,0,89,0" Width="15"/>
             </Grid>
         </Button>
+        <TextBlock x:Name="chartName" VerticalAlignment="Center" FontSize="25" Margin="0,0,270,50" TextAlignment="Center" HorizontalAlignment="Center"></TextBlock>
     </Grid>
 </Page>
