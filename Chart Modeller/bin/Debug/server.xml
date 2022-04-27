@@ -521,6 +521,50 @@
                   </Value>
                 </Values>
               </Chart>
+              <Chart Name="пример" Type="PieSeries">
+                <LabelsList>
+                  <string>BMW M5</string>
+                  <string>BMW X3</string>
+                  <string>Toyota Supra</string>
+                  <string>Huyndai Solaris</string>
+                  <string>Audi TT</string>
+                  <string>Scoda Octavia</string>
+                </LabelsList>
+                <Values>
+                  <Value>
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">1500</anyType>
+                        <anyType xsi:type="xsd:int">1000</anyType>
+                        <anyType xsi:type="xsd:int">11000</anyType>
+                        <anyType xsi:type="xsd:int">1150</anyType>
+                        <anyType xsi:type="xsd:int">1600</anyType>
+                        <anyType xsi:type="xsd:int">1230</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>0</A>
+                      <R>0</R>
+                      <G>0</G>
+                      <B>0</B>
+                      <ScA>0</ScA>
+                      <ScR>0</ScR>
+                      <ScG>0</ScG>
+                      <ScB>0</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>0</A>
+                      <R>0</R>
+                      <G>0</G>
+                      <B>0</B>
+                      <ScA>0</ScA>
+                      <ScR>0</ScR>
+                      <ScG>0</ScG>
+                      <ScB>0</ScB>
+                    </FillColor>
+                  </Value>
+                </Values>
+              </Chart>
             </Charts>
           </Panel>
         </Panels>

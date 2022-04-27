@@ -216,7 +216,7 @@ namespace Chart_Modeller
                 }
                 else if (chart.Type == "PieSeries")
                 {
-                    ///
+                    //CreatePieChart(value);
                 }
                 else if (chart.Type == "StepLineSeries")
                 {
@@ -267,6 +267,35 @@ namespace Chart_Modeller
             sp.Children.Add(deleteButton);
             sp.Children.Add(cartesianChart);
         }
+
+        //private void CreatePieChart(Value value)
+        //{
+        //    if (value.ValuesList.Count.GetType() == typeof(int))
+        //    {
+        //        foreach (ArrayList values in value.ValuesList)
+        //        {
+        //            PieSeries = new PieSeries();
+        //            PieSeries.Values = new ChartValues<int>(values.OfType<int>());
+        //            SeriesCollection.Add(PieSeries);
+        //            PieSeries.Title = value.Title;
+        //            PieSeries.DataLabels = true;
+        //        }
+        //    }
+        //    else if (value.ValuesList.Count.GetType() == typeof(decimal))
+        //    {
+        //        foreach (ArrayList values in value.ValuesList)
+        //        {
+        //            series.Values = new ChartValues<decimal>(values.OfType<decimal>());
+        //        }
+        //    }
+        //    else if (value.ValuesList.Count.GetType() == typeof(double))
+        //    {
+        //        foreach (ArrayList values in value.ValuesList)
+        //        {
+        //            series.Values = new ChartValues<double>(values.OfType<double>());
+        //        }
+        //    }
+        //}
 
         private void backButton_Click(object sender, RoutedEventArgs e)
         {

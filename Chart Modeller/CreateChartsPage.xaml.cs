@@ -1,5 +1,6 @@
 ﻿using Chart_Modeller.Models;
 using LiveCharts;
+using LiveCharts.Defaults;
 using LiveCharts.Wpf;
 using System;
 using System.Collections;
@@ -143,7 +144,7 @@ namespace Chart_Modeller
             }
             else
             {
-                SeriesCollection.Add(CreateSeries(PieSeries));
+                CreatePieSeries();
                 Chart.Type = "PieSeries";
                 pieChart.Series = SeriesCollection;
             }
@@ -189,13 +190,70 @@ namespace Chart_Modeller
             return series;
         }
 
+        private void CreatePieSeries()
+        {
+            Values = new ArrayList();
+            Value = new Value();
+
+            foreach (DataColumn column in Table.Columns)
+            {
+                if (Table.Columns[0].DataType == typeof(int))
+                {
+                    foreach (DataRow row in Table.Rows)
+                    {
+                        Values.Add((int)row[column.ColumnName]);
+
+                        PieSeries = new PieSeries();
+                        PieSeries.Values = new ChartValues<int> {(int)row[column.ColumnName]};
+                        SeriesCollection.Add(PieSeries);
+                        PieSeries.Title = lineNameTxt.Text;
+                        PieSeries.DataLabels = true;
+                    };
+                }
+                else if (Table.Columns[0].DataType == typeof(decimal))
+                {
+                    foreach (DataRow row in Table.Rows)
+                    {
+                        Values.Add((decimal)row[column.ColumnName]);
+
+                        PieSeries = new PieSeries();
+                        PieSeries.Values = new ChartValues<decimal> {(decimal)row[column.ColumnName]};
+                        SeriesCollection.Add(PieSeries);
+                        PieSeries.Title = lineNameTxt.Text;
+                        PieSeries.DataLabels = true;
+                    };
+                }
+                else if (Table.Columns[0].DataType == typeof(double))
+                {
+                    foreach (DataRow row in Table.Rows)
+                    {
+                        Values.Add((double)row[column.ColumnName]);
+
+                        PieSeries = new PieSeries();
+                        PieSeries.Values = new ChartValues<double> { (double)row[column.ColumnName] };
+                        SeriesCollection.Add(PieSeries);
+                        PieSeries.Title = lineNameTxt.Text;
+                        PieSeries.DataLabels = true;
+                    };
+                }
+            }
+
+            Value.ValuesList.Add(Values);
+
+            SetDecoration(PieSeries);
+        }
+
         private void SetDecoration(Series series)
         {
-            series.Title = lineNameTxt.Text;
-            Value.Title = series.Title;
+            if (series != PieSeries)
+            {
+                series.Title = lineNameTxt.Text;
+                Value.Title = series.Title;
+            }
+            
             chartName.Text = chartNameTxt.Text;
 
-            if (colorPicker.SelectedBrush.Color.R != 255 && colorPicker.SelectedBrush.Color.G != 255 && colorPicker.SelectedBrush.Color.B != 255)
+            if (colorPicker.SelectedBrush.Color.R != 255 && colorPicker.SelectedBrush.Color.G != 255 && colorPicker.SelectedBrush.Color.B != 255 && series != PieSeries)
             {
                 series.Stroke = new SolidColorBrush(Color.FromRgb(colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B));
                 series.Fill = new SolidColorBrush(Color.FromArgb(123, colorPicker.SelectedBrush.Color.R, colorPicker.SelectedBrush.Color.G, colorPicker.SelectedBrush.Color.B));
