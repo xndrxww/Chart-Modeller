@@ -18,12 +18,18 @@ namespace Chart_Modeller
 
         private SeriesCollection SeriesCollection;
 
-        private LineSeries LineSeries;
-        private ColumnSeries ColumnSeries;
-        private StackedAreaSeries StackedAreaSeries;
-        private HeatSeries HeatSeries;
+        private Series series;
+
+
+        private CartesianChart CartesianChart;
+        private PieChart PieChart;
+
+        //private LineSeries LineSeries;
+        //private ColumnSeries ColumnSeries;
+        //private StackedAreaSeries StackedAreaSeries;
+        //private HeatSeries HeatSeries;
         private PieSeries PieSeries;
-        private StepLineSeries StepLineSeries;
+        //private StepLineSeries StepLineSeries;
 
 
         public ChartsPage()
@@ -107,25 +113,7 @@ namespace Chart_Modeller
                             {
                                 foreach (var chart in panel.Charts)
                                 {
-                                    if (chart.Type == "LineSeries")
-                                        CreateChart(LineSeries, chart);
-
-                                    else if (chart.Type == "ColumnSeries")
-                                        CreateChart(ColumnSeries, chart);
-
-                                    else if (chart.Type == "StackedAreaSeries")
-                                        CreateChart(StackedAreaSeries, chart);
-
-                                    else if (chart.Type == "HeatSeries")
-                                        CreateChart(HeatSeries, chart);
-
-                                    else if (chart.Type == "PieSeries")
-                                    {
-                                        ////////////
-                                    }
-
-                                    else if (chart.Type == "StepLineSeries")
-                                        CreateChart(StepLineSeries, chart);
+                                    CreateChart(chart);
                                 }
                             }
                         }
@@ -134,7 +122,7 @@ namespace Chart_Modeller
             }
         }
 
-        private void CreateChart(Series series, Chart chart)
+        private void CreateChart(Chart chart)
         {
             TextBlock chartName = new TextBlock
             {
@@ -186,122 +174,157 @@ namespace Chart_Modeller
                 }
             };
 
-            CartesianChart cartesianChart = new CartesianChart
-            {
-                Margin = new Thickness(0, 0, 0, 80),
-                Width = 1050,
-                Height = 420
-            };
-
             SeriesCollection = new SeriesCollection();
 
-
-            foreach (var value in chart.Values)
+            if (chart.Type == "PieSeries")
             {
-                if (chart.Type == "LineSeries")
+                foreach (var value in chart.Values)
                 {
-                    series = new LineSeries();
-                }
-                else if (chart.Type == "ColumnSeries")
-                {
-                    series = new ColumnSeries();
-                }
-                else if (chart.Type == "StackedAreaSeries")
-                {
-                    series = new StackedAreaSeries();
-                }
-                else if (chart.Type == "HeatSeries")
-                {
-                    series = new HeatSeries();
-                }
-                else if (chart.Type == "PieSeries")
-                {
-                    //CreatePieChart(value);
-                }
-                else if (chart.Type == "StepLineSeries")
-                {
-                    series = new StepLineSeries();
+                    CreatePieChart(value);
                 }
 
-
-                if (value.ValuesList.Count.GetType() == typeof(int))
-                {
-                    foreach (ArrayList values in value.ValuesList)
-                    {
-                        series.Values = new ChartValues<int>(values.OfType<int>());
-                    }
-                }
-                else if (value.ValuesList.Count.GetType() == typeof(decimal))
-                {
-                    foreach (ArrayList values in value.ValuesList)
-                    {
-                        series.Values = new ChartValues<decimal>(values.OfType<decimal>());
-                    }
-                }
-                else if (value.ValuesList.Count.GetType() == typeof(double))
-                {
-                    foreach (ArrayList values in value.ValuesList)
-                    {
-                        series.Values = new ChartValues<double>(values.OfType<double>());
-                    }
-                }
-
-                series.Title = value.Title;
-
-                if (value.StrokeColor != Color.FromRgb(0, 0, 0) && value.FillColor != Color.FromArgb(0,0,0,0))
-                {
-                    series.Stroke = new SolidColorBrush(value.StrokeColor);
-                    series.Fill = new SolidColorBrush(value.FillColor);
-                }
-
-                SeriesCollection.Add(series);
+                sp.Children.Add(chartName);
+                sp.Children.Add(deleteButton);
+                sp.Children.Add(PieChart);
             }
+            else
+            {
+                foreach (var value in chart.Values)
+                {
+                    CheckSeries(chart);
 
-            cartesianChart.Series = SeriesCollection;
+                    CartesianChart = new CartesianChart
+                    {
+                        Margin = new Thickness(0, 0, 0, 80),
+                        Width = 1050,
+                        Height = 420
+                    };
 
-            Axis axis = new Axis();
-            axis.Labels = chart.LabelsList;
-            cartesianChart.AxisX.Add(axis);
+                    if (value.ValuesList.Count.GetType() == typeof(int))
+                    {
+                        foreach (ArrayList values in value.ValuesList)
+                        {
+                            series.Values = new ChartValues<int>(values.OfType<int>());
+                        }
+                    }
+                    else if (value.ValuesList.Count.GetType() == typeof(decimal))
+                    {
+                        foreach (ArrayList values in value.ValuesList)
+                        {
+                            series.Values = new ChartValues<decimal>(values.OfType<decimal>());
+                        }
+                    }
+                    else if (value.ValuesList.Count.GetType() == typeof(double))
+                    {
+                        foreach (ArrayList values in value.ValuesList)
+                        {
+                            series.Values = new ChartValues<double>(values.OfType<double>());
+                        }
+                    }
 
-            sp.Children.Add(chartName);
-            sp.Children.Add(deleteButton);
-            sp.Children.Add(cartesianChart);
+                    series.Title = value.Title;
+
+                    if (value.StrokeColor != Color.FromRgb(0, 0, 0) && value.FillColor != Color.FromArgb(0, 0, 0, 0))
+                    {
+                        series.Stroke = new SolidColorBrush(value.StrokeColor);
+                        series.Fill = new SolidColorBrush(value.FillColor);
+                    }
+
+                    SeriesCollection.Add(series);
+                }
+
+                CartesianChart.Series = SeriesCollection;
+
+                Axis axis = new Axis();
+                axis.Labels = chart.LabelsList;
+                CartesianChart.AxisX.Add(axis);
+
+                sp.Children.Add(chartName);
+                sp.Children.Add(deleteButton);
+                sp.Children.Add(CartesianChart);
+            }
         }
 
-        //private void CreatePieChart(Value value)
-        //{
-        //    if (value.ValuesList.Count.GetType() == typeof(int))
-        //    {
-        //        foreach (ArrayList values in value.ValuesList)
-        //        {
-        //            PieSeries = new PieSeries();
-        //            PieSeries.Values = new ChartValues<int>(values.OfType<int>());
-        //            SeriesCollection.Add(PieSeries);
-        //            PieSeries.Title = value.Title;
-        //            PieSeries.DataLabels = true;
-        //        }
-        //    }
-        //    else if (value.ValuesList.Count.GetType() == typeof(decimal))
-        //    {
-        //        foreach (ArrayList values in value.ValuesList)
-        //        {
-        //            series.Values = new ChartValues<decimal>(values.OfType<decimal>());
-        //        }
-        //    }
-        //    else if (value.ValuesList.Count.GetType() == typeof(double))
-        //    {
-        //        foreach (ArrayList values in value.ValuesList)
-        //        {
-        //            series.Values = new ChartValues<double>(values.OfType<double>());
-        //        }
-        //    }
-        //}
+        private void CreatePieChart(Value value)
+        {
+            PieChart = new PieChart
+            {
+                Margin = new Thickness(0, 0, 0, 80),
+                Height = 350
+            };
+
+            if (value.ValuesList.Count.GetType() == typeof(int))
+            {
+                foreach (ArrayList values in value.ValuesList)
+                {
+                    foreach (int item in values)
+                    {
+                        PieSeries = new PieSeries();
+                        PieSeries.Values = new ChartValues<int> { item };
+                        SeriesCollection.Add(PieSeries);
+                        PieSeries.Title = value.Title;
+                        PieSeries.DataLabels = true;
+                    }
+                }
+            }
+            else if (value.ValuesList.Count.GetType() == typeof(decimal))
+            {
+                foreach (ArrayList values in value.ValuesList)
+                {
+                    foreach (decimal item in values)
+                    {
+                        PieSeries = new PieSeries();
+                        PieSeries.Values = new ChartValues<decimal> { item };
+                        SeriesCollection.Add(PieSeries);
+                        PieSeries.Title = value.Title;
+                        PieSeries.DataLabels = true;
+                    }
+                }
+            }
+            else if (value.ValuesList.Count.GetType() == typeof(double))
+            {
+                foreach (ArrayList values in value.ValuesList)
+                {
+                    foreach (double item in values)
+                    {
+                        PieSeries = new PieSeries();
+                        PieSeries.Values = new ChartValues<double> { item };
+                        SeriesCollection.Add(PieSeries);
+                        PieSeries.Title = value.Title;
+                        PieSeries.DataLabels = true;
+                    }
+                }
+            }
+
+            PieChart.Series = SeriesCollection;
+        }
 
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
             PanelsPage panelsPage = new PanelsPage();
             panelsPage.dbBox.SelectedIndex = MainWindow.DbIndex;
             MainWindow.MainFrameInstance.Navigate(panelsPage);
+        }
+
+        private Series CheckSeries(Chart chart)
+        {
+            if (chart.Type == "LineSeries")
+                series = new LineSeries();
+
+            else if (chart.Type == "ColumnSeries")
+                series = new ColumnSeries();
+
+            else if (chart.Type == "StackedAreaSeries")
+                series = new StackedAreaSeries();
+
+            else if (chart.Type == "HeatSeries")
+                series = new HeatSeries();
+
+
+            else if (chart.Type == "StepLineSeries")
+                series = new StepLineSeries();
+
+            return series;
         }
     }
 }

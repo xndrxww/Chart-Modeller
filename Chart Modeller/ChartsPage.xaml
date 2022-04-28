@@ -17,7 +17,7 @@
                 <Image Source="/Images/back.png" VerticalAlignment="Center" Margin="-18,0,18,0" Height="14"/>
             </Grid>
         </Button>
-        <ScrollViewer Margin="0,170,0,105" Grid.ColumnSpan="2">
+        <ScrollViewer Margin="0,170,0,105">
             <StackPanel x:Name="sp" Orientation="Vertical"/>
         </ScrollViewer>
         <Button x:Name="addChart" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="210" Height="40" Click="addChart_Click" FontSize="18" Margin="15,0,0,15" Background="#131C26" Foreground="White" HorizontalContentAlignment="Center">

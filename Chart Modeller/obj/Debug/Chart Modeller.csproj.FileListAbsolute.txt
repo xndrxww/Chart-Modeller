@@ -74,3 +74,5 @@ C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Creat
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\CreateChartsPage.baml
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ErrorWindow.g.cs
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ErrorWindow.baml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\ErrorWindow.g.cs
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\ErrorWindow.baml

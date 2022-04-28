@@ -60,11 +60,11 @@ namespace Chart_Modeller
                 {
                     ServersList = (List<Server>)ServerSerializer.Deserialize(stream);
                 }
-                foreach (var item in ServersList)
+                foreach (var server in ServersList)
                 {
-                    Server.ServerName = item.ServerName;
-                    Server.Login = item.Login;
-                    Server.Password = item.Password;
+                    Server.ServerName = server.ServerName;
+                    Server.Login = server.Login;
+                    Server.Password = server.Password;
                 }
             }
             else

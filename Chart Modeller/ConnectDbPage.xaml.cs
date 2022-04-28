@@ -54,11 +54,19 @@ namespace Chart_Modeller
 
         private void CheckServer()
         {
-            foreach (var server in MainWindow.ServersList)
+            if (MainWindow.ServersList.Count == 0)
             {
-                if (server.ServerName != serverTxt.Text || server.Login != loginTxt.Text || server.Password != passwordTxt.Text)
+                AddServer();
+                MainWindow.MainFrameInstance.Navigate(new PanelsPage());
+            }
+            else
+            {
+                foreach (var server in MainWindow.ServersList)
                 {
-                    AddServer();
+                    if (server.ServerName != serverTxt.Text || server.Login != loginTxt.Text || server.Password != passwordTxt.Text)
+                    {
+                        AddServer();
+                    }
                 }
                 MainWindow.MainFrameInstance.Navigate(new PanelsPage());
             }
