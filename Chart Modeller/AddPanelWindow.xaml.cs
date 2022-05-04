@@ -1,5 +1,6 @@
 ﻿using Chart_Modeller.Models;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace Chart_Modeller
@@ -76,6 +77,19 @@ namespace Chart_Modeller
                     panelsPage.dbBox.SelectedIndex = MainWindow.DbIndex;
                     MainWindow.MainFrameInstance.Navigate(panelsPage);
                 }
+            }
+        }
+
+        private void closeAppButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Grid_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
             }
         }
     }

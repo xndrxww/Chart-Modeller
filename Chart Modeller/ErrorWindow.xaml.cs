@@ -27,5 +27,18 @@ namespace Chart_Modeller
         {
             this.Close();
         }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void closeAppButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

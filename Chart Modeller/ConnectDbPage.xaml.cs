@@ -17,11 +17,13 @@ namespace Chart_Modeller
         public ConnectDbPage()
         {
             InitializeComponent();
+
+            MainWindow.PageName.Text = "";
         }
 
         private void connectButton_Click(object sender, RoutedEventArgs e)
         {
-            string connectionString = $@"Data Source={serverTxt.Text};Initial Catalog=master;Persist Security Info=True;User ID={loginTxt.Text};Password={passwordTxt.Text}";
+            string connectionString = $@"Data Source={serverTxt.Text};Initial Catalog=master;Persist Security Info=True;User ID={loginTxt.Text};Password={passwordTxt.Text};Connection Timeout=3";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
@@ -34,11 +36,6 @@ namespace Chart_Modeller
                     OpenWindow();
                 }
             }
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            MainWindow.PageName.Text = "Подключение к серверу";
         }
 
         private void AddServer()

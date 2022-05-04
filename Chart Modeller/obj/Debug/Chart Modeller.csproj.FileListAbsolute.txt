@@ -23,7 +23,6 @@ C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ChartsPage.baml
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\HandyControl.dll
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\HandyControl.xml
-C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\App.baml
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Chart Modeller.csproj.CopyComplete
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\LiveCharts.dll
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\LiveCharts.Wpf.dll
@@ -76,3 +75,5 @@ C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\Error
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\ErrorWindow.baml
 C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\ErrorWindow.g.cs
 C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\ErrorWindow.baml
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\HandyControl.pdb
+C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\App.baml

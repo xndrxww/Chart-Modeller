@@ -6,47 +6,64 @@
       xmlns:local="clr-namespace:Chart_Modeller"
       xmlns:hc="https://handyorg.github.io/handycontrol" xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" x:Class="Chart_Modeller.CreateChartsPage"
       mc:Ignorable="d" 
-      d:DesignHeight="1024" d:DesignWidth="1440"
+            d:DesignHeight="900" d:DesignWidth="1300"
       Title="CreateChartsPage" Loaded="Page_Loaded">
 
     <Grid>
-        <Button x:Name="backButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Foreground="#131C26" Click="backButton_Click">
+        <Button x:Name="backButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,60,0,0" Foreground="#131C26" Click="backButton_Click" BorderBrush="{x:Null}">
             <Grid VerticalAlignment="Center">
                 <TextBlock  VerticalAlignment="Center" Margin="7,0,-7,0">Назад</TextBlock>
                 <Image Source="/Images/back.png" VerticalAlignment="Center" Margin="-18,0,18,0" Height="14"/>
             </Grid>
         </Button>
-        <DataGrid x:Name="dataGrid" VerticalAlignment="Top" HorizontalAlignment="Left" Width="900" MaxHeight="350" Margin="50,100,0,0" IsReadOnly="True"/>
-        <hc:ComboBox  x:Name="tablesBox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" DisplayMemberPath="TABLE_NAME" SelectedValuePath="TABLE_NAME"  Margin="0,0,0,20" SelectionChanged="tablesBox_SelectionChanged"/>
-        <lvc:PieChart x:Name="pieChart" VerticalAlignment="Bottom"  Margin="225,0,500,130" Height="350">
+        <DataGrid x:Name="dataGrid" VerticalAlignment="Top" HorizontalAlignment="Left" Width="900" MaxHeight="310" Margin="50,110,0,0" IsReadOnly="True" BorderBrush="{x:Null}"/>
+        <lvc:PieChart x:Name="pieChart" VerticalAlignment="Bottom"  Margin="225,0,500,95" Height="300">
             <lvc:PieChart.AxisX>
                 <lvc:Axis Labels="{Binding LabelsList}" />
             </lvc:PieChart.AxisX>
         </lvc:PieChart>
-        <lvc:CartesianChart x:Name="chart" Width="1050" Height="420" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="50,0,0,100">
+        <lvc:CartesianChart x:Name="chart" Width="900" Height="360" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="50,0,0,80">
             <lvc:CartesianChart.AxisX>
                 <lvc:Axis Labels="{Binding LabelsList}" />
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
-        <Grid HorizontalAlignment="Right" Width="250" Height="800" VerticalAlignment="Center" Background="#131C26" Margin="50">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontSize="15" Foreground="White">Значение X</TextBlock>
-            <ComboBox x:Name="columnsBox" VerticalAlignment="Top" Margin="0,50,0,0" Width="200" SelectedIndex="-1"/>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,120,0,0" FontSize="15" Foreground="White">Значение Y</TextBlock>
-            <ComboBox x:Name="xBox" VerticalAlignment="Top" Margin="0,150,0,0" Width="200" SelectedIndex="-1"/>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,220,0,0" FontSize="15" Foreground="White">Название значения</TextBlock>
-            <TextBox x:Name="lineNameTxt" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,250,0,0" Width="200" MaxLength="50"></TextBox>
-            <hc:ColorPicker Name="colorPicker" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,320,0,0" Height="180"/>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,550,0,0" FontSize="15" Foreground="White">Название графика</TextBlock>
-            <TextBox x:Name="chartNameTxt" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,580,0,0" Width="200" MaxLength="50"></TextBox>
-            <Button x:Name="addButton" VerticalAlignment="Bottom" Margin="10,0,0,20" Width="130" Background="#131C26" Foreground="White" HorizontalAlignment="Left" Click="addButton_Click">Добавить значения</Button>
-            <Button x:Name="saveButton" VerticalAlignment="Bottom" Margin="0,0,10,20" Width="80" Background="White" Foreground="#131C26" HorizontalAlignment="Right" Click="saveButton_Click">Сохранить</Button>
-        </Grid>
-        <Button x:Name="clearButton" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120" Margin="100,0,0,500" Click="clearButton_Click">
+        <StackPanel HorizontalAlignment="Right" Width="250"  VerticalAlignment="Center" Panel.ZIndex="1" Margin="0,112,25,118">
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="15" Foreground="White">Значение X</TextBlock>
+                <hc:ComboBox x:Name="columnsBox" VerticalAlignment="Top" SelectedIndex="-1" BorderBrush="{x:Null}" hc:InfoElement.Placeholder="Значение X" SelectionBrush="#FF131C26" Margin="35,15,35,0"/>
+            </StackPanel>
+            <StackPanel Margin="0,40,0,0">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top"  FontSize="15" Foreground="White">Значение Y</TextBlock>
+                <hc:ComboBox x:Name="xBox" VerticalAlignment="Top" SelectedIndex="-1" BorderBrush="{x:Null}" hc:InfoElement.Placeholder="Значение Y" SelectionBrush="#FF131C26" Margin="35,15,35,0"/>
+            </StackPanel>
+            <StackPanel Margin="0,40,0,0">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="15" Foreground="White">Название значения</TextBlock>
+                <hc:TextBox x:Name="lineNameTxt" HorizontalAlignment="Center" VerticalAlignment="Top" Width="180" MaxLength="50" BorderBrush="{x:Null}" hc:InfoElement.Placeholder="Название значения" Margin="35,15,35,0"></hc:TextBox>
+            </StackPanel>
+
+            <hc:ColorPicker Name="colorPicker" HorizontalAlignment="Center" Margin="0,40,0,0" Height="180"/>
+
+            <StackPanel Margin="0,40,0,0">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="15" Foreground="White">Название графика</TextBlock>
+                <hc:TextBox x:Name="chartNameTxt" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" MaxLength="50" hc:InfoElement.Placeholder="Название графика" Margin="35,15,25,0"></hc:TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,40,0,0" HorizontalAlignment="Center">
+                <Button x:Name="addButton" VerticalAlignment="Bottom" Width="130" Background="#131C26" Foreground="White" HorizontalAlignment="Left" Click="addButton_Click" Margin="0,0,20,0">Добавить значения</Button>
+                <Button x:Name="saveButton" VerticalAlignment="Bottom" Width="80" Background="White" Foreground="#131C26" HorizontalAlignment="Right" Click="saveButton_Click" BorderBrush="{x:Null}">Сохранить</Button>
+            </StackPanel>
+        </StackPanel>
+        <Rectangle HorizontalAlignment="Right" Width="250" Height="699" VerticalAlignment="Center" RadiusY="12" RadiusX="12" Fill="#131C26" Margin="0,100,25,101"/>
+
+        <Button x:Name="clearButton" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120" Margin="100,0,0,440" Click="clearButton_Click" BorderBrush="{x:Null}">
             <Grid>
                 <TextBlock  VerticalAlignment="Center" Margin="8,0,-8,0">Очистить график</TextBlock>
                 <Image Source="/Images/delete.png" VerticalAlignment="Center"  Margin="-11,0,89,0" Width="15"/>
             </Grid>
         </Button>
-        <TextBlock x:Name="chartName" VerticalAlignment="Center" FontSize="25" Margin="0,0,270,50" TextAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock x:Name="chartName" VerticalAlignment="Center" FontSize="25" Margin="0,0,270,5" TextAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <Grid VerticalAlignment="Bottom" Background="#131C26" Height="52" Panel.ZIndex="-1">
+            <hc:ComboBox  x:Name="tablesBox" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" DisplayMemberPath="TABLE_NAME" SelectedValuePath="TABLE_NAME" SelectionChanged="tablesBox_SelectionChanged" BorderBrush="{x:Null}"/>
+        </Grid>
     </Grid>
 </Page>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Xml.Serialization;
 
 namespace Chart_Modeller
@@ -40,7 +41,10 @@ namespace Chart_Modeller
 
             Closing += (sender, args) =>
             {
-                ServerSerializer.Serialize(File.Create(ServerFileName), ServersList);
+                if (ServersList.Count != 0)
+                {
+                    ServerSerializer.Serialize(File.Create(ServerFileName), ServersList);
+                }
             };
         }
 
@@ -69,6 +73,19 @@ namespace Chart_Modeller
             }
             else
                 ServersList = new List<Server>();
+        }
+
+        private void Grid_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void closeAppButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

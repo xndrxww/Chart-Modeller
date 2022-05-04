@@ -50,7 +50,8 @@ namespace Chart_Modeller
                                 Content = panel.Name,
                                 Background = new SolidColorBrush(Color.FromRgb(19, 28, 38)),
                                 Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255)),
-                                FontSize = 22
+                                FontSize = 22,
+                                BorderBrush = null
                             };
 
                             panelButton.Click += (s, ev) =>

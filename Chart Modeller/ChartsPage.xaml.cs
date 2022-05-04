@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Chart_Modeller.Models;
+using HandyControl.Controls;
 using LiveCharts;
 using LiveCharts.Wpf;
 
@@ -81,7 +82,7 @@ namespace Chart_Modeller
         {
             bool isWindowOpen = false;
 
-            foreach (Window w in Application.Current.Windows)
+            foreach (System.Windows.Window w in Application.Current.Windows)
             {
                 if (w is ChooseChartWindow)
                 {
@@ -137,7 +138,8 @@ namespace Chart_Modeller
                 Width = 70,
                 Height = 35,
                 Margin = new Thickness(950, 0, 0, 0),
-                ToolTip = "Удалить " + chartName.Text
+                ToolTip = "Удалить " + chartName.Text,
+                BorderBrush = null
             };
 
             deleteButton.Content = new Image

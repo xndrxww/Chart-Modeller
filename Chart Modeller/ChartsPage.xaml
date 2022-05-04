@@ -7,31 +7,34 @@
       xmlns:local="clr-namespace:Chart_Modeller"
       xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="Chart_Modeller.ChartsPage"
       mc:Ignorable="d" 
-      d:DesignHeight="1024" d:DesignWidth="1440 "
+      d:DesignHeight="900" d:DesignWidth="1300"
       Title="ChartsPage" Loaded="Page_Loaded">
 
     <Grid>
-        <Button x:Name="backButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Foreground="#131C26" Click="backButton_Click">
+        <Button x:Name="backButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,60,0,0" Foreground="#131C26" Click="backButton_Click" BorderBrush="{x:Null}">
             <Grid VerticalAlignment="Center">
                 <TextBlock  VerticalAlignment="Center" Margin="7,0,-7,0">Назад</TextBlock>
                 <Image Source="/Images/back.png" VerticalAlignment="Center" Margin="-18,0,18,0" Height="14"/>
             </Grid>
         </Button>
-        <ScrollViewer Margin="0,170,0,105">
+        <ScrollViewer Margin="0,120,0,70">
             <StackPanel x:Name="sp" Orientation="Vertical"/>
         </ScrollViewer>
-        <Button x:Name="addChart" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="210" Height="40" Click="addChart_Click" FontSize="18" Margin="15,0,0,15" Background="#131C26" Foreground="White" HorizontalContentAlignment="Center">
-            <Grid>
-                <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="45,0,15,0">Создать график</TextBlock>
-                <Image Source="/Images/plus.png" Width="18" Margin="15,3,155,3" VerticalAlignment="Center"/>
-            </Grid>
-        </Button>
-        <TextBlock x:Name="dbText" VerticalAlignment="Bottom" Width="200" Margin="620,0,557,20" HorizontalAlignment="Center" TextAlignment="Center" Foreground="White" FontSize="20">FIT</TextBlock>
-        <Button x:Name="deletePanel"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,15,15" Height="40" FontSize="18" Click="deletePanel_Click">
-            <Grid>
-                <TextBlock  VerticalAlignment="Center" Margin="21,1,-14,1">Удалить панель</TextBlock>
-                <Image Source="/Images/delete.png" VerticalAlignment="Center" Width="18" Margin="-6,3,136,3"/>
-            </Grid>
-        </Button>
+        
+        <Grid VerticalAlignment="Bottom" Background="#131C26" Height="52" Panel.ZIndex="-1">
+            <Button x:Name="addChart" HorizontalAlignment="Left" VerticalAlignment="Center" Width="170" Height="35" Margin="30,0,0,0" Click="addChart_Click" FontSize="16" Background="#131C26" Foreground="White" HorizontalContentAlignment="Center">
+                <Grid>
+                    <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="45,0,15,0">Создать график</TextBlock>
+                    <Image Source="/Images/plus.png" Width="16" Margin="23,3,147,3" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <TextBlock x:Name="dbText" VerticalAlignment="Center" MaxWidth="500" HorizontalAlignment="Center" TextAlignment="Center" Foreground="White" FontSize="20">FIT</TextBlock>
+            <Button x:Name="deletePanel"  HorizontalAlignment="Right" VerticalAlignment="Center" Height="35" Width="170" FontSize="16" Margin="0,0,30,0" Click="deletePanel_Click" BorderBrush="{x:Null}">
+                <Grid>
+                    <TextBlock  VerticalAlignment="Center" Margin="34,0,-5,0">Удалить панель</TextBlock>
+                    <Image Source="/Images/delete.png" VerticalAlignment="Center" Width="16" Margin="3,3,127,3"/>
+                </Grid>
+            </Button>
+        </Grid>
     </Grid>
 </Page>
