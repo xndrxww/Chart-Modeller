@@ -13,8 +13,8 @@
                 <hc:Theme/>
             </ResourceDictionary.MergedDictionaries>
 
-            <Style TargetType="{x:Type Control}">
-                    <Setter Property="FontFamily" Value="Fonts\Dosis" />
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontFamily" Value="Fonts/#Rubik" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

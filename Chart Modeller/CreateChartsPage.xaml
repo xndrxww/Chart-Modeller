@@ -49,13 +49,13 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,40,0,0" HorizontalAlignment="Center">
-                <Button x:Name="addButton" VerticalAlignment="Bottom" Width="130" Background="#131C26" Foreground="White" HorizontalAlignment="Left" Click="addButton_Click" Margin="0,0,20,0">Добавить значения</Button>
-                <Button x:Name="saveButton" VerticalAlignment="Bottom" Width="80" Background="White" Foreground="#131C26" HorizontalAlignment="Right" Click="saveButton_Click" BorderBrush="{x:Null}">Сохранить</Button>
+                <Button x:Name="addButton" VerticalAlignment="Bottom" Width="135" Background="#131C26" Foreground="White" HorizontalAlignment="Left" Click="addButton_Click" Margin="0,0,15,0">Добавить значения</Button>
+                <Button x:Name="saveButton" VerticalAlignment="Bottom" Width="85" Background="White" Foreground="#131C26" HorizontalAlignment="Right" Click="saveButton_Click" BorderBrush="{x:Null}">Сохранить</Button>
             </StackPanel>
         </StackPanel>
         <Rectangle HorizontalAlignment="Right" Width="250" Height="699" VerticalAlignment="Center" RadiusY="12" RadiusX="12" Fill="#131C26" Margin="0,100,25,101"/>
 
-        <Button x:Name="clearButton" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120" Margin="100,0,0,440" Click="clearButton_Click" BorderBrush="{x:Null}">
+        <Button x:Name="clearButton" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="130" Margin="100,0,0,440" Click="clearButton_Click" BorderBrush="{x:Null}">
             <Grid>
                 <TextBlock  VerticalAlignment="Center" Margin="8,0,-8,0">Очистить график</TextBlock>
                 <Image Source="/Images/delete.png" VerticalAlignment="Center"  Margin="-11,0,89,0" Width="15"/>

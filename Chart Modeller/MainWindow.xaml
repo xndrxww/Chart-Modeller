@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Chart Modeller" Height="900 " Width="1300"  
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize" WindowStyle="None">
+        ResizeMode="NoResize" WindowStyle="None" VisualTextRenderingMode="ClearType">
     <Grid>
         <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Height="35" Panel.ZIndex="2">
             <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40,0,0,0" Foreground="White">Chart Modeller</TextBlock>
@@ -17,6 +17,9 @@
         <Grid VerticalAlignment="Top" Height="35" Background="#131C26" MouseDown="Grid_MouseDown" Panel.ZIndex="1">
             <Button x:Name="closeAppButton" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#131C26" BorderBrush="{x:Null}" Click="closeAppButton_Click" Height="35">
                 <Image Source="/Images/close.png" Height="18"/>
+            </Button>
+            <Button x:Name="minimizeAppButton" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#131C26" BorderBrush="{x:Null}" Height="35" Margin="0,0,40,0" Click="minimizeAppButton_Click">
+                <Image Source="/Images/minus.png" Height="18"/>
             </Button>
         </Grid>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" BorderThickness="0"/>

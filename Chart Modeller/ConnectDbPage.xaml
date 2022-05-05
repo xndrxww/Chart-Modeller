@@ -10,16 +10,16 @@
       Title="ConnectDbPage">
 
     <Grid>
-        <TextBlock Text="Подключение к серверу" FontSize="40" Foreground="#131C26" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="142,176,0,0"/>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,350,0,0">
-            <hc:TextBox x:Name="serverTxt" Width="252" Height="40" FontSize="20" TextAlignment="Center" hc:InfoElement.Placeholder="Имя сервера"/>
-            <hc:TextBox x:Name="loginTxt" Width="252" Height="40" FontSize="20" TextAlignment="Center" hc:InfoElement.Placeholder="Логин" Margin="0,50,0,0"/>
-            <hc:TextBox x:Name="passwordTxt" Width="252" Height="40" FontSize="20" TextAlignment="Center" hc:InfoElement.Placeholder="Пароль" Margin="0,50,0,0"/>
-            <Button x:Name="connectButton" Width="124" Height="40" FontSize="20" Click="connectButton_Click" Content="Войти" Margin="0,50,0,0"/>
+        <TextBlock Text="Подключение к серверу" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,233,0,0"/>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="249,360,0,0">
+            <hc:TextBox x:Name="serverTxt" Width="252" Height="40" FontSize="18" TextAlignment="Center" hc:InfoElement.Placeholder="Имя сервера"/>
+            <hc:TextBox x:Name="loginTxt" Width="252" Height="40" FontSize="18" TextAlignment="Center" hc:InfoElement.Placeholder="Логин" Margin="0,50,0,0"/>
+            <hc:TextBox x:Name="passwordTxt" Width="252" Height="40" FontSize="18" TextAlignment="Center" hc:InfoElement.Placeholder="Пароль" Margin="0,50,0,0"/>
+            <Button x:Name="connectButton" Width="124" Height="40" FontSize="20" Click="connectButton_Click" Content="Войти" Margin="0,50,0,0" Background="#131C26" Foreground="White" BorderBrush="{x:Null}"/>
         </StackPanel>
-       
 
-        <Grid Margin="676,-405,-1126,125" Panel.ZIndex="-1">
+
+        <Grid Margin="628,-387,-1078,107" Panel.ZIndex="-1">
 
             <Grid.RenderTransform>
                 <RotateTransform Angle="50"/>
@@ -40,7 +40,7 @@
                     CornerRadius="20"/>
                     <Border Width="700"
                     Height="50"
-                    Background="#383660"
+                    Background="#335882"
                     Margin="150,15,0,0"
                     CornerRadius="20"/>
                 </StackPanel>
@@ -58,7 +58,7 @@
                     CornerRadius="20"/>
                     <Border Width="800"
                     Height="50"
-                    Background="#383660"
+                    Background="#335882"
                     Margin="150,15,0,0"
                     CornerRadius="20"/>
                 </StackPanel>

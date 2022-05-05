@@ -77,3 +77,4 @@ C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\ErrorWind
 C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\ErrorWindow.baml
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\HandyControl.pdb
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\App.baml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\HandyControl.pdb

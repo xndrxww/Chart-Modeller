@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chart_Modeller"
         mc:Ignorable="d"
-        Title="Chart Modeller" Height="350" Width="650" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None">
+        Title="Chart Modeller" Height="350" Width="650" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" VisualTextRenderingMode="ClearType">
     <Grid>
         <Rectangle Stroke="#131C26"></Rectangle>
         <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Height="35" Panel.ZIndex="1">

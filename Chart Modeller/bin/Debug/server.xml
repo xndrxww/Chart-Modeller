@@ -1,218 +1,204 @@
 <?xml version="1.0"?>
 <ArrayOfServer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Server ServerName="LAPTOP-VAME4LJ4\KUZNETSOV" Login="sa" Password="3232">
+  <Server ServerName="SPH-Monitoring" Login="sa" Password="111111@N">
     <Databases>
-      <Database Name="Car_Showroom">
+      <Database Name="Cars">
         <Panels>
-          <Panel Name=" 34234">
+          <Panel Name="asdasdasd">
             <Charts>
-              <Chart Name="ыфв" Type="LineSeries">
+              <Chart Name="asdasd" Type="LineSeries">
                 <LabelsList>
-                  <string>Ежегодный</string>
-                  <string>По беремености</string>
-                  <string>Квартальный</string>
+                  <string>Toyota Chaser</string>
+                  <string>BMW X5</string>
+                  <string>Lada Granta</string>
                 </LabelsList>
                 <Values>
-                  <Value Title="выфвфыв">
+                  <Value Title="asdasd">
                     <ValuesList>
                       <anyType xsi:type="ArrayOfAnyType">
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">2</anyType>
-                        <anyType xsi:type="xsd:int">3</anyType>
+                        <anyType xsi:type="xsd:int">400</anyType>
+                        <anyType xsi:type="xsd:int">500</anyType>
+                        <anyType xsi:type="xsd:int">350</anyType>
                       </anyType>
                     </ValuesList>
                     <StrokeColor>
                       <A>255</A>
-                      <R>191</R>
-                      <G>78</G>
-                      <B>78</B>
+                      <R>146</R>
+                      <G>17</G>
+                      <B>17</B>
                       <ScA>1</ScA>
-                      <ScR>0.520995557</ScR>
-                      <ScG>0.07618538</ScG>
-                      <ScB>0.07618538</ScB>
+                      <ScR>0.287440836</ScR>
+                      <ScG>0.00560539169</ScG>
+                      <ScB>0.00560539169</ScB>
                     </StrokeColor>
                     <FillColor>
                       <A>123</A>
-                      <R>191</R>
-                      <G>78</G>
-                      <B>78</B>
+                      <R>146</R>
+                      <G>17</G>
+                      <B>17</B>
                       <ScA>0.482352942</ScA>
-                      <ScR>0.520995557</ScR>
-                      <ScG>0.07618538</ScG>
-                      <ScB>0.07618538</ScB>
+                      <ScR>0.287440836</ScR>
+                      <ScG>0.00560539169</ScG>
+                      <ScB>0.00560539169</ScB>
+                    </FillColor>
+                  </Value>
+                  <Value Title="asdasd">
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">800000</anyType>
+                        <anyType xsi:type="xsd:int">2000000</anyType>
+                        <anyType xsi:type="xsd:int">750000</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>255</A>
+                      <R>23</R>
+                      <G>146</G>
+                      <B>17</B>
+                      <ScA>1</ScA>
+                      <ScR>0.008568126</ScR>
+                      <ScG>0.287440836</ScG>
+                      <ScB>0.00560539169</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>123</A>
+                      <R>23</R>
+                      <G>146</G>
+                      <B>17</B>
+                      <ScA>0.482352942</ScA>
+                      <ScR>0.008568126</ScR>
+                      <ScG>0.287440836</ScG>
+                      <ScB>0.00560539169</ScB>
                     </FillColor>
                   </Value>
                 </Values>
               </Chart>
-              <Chart Name="ыфвыфв" Type="ColumnSeries">
+              <Chart Name="asd" Type="PieSeries">
                 <LabelsList>
-                  <string>Консультант</string>
-                  <string>Начальник</string>
-                  <string>Главный директор</string>
-                  <string>Менеджер по продажам</string>
-                  <string>Кассир</string>
+                  <string>Toyota Chaser</string>
+                  <string>BMW X5</string>
+                  <string>Lada Granta</string>
                 </LabelsList>
                 <Values>
-                  <Value Title="фывыфв">
+                  <Value>
                     <ValuesList>
                       <anyType xsi:type="ArrayOfAnyType">
-                        <anyType xsi:type="xsd:int">30000</anyType>
-                        <anyType xsi:type="xsd:int">70000</anyType>
-                        <anyType xsi:type="xsd:int">50000</anyType>
-                        <anyType xsi:type="xsd:int">40000</anyType>
-                        <anyType xsi:type="xsd:int">40000</anyType>
+                        <anyType xsi:type="xsd:int">800000</anyType>
+                        <anyType xsi:type="xsd:int">2000000</anyType>
+                        <anyType xsi:type="xsd:int">750000</anyType>
                       </anyType>
                     </ValuesList>
                     <StrokeColor>
-                      <A>255</A>
-                      <R>49</R>
-                      <G>209</G>
-                      <B>49</B>
-                      <ScA>1</ScA>
-                      <ScR>0.0307134446</ScR>
-                      <ScG>0.637596846</ScG>
-                      <ScB>0.0307134446</ScB>
+                      <A>0</A>
+                      <R>0</R>
+                      <G>0</G>
+                      <B>0</B>
+                      <ScA>0</ScA>
+                      <ScR>0</ScR>
+                      <ScG>0</ScG>
+                      <ScB>0</ScB>
                     </StrokeColor>
                     <FillColor>
-                      <A>123</A>
-                      <R>49</R>
-                      <G>209</G>
-                      <B>49</B>
-                      <ScA>0.482352942</ScA>
-                      <ScR>0.0307134446</ScR>
-                      <ScG>0.637596846</ScG>
-                      <ScB>0.0307134446</ScB>
+                      <A>0</A>
+                      <R>0</R>
+                      <G>0</G>
+                      <B>0</B>
+                      <ScA>0</ScA>
+                      <ScR>0</ScR>
+                      <ScG>0</ScG>
+                      <ScB>0</ScB>
                     </FillColor>
                   </Value>
                 </Values>
               </Chart>
-              <Chart Name="asdsad" Type="ColumnSeries">
+              <Chart Name="asdasd" Type="ColumnSeries">
                 <LabelsList>
-                  <string>Автомат</string>
-                  <string>Механическая</string>
-                  <string>Автомат</string>
-                  <string>Механическая</string>
-                  <string>Механическая</string>
-                  <string>Механическая</string>
+                  <string>Toyota Chaser</string>
+                  <string>BMW X5</string>
+                  <string>Lada Granta</string>
                 </LabelsList>
                 <Values>
-                  <Value Title="fddsf">
+                  <Value Title="sadasd">
                     <ValuesList>
                       <anyType xsi:type="ArrayOfAnyType">
-                        <anyType xsi:type="xsd:int">1500</anyType>
-                        <anyType xsi:type="xsd:int">1000</anyType>
-                        <anyType xsi:type="xsd:int">11000</anyType>
-                        <anyType xsi:type="xsd:int">1150</anyType>
-                        <anyType xsi:type="xsd:int">1600</anyType>
-                        <anyType xsi:type="xsd:int">1230</anyType>
+                        <anyType xsi:type="xsd:int">800000</anyType>
+                        <anyType xsi:type="xsd:int">2000000</anyType>
+                        <anyType xsi:type="xsd:int">750000</anyType>
                       </anyType>
                     </ValuesList>
                     <StrokeColor>
                       <A>255</A>
-                      <R>131</R>
-                      <G>39</G>
-                      <B>150</B>
+                      <R>44</R>
+                      <G>217</G>
+                      <B>105</B>
                       <ScA>1</ScA>
-                      <ScR>0.226965874</ScR>
-                      <ScG>0.0202885624</ScG>
-                      <ScB>0.3049873</ScB>
+                      <ScR>0.02518686</ScR>
+                      <ScG>0.693871737</ScG>
+                      <ScB>0.141263291</ScB>
                     </StrokeColor>
                     <FillColor>
                       <A>123</A>
-                      <R>131</R>
-                      <G>39</G>
-                      <B>150</B>
+                      <R>44</R>
+                      <G>217</G>
+                      <B>105</B>
                       <ScA>0.482352942</ScA>
-                      <ScR>0.226965874</ScR>
-                      <ScG>0.0202885624</ScG>
-                      <ScB>0.3049873</ScB>
-                    </FillColor>
-                  </Value>
-                  <Value Title="fddsf">
-                    <ValuesList>
-                      <anyType xsi:type="ArrayOfAnyType">
-                        <anyType xsi:type="xsd:int">250</anyType>
-                        <anyType xsi:type="xsd:int">213</anyType>
-                        <anyType xsi:type="xsd:int">250</anyType>
-                        <anyType xsi:type="xsd:int">185</anyType>
-                        <anyType xsi:type="xsd:int">250</anyType>
-                        <anyType xsi:type="xsd:int">240</anyType>
-                      </anyType>
-                    </ValuesList>
-                    <StrokeColor>
-                      <A>255</A>
-                      <R>76</R>
-                      <G>85</G>
-                      <B>200</B>
-                      <ScA>1</ScA>
-                      <ScR>0.07227185</ScR>
-                      <ScG>0.09084171</ScG>
-                      <ScB>0.577580452</ScB>
-                    </StrokeColor>
-                    <FillColor>
-                      <A>123</A>
-                      <R>76</R>
-                      <G>85</G>
-                      <B>200</B>
-                      <ScA>0.482352942</ScA>
-                      <ScR>0.07227185</ScR>
-                      <ScG>0.09084171</ScG>
-                      <ScB>0.577580452</ScB>
+                      <ScR>0.02518686</ScR>
+                      <ScG>0.693871737</ScG>
+                      <ScB>0.141263291</ScB>
                     </FillColor>
                   </Value>
                 </Values>
               </Chart>
             </Charts>
           </Panel>
-          <Panel Name="dfsadasd">
+          <Panel Name="Панельк">
             <Charts>
-              <Chart Name="asdasd" Type="ColumnSeries">
+              <Chart Name="dfgdfg" Type="ColumnSeries">
                 <LabelsList>
-                  <string>Митин</string>
-                  <string>Кузнецов</string>
-                  <string>Морозов</string>
-                  <string>Мечник</string>
-                  <string>Добрынина</string>
-                  <string>Лапина</string>
-                  <string>Филимонов</string>
+                  <string>Toyota Chaser</string>
+                  <string>BMW X5</string>
+                  <string>Lada Granta</string>
                 </LabelsList>
                 <Values>
-                  <Value Title="sad">
+                  <Value Title="dfgdfg">
                     <ValuesList>
                       <anyType xsi:type="ArrayOfAnyType">
-                        <anyType xsi:type="xsd:int">30000</anyType>
-                        <anyType xsi:type="xsd:int">70000</anyType>
-                        <anyType xsi:type="xsd:int">40000</anyType>
-                        <anyType xsi:type="xsd:int">40000</anyType>
-                        <anyType xsi:type="xsd:int">30000</anyType>
-                        <anyType xsi:type="xsd:int">30000</anyType>
-                        <anyType xsi:type="xsd:int">30000</anyType>
+                        <anyType xsi:type="xsd:int">800000</anyType>
+                        <anyType xsi:type="xsd:int">2000000</anyType>
+                        <anyType xsi:type="xsd:int">750000</anyType>
                       </anyType>
                     </ValuesList>
                     <StrokeColor>
                       <A>255</A>
-                      <R>129</R>
-                      <G>22</G>
-                      <B>22</B>
+                      <R>30</R>
+                      <G>164</G>
+                      <B>228</B>
                       <ScA>1</ScA>
-                      <ScR>0.2195262</ScR>
-                      <ScG>0.008023193</ScG>
-                      <ScB>0.008023193</ScB>
+                      <ScR>0.0129830325</ScR>
+                      <ScG>0.3712377</ScG>
+                      <ScB>0.7758222</ScB>
                     </StrokeColor>
                     <FillColor>
                       <A>123</A>
-                      <R>129</R>
-                      <G>22</G>
-                      <B>22</B>
+                      <R>30</R>
+                      <G>164</G>
+                      <B>228</B>
                       <ScA>0.482352942</ScA>
-                      <ScR>0.2195262</ScR>
-                      <ScG>0.008023193</ScG>
-                      <ScB>0.008023193</ScB>
+                      <ScR>0.0129830325</ScR>
+                      <ScG>0.3712377</ScG>
+                      <ScB>0.7758222</ScB>
                     </FillColor>
                   </Value>
                 </Values>
               </Chart>
             </Charts>
+          </Panel>
+        </Panels>
+      </Database>
+      <Database Name="model">
+        <Panels>
+          <Panel Name="sadasd">
+            <Charts />
           </Panel>
         </Panels>
       </Database>

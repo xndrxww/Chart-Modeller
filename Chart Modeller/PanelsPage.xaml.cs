@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Shapes;
 using System.Xml.Serialization;
 
 namespace Chart_Modeller
@@ -42,6 +43,14 @@ namespace Chart_Modeller
                     {
                         foreach (var panel in database.Panels)
                         {
+                            Rectangle rectangle = new Rectangle
+                            {
+                                Margin = new Thickness(0, 0, 0, 80),
+                                Width = 1200,
+                                Height = 500,
+                                Fill = new SolidColorBrush(Color.FromRgb(0, 0, 0))
+                            };
+
                             Button panelButton = new Button
                             {
                                 Margin = new Thickness(0, 50, 0, 0),

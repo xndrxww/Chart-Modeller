@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Chart_Modeller"
         xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="Chart_Modeller.ChooseChartWindow"
         mc:Ignorable="d"
-        Title="Chart Modeller" Height="500" Width="720" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None">
+        Title="Chart Modeller" Height="500" Width="720" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None" VisualTextRenderingMode="ClearType">
     <Grid>
         <Rectangle Stroke="#131C26"></Rectangle>
         <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Height="35" Panel.ZIndex="1">

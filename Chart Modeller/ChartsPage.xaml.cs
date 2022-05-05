@@ -25,12 +25,7 @@ namespace Chart_Modeller
         private CartesianChart CartesianChart;
         private PieChart PieChart;
 
-        //private LineSeries LineSeries;
-        //private ColumnSeries ColumnSeries;
-        //private StackedAreaSeries StackedAreaSeries;
-        //private HeatSeries HeatSeries;
         private PieSeries PieSeries;
-        //private StepLineSeries StepLineSeries;
 
 
         public ChartsPage()
@@ -127,20 +122,32 @@ namespace Chart_Modeller
         {
             TextBlock chartName = new TextBlock
             {
-                Margin = new Thickness(5),
                 Text = chart.Name,
                 TextAlignment = TextAlignment.Center,
-                FontSize = 25
+                FontSize = 25,
+                HorizontalAlignment = HorizontalAlignment.Center,
             };
 
             Button deleteButton = new Button
             {
                 Width = 70,
                 Height = 35,
-                Margin = new Thickness(950, 0, 0, 0),
+                HorizontalAlignment = HorizontalAlignment.Right,
                 ToolTip = "Удалить " + chartName.Text,
-                BorderBrush = null
+                BorderBrush = null,
+                VerticalAlignment = VerticalAlignment.Center
             };
+
+            Grid grid = new Grid
+            {
+                Width = 1000,
+                Height = 50,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                Margin = new Thickness(0,5,0,0)
+            };
+
+            grid.Children.Add(chartName);
+            grid.Children.Add(deleteButton);
 
             deleteButton.Content = new Image
             {
@@ -185,8 +192,7 @@ namespace Chart_Modeller
                     CreatePieChart(value);
                 }
 
-                sp.Children.Add(chartName);
-                sp.Children.Add(deleteButton);
+                sp.Children.Add(grid);
                 sp.Children.Add(PieChart);
             }
             else
@@ -241,8 +247,7 @@ namespace Chart_Modeller
                 axis.Labels = chart.LabelsList;
                 CartesianChart.AxisX.Add(axis);
 
-                sp.Children.Add(chartName);
-                sp.Children.Add(deleteButton);
+                sp.Children.Add(grid);
                 sp.Children.Add(CartesianChart);
             }
         }

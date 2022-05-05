@@ -33,7 +33,7 @@ namespace Chart_Modeller
         public List<string> LabelsList { get; set; }
 
         private Chart Chart = new Chart();
-        private Value Value;
+        private Value Value = new Value();
 
         public CreateChartsPage(string pageName)
         {
@@ -292,7 +292,7 @@ namespace Chart_Modeller
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
             SeriesCollection.Clear();
-            Value.ValuesList.Clear();
+                Value.ValuesList.Clear();
             DataContext = null;
             Chart = new Chart();
             chartName.Text = "";

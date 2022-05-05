@@ -15,16 +15,16 @@
         </ScrollViewer>
 
         <Grid VerticalAlignment="Bottom" Background="#131C26" Height="52" Panel.ZIndex="-1">
-            <Button x:Name="addPanel" HorizontalAlignment="Left" VerticalAlignment="Center" Width="170" Height="35" Click="addPanel_Click" FontSize="16" Margin="30,0,0,0" Background="#131C26" Foreground="White" HorizontalContentAlignment="Center">
+            <Button x:Name="addPanel" HorizontalAlignment="Left" VerticalAlignment="Center" Width="175" Height="35" Click="addPanel_Click" FontSize="16" Margin="30,0,0,0" Background="#131C26" Foreground="White" HorizontalContentAlignment="Center">
                 <Grid>
-                    <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="45,0,15,0">Создать панель</TextBlock>
-                    <Image Source="/Images/plus.png" Width="16" Margin="23,3,147,3" VerticalAlignment="Center"/>
+                    <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50,0,24,0">Создать панель</TextBlock>
+                    <Image Source="/Images/plus.png" Width="16" Margin="23,0,147,0" VerticalAlignment="Center"/>
                 </Grid>
             </Button>
             <Button x:Name="exitButton" HorizontalAlignment="Right" VerticalAlignment="Center" Height="35" FontSize="16" HorizontalContentAlignment="Center" Margin="0,0,30,0" Click="exitButton_Click" ToolTip="{Binding Path=ServerName}" BorderBrush="{x:Null}" Width="100">
                 <Grid>
-                    <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="34,0,12,0">Выход</TextBlock>
-                    <Image Source="/Images/exit.png" Width="16" Margin="11,0,69,3" VerticalAlignment="Bottom"/>
+                    <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="31,0,15,0">Выход</TextBlock>
+                    <Image Source="/Images/exit.png" Width="16" VerticalAlignment="Center" Margin="9,0,67,0"/>
                 </Grid>
             </Button>
             <hc:ComboBox x:Name="dbBox" VerticalAlignment="Center" Width="200" DisplayMemberPath="name" SelectedValuePath="name" SelectionChanged="dbBox_SelectionChanged" BorderBrush="{x:Null}" SelectionBrush="#FF131C26"/>
