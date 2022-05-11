@@ -15,12 +15,16 @@ namespace Chart_Modeller
             
         }
 
-        public Server(string serverName, string login, string password)
+        public Server(string serverName, string login, string password, string serverType)
         {
             ServerName = serverName;
             Login = login;
             Password = password;
+            ServerType = serverType;
         }
+
+        [XmlAttribute]
+        public string ServerType { get; set; }
 
         [XmlAttribute]
         public string ServerName { get; set; }

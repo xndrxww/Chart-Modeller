@@ -39,20 +39,23 @@ namespace Chart_Modeller
 
                 int i = 0;
 
-                foreach (var item in MainWindow.ServersList)
+                foreach (var server in MainWindow.ServersList)
                 {
-                    if (item.Databases.Count > 0)
+                    if (server.ServerName == MainWindow.Server.ServerName)
                     {
-                        foreach (var item2 in item.Databases.ToArray())
+                        if (server.Databases.Count > 0)
                         {
-                            if (item2.Name == DbName)
+                            foreach (var item2 in server.Databases.ToArray())
                             {
-                                item2.Panels.Add(Panels);
-                                i++;
-                                this.Close();
-                                panelsPage = new PanelsPage();
-                                panelsPage.dbBox.SelectedIndex = MainWindow.DbIndex;
-                                MainWindow.MainFrameInstance.Navigate(panelsPage);
+                                if (item2.Name == DbName)
+                                {
+                                    item2.Panels.Add(Panels);
+                                    i++;
+                                    this.Close();
+                                    panelsPage = new PanelsPage();
+                                    panelsPage.dbBox.SelectedIndex = MainWindow.DbIndex;
+                                    MainWindow.MainFrameInstance.Navigate(panelsPage);
+                                }
                             }
                         }
                     }

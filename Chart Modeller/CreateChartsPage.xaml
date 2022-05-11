@@ -63,7 +63,7 @@
         </Button>
         <TextBlock x:Name="chartName" VerticalAlignment="Center" FontSize="25" Margin="0,0,270,5" TextAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         <Grid VerticalAlignment="Bottom" Background="#131C26" Height="52" Panel.ZIndex="-1">
-            <hc:ComboBox  x:Name="tablesBox" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" DisplayMemberPath="TABLE_NAME" SelectedValuePath="TABLE_NAME" SelectionChanged="tablesBox_SelectionChanged" BorderBrush="{x:Null}"/>
+            <hc:ComboBox  x:Name="tablesBox" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" SelectionChanged="tablesBox_SelectionChanged" BorderBrush="{x:Null}"/>
         </Grid>
     </Grid>
 </Page>

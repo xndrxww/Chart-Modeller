@@ -46,21 +46,24 @@ namespace Chart_Modeller
         {
             foreach (var server in MainWindow.ServersList)
             {
-                foreach (var database in server.Databases)
+                if (server.ServerName == MainWindow.Server.ServerName)
                 {
-                    if (database.Name == MainWindow.Database.Name)
+                    foreach (var database in server.Databases)
                     {
-                        foreach (var panel in database.Panels)
+                        if (database.Name == MainWindow.Database.Name)
                         {
-                            if (panel.Name == PanelName)
+                            foreach (var panel in database.Panels)
                             {
-                                database.Panels.Remove(panel);
+                                if (panel.Name == PanelName)
+                                {
+                                    database.Panels.Remove(panel);
 
-                                PanelsPage panelsPage = new PanelsPage();
-                                panelsPage.dbBox.SelectedIndex = MainWindow.DbIndex;
-                                MainWindow.MainFrameInstance.Navigate(panelsPage);
+                                    PanelsPage panelsPage = new PanelsPage();
+                                    panelsPage.dbBox.SelectedIndex = MainWindow.DbIndex;
+                                    MainWindow.MainFrameInstance.Navigate(panelsPage);
 
-                                break;
+                                    break;
+                                }
                             }
                         }
                     }
@@ -99,17 +102,20 @@ namespace Chart_Modeller
 
             foreach (var server in MainWindow.ServersList)
             {
-                foreach (var database in server.Databases)
+                if (server.ServerName == MainWindow.Server.ServerName)
                 {
-                    if (database.Name == MainWindow.Database.Name)
+                    foreach (var database in server.Databases)
                     {
-                        foreach (var panel in database.Panels)
+                        if (database.Name == MainWindow.Database.Name)
                         {
-                            if (panel.Name == MainWindow.Panel.Name)
+                            foreach (var panel in database.Panels)
                             {
-                                foreach (var chart in panel.Charts)
+                                if (panel.Name == MainWindow.Panel.Name)
                                 {
-                                    CreateChart(chart);
+                                    foreach (var chart in panel.Charts)
+                                    {
+                                        CreateChart(chart);
+                                    }
                                 }
                             }
                         }
@@ -143,7 +149,7 @@ namespace Chart_Modeller
                 Width = 1000,
                 Height = 50,
                 HorizontalAlignment = HorizontalAlignment.Center,
-                Margin = new Thickness(0,5,0,0)
+                Margin = new Thickness(0, 5, 0, 0)
             };
 
             grid.Children.Add(chartName);
@@ -159,21 +165,24 @@ namespace Chart_Modeller
             {
                 foreach (var server in MainWindow.ServersList)
                 {
-                    foreach (var database in server.Databases)
+                    if (server.ServerName == MainWindow.Server.ServerName)
                     {
-                        if (database.Name == MainWindow.Database.Name)
+                        foreach (var database in server.Databases)
                         {
-                            foreach (var panel in database.Panels)
+                            if (database.Name == MainWindow.Database.Name)
                             {
-                                if (panel.Name == PanelName)
+                                foreach (var panel in database.Panels)
                                 {
-                                    foreach (var item in panel.Charts)
+                                    if (panel.Name == PanelName)
                                     {
-                                        if (item.Name == chart.Name)
+                                        foreach (var item in panel.Charts)
                                         {
-                                            panel.Charts.Remove(item);
-                                            MainWindow.MainFrameInstance.Navigate(new ChartsPage());
-                                            break;
+                                            if (item.Name == chart.Name)
+                                            {
+                                                panel.Charts.Remove(item);
+                                                MainWindow.MainFrameInstance.Navigate(new ChartsPage());
+                                                break;
+                                            }
                                         }
                                     }
                                 }
@@ -208,23 +217,31 @@ namespace Chart_Modeller
                         Height = 420
                     };
 
-                    if (value.ValuesList.Count.GetType() == typeof(int))
+                    Type type = null;
+
+                    foreach (ArrayList values in value.ValuesList)
                     {
-                        foreach (ArrayList values in value.ValuesList)
+                        foreach (var item in values)
+                        {
+                            if (item.GetType() == typeof(int) || item.GetType() == typeof(long) || item.GetType() == typeof(decimal) || item.GetType() == typeof(double))
+                            {
+                                type = item.GetType();
+                            }
+                        }
+
+                        if (type == typeof(int))
                         {
                             series.Values = new ChartValues<int>(values.OfType<int>());
                         }
-                    }
-                    else if (value.ValuesList.Count.GetType() == typeof(decimal))
-                    {
-                        foreach (ArrayList values in value.ValuesList)
+                        else if (type == typeof(long))
+                        {
+                            series.Values = new ChartValues<long>(values.OfType<long>());
+                        }
+                        else if (type == typeof(decimal))
                         {
                             series.Values = new ChartValues<decimal>(values.OfType<decimal>());
                         }
-                    }
-                    else if (value.ValuesList.Count.GetType() == typeof(double))
-                    {
-                        foreach (ArrayList values in value.ValuesList)
+                        else if (type == typeof(double))
                         {
                             series.Values = new ChartValues<double>(values.OfType<double>());
                         }
@@ -260,9 +277,19 @@ namespace Chart_Modeller
                 Height = 350
             };
 
-            if (value.ValuesList.Count.GetType() == typeof(int))
+            Type type = null;
+
+            foreach (ArrayList values in value.ValuesList)
             {
-                foreach (ArrayList values in value.ValuesList)
+                foreach (var item in values)
+                {
+                    if (item.GetType() == typeof(int) || item.GetType() == typeof(long) || item.GetType() == typeof(decimal) || item.GetType() == typeof(double))
+                    {
+                        type = item.GetType();
+                    }
+                }
+
+                if (type == typeof(int))
                 {
                     foreach (int item in values)
                     {
@@ -273,10 +300,18 @@ namespace Chart_Modeller
                         PieSeries.DataLabels = true;
                     }
                 }
-            }
-            else if (value.ValuesList.Count.GetType() == typeof(decimal))
-            {
-                foreach (ArrayList values in value.ValuesList)
+                else if (type == typeof(long))
+                {
+                    foreach (long item in values)
+                    {
+                        PieSeries = new PieSeries();
+                        PieSeries.Values = new ChartValues<long> { item };
+                        SeriesCollection.Add(PieSeries);
+                        PieSeries.Title = value.Title;
+                        PieSeries.DataLabels = true;
+                    }
+                }
+                else if (type == typeof(decimal))
                 {
                     foreach (decimal item in values)
                     {
@@ -287,10 +322,7 @@ namespace Chart_Modeller
                         PieSeries.DataLabels = true;
                     }
                 }
-            }
-            else if (value.ValuesList.Count.GetType() == typeof(double))
-            {
-                foreach (ArrayList values in value.ValuesList)
+                else if (type == typeof(double))
                 {
                     foreach (double item in values)
                     {

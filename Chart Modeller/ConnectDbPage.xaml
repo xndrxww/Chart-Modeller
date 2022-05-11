@@ -9,13 +9,25 @@
       d:DesignHeight="900" d:DesignWidth="1300"
       Title="ConnectDbPage">
 
+    <Page.Resources>
+        <DataTemplate x:Key="cmbTemplate">
+            <WrapPanel Margin="0 5 0 5" Height="18">
+                <Image Width="20" Height="20" Stretch="Fill" Source="{Binding Photo}" VerticalAlignment="Center" Margin="0,0,15,0"/>
+                <TextBlock Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+            </WrapPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+
+
     <Grid>
-        <TextBlock Text="Подключение к серверу" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,233,0,0"/>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="249,360,0,0">
+        <TextBlock Text="Подключение к серверу" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,210,0,0"/>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="249,336,0,0">
             <hc:TextBox x:Name="serverTxt" Width="252" Height="40" FontSize="18" TextAlignment="Center" hc:InfoElement.Placeholder="Имя сервера"/>
             <hc:TextBox x:Name="loginTxt" Width="252" Height="40" FontSize="18" TextAlignment="Center" hc:InfoElement.Placeholder="Логин" Margin="0,50,0,0"/>
             <hc:TextBox x:Name="passwordTxt" Width="252" Height="40" FontSize="18" TextAlignment="Center" hc:InfoElement.Placeholder="Пароль" Margin="0,50,0,0"/>
-            <Button x:Name="connectButton" Width="124" Height="40" FontSize="20" Click="connectButton_Click" Content="Войти" Margin="0,50,0,0" Background="#131C26" Foreground="White" BorderBrush="{x:Null}"/>
+            <hc:ComboBox x:Name="serverTypeBox" Width="252" Margin="0,50,0,0" ItemTemplate="{StaticResource cmbTemplate}" SelectedValuePath="Name"/>
+            <Button x:Name="connectButton" Width="124" Height="40" FontSize="20" Click="connectButton_Click" Content="Войти" Margin="0,40,0,0" Background="#131C26" Foreground="White" BorderBrush="{x:Null}"/>
         </StackPanel>
 
 

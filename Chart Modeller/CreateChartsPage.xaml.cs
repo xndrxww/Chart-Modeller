@@ -2,6 +2,7 @@
 using LiveCharts;
 using LiveCharts.Defaults;
 using LiveCharts.Wpf;
+using Npgsql;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -38,9 +39,10 @@ namespace Chart_Modeller
         public CreateChartsPage(string pageName)
         {
             InitializeComponent();
+
             PageName = pageName;
 
-            connectionString = $@"Data Source={MainWindow.Server.ServerName};Initial Catalog={MainWindow.Database.Name};Persist Security Info=True;User ID={MainWindow.Server.Login};Password={MainWindow.Server.Password}";
+            SetConnectionString();
 
             if (PageName == "Создание круговой диаграммы")
             {
@@ -48,29 +50,75 @@ namespace Chart_Modeller
             }
         }
 
+        private void SetConnectionString()
+        {
+            if (MainWindow.Server.ServerType == "MS SQL Server")
+            {
+                connectionString = $@"Data Source={MainWindow.Server.ServerName};Initial Catalog={MainWindow.Database.Name};Persist Security Info=True;User ID={MainWindow.Server.Login};Password={MainWindow.Server.Password}";
+            }
+            else if (MainWindow.Server.ServerType == "PostgreSQL")
+            {
+                connectionString = $@"Host={MainWindow.Server.ServerName};Username={MainWindow.Server.Login};Password={MainWindow.Server.Password};Database={MainWindow.Database.Name}";
+            }
+        }
+
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             MainWindow.PageName.Text = PageName;
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            if (MainWindow.Server.ServerType == "MS SQL Server")
             {
-                Table = new DataTable();
-                new SqlDataAdapter("select TABLE_NAME from INFORMATION_SCHEMA.TABLES", connection).Fill(Table);
-
-                tablesBox.ItemsSource = Table.DefaultView;
-                tablesBox.SelectedIndex = tablesBox.Items.Count - 1;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    Table = new DataTable();
+                    new SqlDataAdapter("select table_name from INFORMATION_SCHEMA.TABLES", connection).Fill(Table);
+                    tablesBox.SelectedValuePath = "table_name";
+                    tablesBox.DisplayMemberPath = "table_name";
+                }
             }
+
+            else if (MainWindow.Server.ServerType == "PostgreSQL")
+            {
+                using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+                {
+                    Table = new DataTable();
+                    new NpgsqlDataAdapter("SELECT * FROM pg_catalog.pg_tables WHERE schemaname != 'pg_catalog' AND schemaname != 'information_schema';", connection).Fill(Table);
+                }
+                tablesBox.DisplayMemberPath = "tablename";
+                tablesBox.SelectedValuePath = "tablename";
+            }
+
+            tablesBox.ItemsSource = Table.DefaultView;
+            tablesBox.SelectedIndex = tablesBox.Items.Count - 1;
         }
 
         private void tablesBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            if (MainWindow.Server.ServerType == "MS SQL Server")
             {
-                Table = new DataTable();
-                new SqlDataAdapter($"select * from [{MainWindow.Database.Name}].[dbo].[{tablesBox.SelectedValue}]", connection).Fill(Table);
-
-                dataGrid.ItemsSource = Table.DefaultView;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    Table = new DataTable();
+                    new SqlDataAdapter($"select * from [{MainWindow.Database.Name}].[dbo].[{tablesBox.SelectedValue}]", connection).Fill(Table);
+                }
             }
+            else if (MainWindow.Server.ServerType == "PostgreSQL")
+            {
+                using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+                {
+                    Table = new DataTable();
+                    try
+                    {
+                      new NpgsqlDataAdapter($"select * from {tablesBox.SelectedValue}", connection).Fill(Table);
+                    }
+                    catch (Exception)
+                    {
+                        
+                    }
+                }
+            }
+
+            dataGrid.ItemsSource = Table.DefaultView;
 
             FillBox();
         }
@@ -82,12 +130,12 @@ namespace Chart_Modeller
 
             foreach (DataColumn column in Table.Columns)
             {
-                if (column.DataType == typeof(int) || column.DataType == typeof(decimal) || column.DataType == typeof(double))
+                if (column.DataType == typeof(int) || column.DataType == typeof(decimal) || column.DataType == typeof(double) || column.DataType == typeof(Int64))
                 {
                     columnsBox.Items.Add(column.ColumnName);
                 }
 
-                if (column.DataType == typeof(string))
+                if (column.DataType == typeof(string) || column.DataType == typeof(char) || column.DataType == typeof(DateTime))
                 {
                     xBox.Items.Add(column.ColumnName);
                 }
@@ -96,10 +144,21 @@ namespace Chart_Modeller
 
         private void GetChartsData(ComboBox comboBox)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            if (MainWindow.Server.ServerType == "MS SQL Server")
             {
-                Table = new DataTable();
-                new SqlDataAdapter($"select {comboBox.SelectedItem} from [{MainWindow.Database.Name}].[dbo].[{tablesBox.SelectedValue}]", connection).Fill(Table);
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    Table = new DataTable();
+                    new SqlDataAdapter($"select {comboBox.SelectedItem} from [{MainWindow.Database.Name}].[dbo].[{tablesBox.SelectedValue}]", connection).Fill(Table);
+                }
+            }
+            else if (MainWindow.Server.ServerType == "PostgreSQL")
+            {
+                using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+                {
+                    Table = new DataTable();
+                    new NpgsqlDataAdapter($"select {comboBox.SelectedItem} from {tablesBox.SelectedValue}", connection).Fill(Table);
+                }
             }
         }
 
@@ -165,6 +224,14 @@ namespace Chart_Modeller
                     };
                     series.Values = new ChartValues<int>(Values.OfType<int>());
                 }
+                else if (Table.Columns[0].DataType == typeof(long))
+                {
+                    foreach (DataRow row in Table.Rows)
+                    {
+                        Values.Add((long)row[column.ColumnName]);
+                    };
+                    series.Values = new ChartValues<long>(Values.OfType<long>());
+                }
                 else if (Table.Columns[0].DataType == typeof(decimal))
                 {
                     foreach (DataRow row in Table.Rows)
@@ -204,7 +271,20 @@ namespace Chart_Modeller
                         Values.Add((int)row[column.ColumnName]);
 
                         PieSeries = new PieSeries();
-                        PieSeries.Values = new ChartValues<int> {(int)row[column.ColumnName]};
+                        PieSeries.Values = new ChartValues<int> { (int)row[column.ColumnName] };
+                        SeriesCollection.Add(PieSeries);
+                        PieSeries.Title = lineNameTxt.Text;
+                        PieSeries.DataLabels = true;
+                    };
+                }
+                else if (Table.Columns[0].DataType == typeof(long))
+                {
+                    foreach (DataRow row in Table.Rows)
+                    {
+                        Values.Add((long)row[column.ColumnName]);
+
+                        PieSeries = new PieSeries();
+                        PieSeries.Values = new ChartValues<long> { (long)row[column.ColumnName] };
                         SeriesCollection.Add(PieSeries);
                         PieSeries.Title = lineNameTxt.Text;
                         PieSeries.DataLabels = true;
@@ -217,7 +297,7 @@ namespace Chart_Modeller
                         Values.Add((decimal)row[column.ColumnName]);
 
                         PieSeries = new PieSeries();
-                        PieSeries.Values = new ChartValues<decimal> {(decimal)row[column.ColumnName]};
+                        PieSeries.Values = new ChartValues<decimal> { (decimal)row[column.ColumnName] };
                         SeriesCollection.Add(PieSeries);
                         PieSeries.Title = lineNameTxt.Text;
                         PieSeries.DataLabels = true;
@@ -250,7 +330,7 @@ namespace Chart_Modeller
                 series.Title = lineNameTxt.Text;
                 Value.Title = series.Title;
             }
-            
+
             chartName.Text = chartNameTxt.Text;
 
             if (colorPicker.SelectedBrush.Color.R != 255 && colorPicker.SelectedBrush.Color.G != 255 && colorPicker.SelectedBrush.Color.B != 255 && series != PieSeries)
@@ -279,7 +359,8 @@ namespace Chart_Modeller
             {
                 foreach (DataRow row in Table.Rows)
                 {
-                    LabelsList.Add((string)row[column.ColumnName]);
+                    string labelRow = row[column.ColumnName].ToString();
+                    LabelsList.Add(labelRow);
                 };
             }
 
@@ -292,7 +373,7 @@ namespace Chart_Modeller
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
             SeriesCollection.Clear();
-                Value.ValuesList.Clear();
+            Value.ValuesList.Clear();
             DataContext = null;
             Chart = new Chart();
             chartName.Text = "";
@@ -302,15 +383,18 @@ namespace Chart_Modeller
         {
             foreach (var server in MainWindow.ServersList)
             {
-                foreach (var database in server.Databases)
+                if (server.ServerName == MainWindow.Server.ServerName)
                 {
-                    if (database.Name == MainWindow.Database.Name)
+                    foreach (var database in server.Databases)
                     {
-                        foreach (var panel in database.Panels)
+                        if (database.Name == MainWindow.Database.Name)
                         {
-                            if (panel.Name == MainWindow.Panel.Name)
+                            foreach (var panel in database.Panels)
                             {
-                                panel.Charts.Add(Chart);
+                                if (panel.Name == MainWindow.Panel.Name)
+                                {
+                                    panel.Charts.Add(Chart);
+                                }
                             }
                         }
                     }

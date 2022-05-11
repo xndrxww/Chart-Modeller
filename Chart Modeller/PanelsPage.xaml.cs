@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
@@ -12,10 +13,13 @@ namespace Chart_Modeller
 {
     public partial class PanelsPage : Page
     {
+        private string connectionString;
+
         public PanelsPage()
         {
             InitializeComponent();
-            FillDbBox();
+            CheckServerType();
+            //FillDbBox();
             GetPanels();
             this.DataContext = MainWindow.Server;
         }
@@ -29,6 +33,36 @@ namespace Chart_Modeller
                 dbBox.ItemsSource = table.DefaultView;
                 dbBox.SelectedIndex = dbBox.Items.Count - 1;
             }
+        }
+
+        private void CheckServerType()
+        {
+            if (MainWindow.Server.ServerType == "MS SQL Server")
+            {
+                connectionString = $@"Data Source={MainWindow.Server.ServerName};Initial Catalog=master;Persist Security Info=True;User ID={MainWindow.Server.Login};Password={MainWindow.Server.Password}";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    var table = new DataTable();
+                    new SqlDataAdapter("select name from sys.databases", connection).Fill(table);
+                    dbBox.ItemsSource = table.DefaultView;
+                    dbBox.SelectedValuePath = "name";
+                    dbBox.DisplayMemberPath = "name";
+                }
+            }
+            else if (MainWindow.Server.ServerType == "PostgreSQL")
+            {
+                connectionString = $@"Host={MainWindow.Server.ServerName};Username={MainWindow.Server.Login};Password={MainWindow.Server.Password};Database=postgres";
+                using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+                {
+                    var table = new DataTable();
+                    new NpgsqlDataAdapter("SELECT datname FROM pg_database WHERE datistemplate = false;", connection).Fill(table);
+                    dbBox.ItemsSource = table.DefaultView;
+                    dbBox.SelectedValuePath = "datname";
+                    dbBox.DisplayMemberPath = "datname";
+                }
+            }
+
+            dbBox.SelectedIndex = dbBox.Items.Count - 1;
         }
 
         public void GetPanels()

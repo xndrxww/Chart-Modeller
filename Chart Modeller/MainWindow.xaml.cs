@@ -15,6 +15,8 @@ namespace Chart_Modeller
 
         public static Frame MainFrameInstance;
 
+        public static string ConnectionString;
+
         //Сервер
         public static List<Server> ServersList;
         public static Server Server;
@@ -66,6 +68,7 @@ namespace Chart_Modeller
                 }
                 foreach (var server in ServersList)
                 {
+                    Server.ServerType = server.ServerType;
                     Server.ServerName = server.ServerName;
                     Server.Login = server.Login;
                     Server.Password = server.Password;

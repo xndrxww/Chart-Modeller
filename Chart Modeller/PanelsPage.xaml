@@ -27,7 +27,7 @@
                     <Image Source="/Images/exit.png" Width="16" VerticalAlignment="Center" Margin="9,0,67,0"/>
                 </Grid>
             </Button>
-            <hc:ComboBox x:Name="dbBox" VerticalAlignment="Center" Width="200" DisplayMemberPath="name" SelectedValuePath="name" SelectionChanged="dbBox_SelectionChanged" BorderBrush="{x:Null}" SelectionBrush="#FF131C26"/>
+            <hc:ComboBox x:Name="dbBox" VerticalAlignment="Center" Width="200" SelectionChanged="dbBox_SelectionChanged" BorderBrush="{x:Null}" SelectionBrush="#FF131C26"/>
         </Grid>
     </Grid>
 </Page>
