@@ -19,20 +19,8 @@ namespace Chart_Modeller
         {
             InitializeComponent();
             CheckServerType();
-            //FillDbBox();
             GetPanels();
             this.DataContext = MainWindow.Server;
-        }
-        private void FillDbBox()
-        {
-            string connectionString = $@"Data Source={MainWindow.Server.ServerName};Initial Catalog=master;Persist Security Info=True;User ID={MainWindow.Server.Login};Password={MainWindow.Server.Password}";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                var table = new DataTable();
-                new SqlDataAdapter("select name from sys.databases", connection).Fill(table);
-                dbBox.ItemsSource = table.DefaultView;
-                dbBox.SelectedIndex = dbBox.Items.Count - 1;
-            }
         }
 
         private void CheckServerType()

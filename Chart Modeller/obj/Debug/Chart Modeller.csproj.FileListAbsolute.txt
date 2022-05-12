@@ -108,3 +108,33 @@ C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\Syste
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\System.Threading.Channels.xml
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\bin\Debug\System.ValueTuple.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\Npgsql.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Buffers.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Collections.Immutable.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Memory.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Text.Json.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Threading.Channels.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.ValueTuple.dll
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\Npgsql.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Buffers.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Collections.Immutable.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Memory.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Text.Json.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Threading.Channels.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\bin\Debug\System.ValueTuple.xml

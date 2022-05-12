@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -26,6 +27,8 @@ namespace Chart_Modeller
         private PieChart PieChart;
 
         private PieSeries PieSeries;
+
+        private List<PieSeries> PieSeriesList = new List<PieSeries>();
 
 
         public ChartsPage()
@@ -198,7 +201,7 @@ namespace Chart_Modeller
             {
                 foreach (var value in chart.Values)
                 {
-                    CreatePieChart(value);
+                    CreatePieChart(value, chart);
                 }
 
                 sp.Children.Add(grid);
@@ -223,7 +226,7 @@ namespace Chart_Modeller
                     {
                         foreach (var item in values)
                         {
-                            if (item.GetType() == typeof(int) || item.GetType() == typeof(long) || item.GetType() == typeof(decimal) || item.GetType() == typeof(double))
+                            if (item.GetType() == typeof(int) || item.GetType() == typeof(long) || item.GetType() == typeof(decimal) || item.GetType() == typeof(double) || item.GetType() == typeof(short))
                             {
                                 type = item.GetType();
                             }
@@ -236,6 +239,10 @@ namespace Chart_Modeller
                         else if (type == typeof(long))
                         {
                             series.Values = new ChartValues<long>(values.OfType<long>());
+                        }
+                        else if (type == typeof(short))
+                        {
+                            series.Values = new ChartValues<short>(values.OfType<short>());
                         }
                         else if (type == typeof(decimal))
                         {
@@ -269,12 +276,13 @@ namespace Chart_Modeller
             }
         }
 
-        private void CreatePieChart(Value value)
+        private void CreatePieChart(Value value, Chart chart)
         {
             PieChart = new PieChart
             {
                 Margin = new Thickness(0, 0, 0, 80),
-                Height = 350
+                Height = 350,
+                LegendLocation = LegendLocation.Bottom
             };
 
             Type type = null;
@@ -283,7 +291,7 @@ namespace Chart_Modeller
             {
                 foreach (var item in values)
                 {
-                    if (item.GetType() == typeof(int) || item.GetType() == typeof(long) || item.GetType() == typeof(decimal) || item.GetType() == typeof(double))
+                    if (item.GetType() == typeof(int) || item.GetType() == typeof(long) || item.GetType() == typeof(decimal) || item.GetType() == typeof(double) || item.GetType() == typeof(short))
                     {
                         type = item.GetType();
                     }
@@ -298,6 +306,7 @@ namespace Chart_Modeller
                         SeriesCollection.Add(PieSeries);
                         PieSeries.Title = value.Title;
                         PieSeries.DataLabels = true;
+                        PieSeriesList.Add(PieSeries);
                     }
                 }
                 else if (type == typeof(long))
@@ -309,6 +318,19 @@ namespace Chart_Modeller
                         SeriesCollection.Add(PieSeries);
                         PieSeries.Title = value.Title;
                         PieSeries.DataLabels = true;
+                        PieSeriesList.Add(PieSeries);
+                    }
+                }
+                else if (type == typeof(short))
+                {
+                    foreach (short item in values)
+                    {
+                        PieSeries = new PieSeries();
+                        PieSeries.Values = new ChartValues<short> { item };
+                        SeriesCollection.Add(PieSeries);
+                        PieSeries.Title = value.Title;
+                        PieSeries.DataLabels = true;
+                        PieSeriesList.Add(PieSeries);
                     }
                 }
                 else if (type == typeof(decimal))
@@ -320,6 +342,7 @@ namespace Chart_Modeller
                         SeriesCollection.Add(PieSeries);
                         PieSeries.Title = value.Title;
                         PieSeries.DataLabels = true;
+                        PieSeriesList.Add(PieSeries);
                     }
                 }
                 else if (type == typeof(double))
@@ -331,7 +354,17 @@ namespace Chart_Modeller
                         SeriesCollection.Add(PieSeries);
                         PieSeries.Title = value.Title;
                         PieSeries.DataLabels = true;
+                        PieSeriesList.Add(PieSeries);
                     }
+                }
+            }
+
+            for (int i = 0; i < PieSeriesList.Count; i++)
+            {
+                for (int k = i; k < chart.LabelsList.Count;)
+                {
+                    PieSeriesList[i].Title = chart.LabelsList[k];
+                    break;
                 }
             }
 

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\obj\Debug\
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\obj\Debug\
 Chart_Modeller
 none
 false
 DEBUG;TRACE
-C:\Users\Андрей\source\repos\Chart Modeller\Chart Modeller\App.xaml
+C:\Users\a.s.kuznetsov\Desktop\Chart-Modeller\Chart Modeller\App.xaml
 8-701020706
 
 18-575954098
-37-284229284
+37-1121688559
 AddPanelWindow.xaml;ChartsPage.xaml;ChooseChartWindow.xaml;ConnectDbPage.xaml;CreateChartsPage.xaml;ErrorWindow.xaml;MainWindow.xaml;PanelsPage.xaml;
 
-False
+True
 

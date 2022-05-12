@@ -278,9 +278,6 @@
     <Resource Include="Images\close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\close_red.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\minus.png" />
   </ItemGroup>
   <ItemGroup>

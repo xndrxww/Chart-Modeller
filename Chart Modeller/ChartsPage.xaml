@@ -23,9 +23,9 @@
 
         <Grid VerticalAlignment="Bottom" Background="#131C26" Height="52" Panel.ZIndex="-1">
             <Button x:Name="addChart" HorizontalAlignment="Left" VerticalAlignment="Center" Width="175" Height="35" Margin="30,0,0,0" Click="addChart_Click" FontSize="16" Background="#131C26" Foreground="White" HorizontalContentAlignment="Center">
-                <Grid>
+                <Grid Height="16" HorizontalAlignment="Center">
                     <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50,0,24,0">Создать график</TextBlock>
-                    <Image Source="/Images/plus.png" Width="16" Margin="23,0,147,0" VerticalAlignment="Center"/>
+                    <Image Source="/Images/plus.png" Width="16" Margin="25,0,146,0" VerticalAlignment="Center" Stretch="Fill"/>
                 </Grid>
             </Button>
             <TextBlock x:Name="dbText" VerticalAlignment="Center" MaxWidth="500" HorizontalAlignment="Center" TextAlignment="Center" Foreground="White" FontSize="20">FIT</TextBlock>

@@ -36,6 +36,8 @@ namespace Chart_Modeller
         private Chart Chart = new Chart();
         private Value Value = new Value();
 
+        private List<PieSeries> PieSeriesList = new List<PieSeries>();
+
         public CreateChartsPage(string pageName)
         {
             InitializeComponent();
@@ -43,6 +45,8 @@ namespace Chart_Modeller
             PageName = pageName;
 
             SetConnectionString();
+
+            LabelsList = new List<string>();
 
             if (PageName == "Создание круговой диаграммы")
             {
@@ -109,11 +113,11 @@ namespace Chart_Modeller
                     Table = new DataTable();
                     try
                     {
-                      new NpgsqlDataAdapter($"select * from {tablesBox.SelectedValue}", connection).Fill(Table);
+                        new NpgsqlDataAdapter($"select * from {tablesBox.SelectedValue}", connection).Fill(Table);
                     }
                     catch (Exception)
                     {
-                        
+
                     }
                 }
             }
@@ -130,7 +134,7 @@ namespace Chart_Modeller
 
             foreach (DataColumn column in Table.Columns)
             {
-                if (column.DataType == typeof(int) || column.DataType == typeof(decimal) || column.DataType == typeof(double) || column.DataType == typeof(Int64))
+                if (column.DataType == typeof(int) || column.DataType == typeof(decimal) || column.DataType == typeof(double) || column.DataType == typeof(long) || column.DataType == typeof(short))
                 {
                     columnsBox.Items.Add(column.ColumnName);
                 }
@@ -232,6 +236,14 @@ namespace Chart_Modeller
                     };
                     series.Values = new ChartValues<long>(Values.OfType<long>());
                 }
+                else if (Table.Columns[0].DataType == typeof(short))
+                {
+                    foreach (DataRow row in Table.Rows)
+                    {
+                        Values.Add((short)row[column.ColumnName]);
+                    };
+                    series.Values = new ChartValues<short>(Values.OfType<short>());
+                }
                 else if (Table.Columns[0].DataType == typeof(decimal))
                 {
                     foreach (DataRow row in Table.Rows)
@@ -273,8 +285,8 @@ namespace Chart_Modeller
                         PieSeries = new PieSeries();
                         PieSeries.Values = new ChartValues<int> { (int)row[column.ColumnName] };
                         SeriesCollection.Add(PieSeries);
-                        PieSeries.Title = lineNameTxt.Text;
                         PieSeries.DataLabels = true;
+                        PieSeriesList.Add(PieSeries);
                     };
                 }
                 else if (Table.Columns[0].DataType == typeof(long))
@@ -286,8 +298,21 @@ namespace Chart_Modeller
                         PieSeries = new PieSeries();
                         PieSeries.Values = new ChartValues<long> { (long)row[column.ColumnName] };
                         SeriesCollection.Add(PieSeries);
-                        PieSeries.Title = lineNameTxt.Text;
                         PieSeries.DataLabels = true;
+                        PieSeriesList.Add(PieSeries);
+                    };
+                }
+                else if (Table.Columns[0].DataType == typeof(short))
+                {
+                    foreach (DataRow row in Table.Rows)
+                    {
+                        Values.Add((short)row[column.ColumnName]);
+
+                        PieSeries = new PieSeries();
+                        PieSeries.Values = new ChartValues<short> { (short)row[column.ColumnName] };
+                        SeriesCollection.Add(PieSeries);
+                        PieSeries.DataLabels = true;
+                        PieSeriesList.Add(PieSeries);
                     };
                 }
                 else if (Table.Columns[0].DataType == typeof(decimal))
@@ -299,8 +324,8 @@ namespace Chart_Modeller
                         PieSeries = new PieSeries();
                         PieSeries.Values = new ChartValues<decimal> { (decimal)row[column.ColumnName] };
                         SeriesCollection.Add(PieSeries);
-                        PieSeries.Title = lineNameTxt.Text;
                         PieSeries.DataLabels = true;
+                        PieSeriesList.Add(PieSeries);
                     };
                 }
                 else if (Table.Columns[0].DataType == typeof(double))
@@ -312,8 +337,8 @@ namespace Chart_Modeller
                         PieSeries = new PieSeries();
                         PieSeries.Values = new ChartValues<double> { (double)row[column.ColumnName] };
                         SeriesCollection.Add(PieSeries);
-                        PieSeries.Title = lineNameTxt.Text;
                         PieSeries.DataLabels = true;
+                        PieSeriesList.Add(PieSeries);
                     };
                 }
             }
@@ -353,15 +378,24 @@ namespace Chart_Modeller
 
         private void SetLabels(Series series)
         {
-            LabelsList = new List<string>();
-
             foreach (DataColumn column in Table.Columns)
             {
                 foreach (DataRow row in Table.Rows)
                 {
-                    string labelRow = row[column.ColumnName].ToString();
-                    LabelsList.Add(labelRow);
+                    LabelsList.Add(row[column.ColumnName].ToString());
                 };
+            }
+
+            if (series == PieSeries)
+            {
+                for (int i = 0; i < PieSeriesList.Count; i++)
+                {
+                    for (int k = i; k < LabelsList.Count;)
+                    {
+                        PieSeriesList[i].Title = LabelsList[k];
+                        break;
+                    }
+                }
             }
 
             Chart.LabelsList = this.LabelsList;
@@ -377,6 +411,8 @@ namespace Chart_Modeller
             DataContext = null;
             Chart = new Chart();
             chartName.Text = "";
+            PieSeriesList.Clear();
+            LabelsList.Clear();
         }
 
         private void AddChart()
