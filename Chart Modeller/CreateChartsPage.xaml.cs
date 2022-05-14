@@ -16,6 +16,7 @@ using System.Windows.Media;
 
 namespace Chart_Modeller
 {
+    //Класс для создания графика или диаграммы
     public partial class CreateChartsPage : Page
     {
         private string PageName;
@@ -54,6 +55,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Метод для установки строки подключения в зависимости от выбранной СУБД
         private void SetConnectionString()
         {
             if (MainWindow.Server.ServerType == "MS SQL Server")
@@ -66,6 +68,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Обработчик события при загрузке страницы
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             MainWindow.PageName.Text = PageName;
@@ -96,6 +99,7 @@ namespace Chart_Modeller
             tablesBox.SelectedIndex = tablesBox.Items.Count - 1;
         }
 
+        //Обработчик события при изменение выбранной секции в выпадающем списке с таблицами БД
         private void tablesBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (MainWindow.Server.ServerType == "MS SQL Server")
@@ -127,6 +131,7 @@ namespace Chart_Modeller
             FillBox();
         }
 
+        //Метод для заполнения выпадающих списков "Значение Х" и "Значение Y"
         private void FillBox()
         {
             columnsBox.Items.Clear();
@@ -146,6 +151,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Метод для получения данных из таблицы в зависимости от выбранных значений в выпадающих списка
         private void GetChartsData(ComboBox comboBox)
         {
             if (MainWindow.Server.ServerType == "MS SQL Server")
@@ -166,6 +172,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Метод для создания графика или диаграммы
         private void CreateChart()
         {
             LineSeries = new LineSeries();
@@ -213,6 +220,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Метод для добавления значений в график или диаграмму
         private Series CreateSeries(Series series)
         {
             Values = new ArrayList();
@@ -269,6 +277,7 @@ namespace Chart_Modeller
             return series;
         }
 
+        //Метод для добавления значений в круговую диаграмму
         private void CreatePieSeries()
         {
             Values = new ArrayList();
@@ -348,6 +357,7 @@ namespace Chart_Modeller
             SetDecoration(PieSeries);
         }
 
+        //Метод для установки цвета и названия для графика или диаграммы
         private void SetDecoration(Series series)
         {
             if (series != PieSeries)
@@ -376,6 +386,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Метод для установки подписей для графика или диаграммы
         private void SetLabels(Series series)
         {
             foreach (DataColumn column in Table.Columns)
@@ -404,6 +415,7 @@ namespace Chart_Modeller
             DataContext = this;
         }
 
+        //Обработчик события нажатия на кнопку "Очистить график"
         private void clearButton_Click(object sender, RoutedEventArgs e)
         {
             SeriesCollection.Clear();
@@ -415,6 +427,7 @@ namespace Chart_Modeller
             LabelsList.Clear();
         }
 
+        //Метод для добавления графика или диаграммы в список для сохранения
         private void AddChart()
         {
             foreach (var server in MainWindow.ServersList)
@@ -438,11 +451,13 @@ namespace Chart_Modeller
             }
         }
 
+        //Обработчик события нажатия на кнопку "Назад"
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrameInstance.Navigate(new ChartsPage());
         }
 
+        //Метод открытия окна для отображения ошибки при создании графика или диаграммы
         private void OpenWindow()
         {
             bool isWindowOpen = false;
@@ -463,6 +478,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Обработчик события нажатия на кнопку "Сохранить"
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
             if (columnsBox.SelectedItem != null)
@@ -480,6 +496,7 @@ namespace Chart_Modeller
                 OpenWindow();
         }
 
+        //Обработчик события нажатия на кнопку "Добавить значения"
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             if (columnsBox.SelectedItem != null)

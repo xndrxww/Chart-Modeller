@@ -5,6 +5,7 @@ using System.Windows.Media;
 
 namespace Chart_Modeller
 {
+    //Класс для создания панелей
     public partial class AddPanelWindow : Window
     {
         private string DbName;
@@ -23,6 +24,7 @@ namespace Chart_Modeller
             DbName = currentDb;
         }
 
+        //Обработчик события нажатия на кнопку "Создать"
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
             if (panelNameTxt.Text == "")
@@ -83,11 +85,13 @@ namespace Chart_Modeller
             }
         }
 
+        //Обработчик события нажатия на кнопку для того, чтобы закрыть текущее окно
         private void closeAppButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        //Обработчик события, при нажатии левой кнопкой мыши на Grid, для перетаскивания текущего окна
         private void Grid_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)

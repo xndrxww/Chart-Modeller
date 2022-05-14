@@ -9,6 +9,7 @@ using System.Xml.Serialization;
 
 namespace Chart_Modeller
 {
+    //Класс главного окна приложения
     public partial class MainWindow : Window
     {
         public static TextBlock PageName;
@@ -50,6 +51,7 @@ namespace Chart_Modeller
             };
         }
 
+        //Метод для проверки на существование файла "server.xml"
         private void CheckServer()
         {
             if (File.Exists(ServerFileName))
@@ -58,6 +60,7 @@ namespace Chart_Modeller
                 MainFrameInstance.Navigate(new ConnectDbPage());
         }
 
+        //Метод для десериализации данных из файла
         private void Deserialization()
         {
             if (File.Exists(ServerFileName))
@@ -78,6 +81,7 @@ namespace Chart_Modeller
                 ServersList = new List<Server>();
         }
 
+        //Обработчик события, при нажатии левой кнопкой мыши на Grid, для перетаскивания текущего окна
         private void Grid_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -86,11 +90,13 @@ namespace Chart_Modeller
             }
         }
 
+        //Обработчик события нажатия на кнопку для того, чтобы закруть приложение
         private void closeAppButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
+        //Обработчик события нажатия на кнопку для того, чтобы свернуть приложения
         private void minimizeAppButton_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;

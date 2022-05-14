@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 
 namespace Chart_Modeller
 {
+    //Класс для вывода окна при возникновении ошибок при пользовании приложением
     public partial class ErrorWindow : Window
     {
         public ErrorWindow(string errorText)
@@ -23,11 +24,13 @@ namespace Chart_Modeller
             this.errorText.Text = errorText;
         }
 
+        //Обработчик события нажатия на кнопку "Продолжить"
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        //Обработчик события, при нажатии левой кнопкой мыши на Grid, для перетаскивания текущего окна
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -36,6 +39,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Обработчик события нажатия на кнопку для того, чтобы закрыть текущее окно
         private void closeAppButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

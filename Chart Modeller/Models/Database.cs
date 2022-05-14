@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 
 namespace Chart_Modeller.Models
 {
+    //Класс для работы с данными баз данных
     public class Database
     {
         public Database()

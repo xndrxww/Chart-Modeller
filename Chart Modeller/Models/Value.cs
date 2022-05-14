@@ -9,6 +9,7 @@ using System.Xml.Serialization;
 
 namespace Chart_Modeller.Models
 {
+    //Класс для работы со значениями графиков
     public class Value
     {
         public Value()

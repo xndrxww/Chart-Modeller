@@ -11,6 +11,7 @@ using System.Xml.Serialization;
 
 namespace Chart_Modeller
 {
+    //Класс для отображения панелей
     public partial class PanelsPage : Page
     {
         private string connectionString;
@@ -23,6 +24,7 @@ namespace Chart_Modeller
             this.DataContext = MainWindow.Server;
         }
 
+        //Метод для проверки типа СУБД
         private void CheckServerType()
         {
             if (MainWindow.Server.ServerType == "MS SQL Server")
@@ -53,6 +55,7 @@ namespace Chart_Modeller
             dbBox.SelectedIndex = dbBox.Items.Count - 1;
         }
 
+        //Метод для получения списка панелей относительно выбранной БД
         public void GetPanels()
         {
             sp.Children.Clear();
@@ -100,21 +103,25 @@ namespace Chart_Modeller
             }
         }
 
+        //Обработчик события нажжатия на кнопку "Создать панель"
         private void addPanel_Click(object sender, RoutedEventArgs e)
         {
             OpenWindow();
         }
 
+        //Обработчик события при загрузке страницы
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             MainWindow.PageName.Text = "Панели";
         }
 
+        //Обработчик события при изменении выбранной секции в выпадающем списке
         private void dbBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             GetPanels(); 
         }
 
+        //Метод открытия окна для создания панели
         private void OpenWindow()
         {
             bool isWindowOpen = false;
@@ -136,6 +143,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Обработчик события нажатия на кнопку "Выход"
         private void exitButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrameInstance.Navigate(new ConnectDbPage());

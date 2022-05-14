@@ -11,6 +11,7 @@ using Npgsql;
 
 namespace Chart_Modeller
 {
+    //Класс для подключение к локальному серверу пользователя 
     public partial class ConnectDbPage : Page
     {
         ArrayList ServerTypesList = new ArrayList();
@@ -25,6 +26,7 @@ namespace Chart_Modeller
             SetServerTypeBox();
         }
 
+        //Обработчик события нажатия на кнопку "Войти"
         private void connectButton_Click(object sender, RoutedEventArgs e)
         {
             if (serverTypeBox.SelectedValue.ToString() == "MS SQL Server")
@@ -69,6 +71,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Метод для добавления сервера в лист серверов
         private void AddServer()
         {
             MainWindow.Server = new Server()
@@ -81,6 +84,7 @@ namespace Chart_Modeller
             MainWindow.ServersList.Add(MainWindow.Server);
         }
 
+        //Метод для проверки сервера на то, был ли он добавлен ранее
         private void CheckServer()
         {
             if (MainWindow.ServersList.Count == 0)
@@ -116,6 +120,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Метод для установки содержимого в выпадающий список для выбора СУБД
         private void SetServerTypeBox()
         {
             ServerTypesList.Add(new ServerType { Photo = "/Images/PostgreSQL.png", Name = "PostgreSQL" });
@@ -124,12 +129,14 @@ namespace Chart_Modeller
             serverTypeBox.SelectedIndex = serverTypeBox.Items.Count - 1;
         }
 
+        //Класс для работы с данными СУБД
         public class ServerType
         {
             public string Photo { get; set; }
             public string Name { get; set; }
         }
 
+        //Метод открытия окна для отображения ошибки при подключении к серверу
         private void OpenWindow()
         {
             bool isWindowOpen = false;

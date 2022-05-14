@@ -14,6 +14,7 @@ using LiveCharts.Wpf;
 
 namespace Chart_Modeller
 {
+    //Класс для вывода графиков и диаграмм на панель
     public partial class ChartsPage : Page
     {
         private string PanelName;
@@ -39,12 +40,14 @@ namespace Chart_Modeller
             GetCharts();
         }
 
+        //Обработчик события при загрузке страницы
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             MainWindow.PageName.Text = PanelName;
             dbText.Text = MainWindow.Database.Name;
         }
 
+        // Обработчик события нажатия на кнопку "Удалить панель"
         private void deletePanel_Click(object sender, RoutedEventArgs e)
         {
             foreach (var server in MainWindow.ServersList)
@@ -74,11 +77,13 @@ namespace Chart_Modeller
             }
         }
 
+        //Обработчик события нажатия на кнопку "Создать график"
         private void addChart_Click(object sender, RoutedEventArgs e)
         {
             OpenWindow();
         }
 
+        //Метод открытия окна для выбора типа графика или диаграммы
         private void OpenWindow()
         {
             bool isWindowOpen = false;

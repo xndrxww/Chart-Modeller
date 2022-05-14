@@ -8,6 +8,7 @@ using System.Xml.Serialization;
 
 namespace Chart_Modeller
 {
+    //Класс для работы с данными серверов
     public class Server
     {
         public Server()

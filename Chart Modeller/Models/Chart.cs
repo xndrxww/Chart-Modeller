@@ -11,6 +11,7 @@ using LiveCharts.Wpf;
 
 namespace Chart_Modeller.Models
 {
+    //Класс для работы с данными графиков
     public class Chart
     {
         public Chart()
