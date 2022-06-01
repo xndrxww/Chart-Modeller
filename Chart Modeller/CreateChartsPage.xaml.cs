@@ -270,11 +270,24 @@ namespace Chart_Modeller
                 }
             }
 
-            Value.ValuesList.Add(Values);
+            if (Values.Count != 0)
+            {
+                Value.ValuesList.Add(Values);
 
-            SetDecoration(series);
+                SetDecoration(series);
 
+                EnableSaveButton();
+            }
             return series;
+        }
+
+        //Метод для возмодности нажатия на кнопку "Сохранить"
+        private void EnableSaveButton()
+        {
+            if (Value.ValuesList.Count != 0)
+            {
+                saveButton.IsEnabled = true;
+            }
         }
 
         //Метод для добавления значений в круговую диаграмму
@@ -352,9 +365,15 @@ namespace Chart_Modeller
                 }
             }
 
-            Value.ValuesList.Add(Values);
 
-            SetDecoration(PieSeries);
+            if (Values.Count != 0)
+            {
+                Value.ValuesList.Add(Values);
+
+                SetDecoration(PieSeries);
+
+                EnableSaveButton();
+            }
         }
 
         //Метод для установки цвета и названия для графика или диаграммы
@@ -425,6 +444,7 @@ namespace Chart_Modeller
             chartName.Text = "";
             PieSeriesList.Clear();
             LabelsList.Clear();
+            saveButton.IsEnabled = false;
         }
 
         //Метод для добавления графика или диаграммы в список для сохранения

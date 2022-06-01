@@ -4,9 +4,9 @@
     <Databases>
       <Database Name="Car_Showroom">
         <Panels>
-          <Panel Name="Панель)))))">
+          <Panel Name="Панель для теста">
             <Charts>
-              <Chart Name="Зарплата сотрудников" Type="PieSeries">
+              <Chart Name="Зарплата рабочих" Type="LineSeries">
                 <LabelsList>
                   <string>Консультант</string>
                   <string>Начальник</string>
@@ -15,7 +15,7 @@
                   <string>Кассир</string>
                 </LabelsList>
                 <Values>
-                  <Value>
+                  <Value Title="Зарплата">
                     <ValuesList>
                       <anyType xsi:type="ArrayOfAnyType">
                         <anyType xsi:type="xsd:int">30000</anyType>
@@ -23,6 +23,50 @@
                         <anyType xsi:type="xsd:int">50000</anyType>
                         <anyType xsi:type="xsd:int">40000</anyType>
                         <anyType xsi:type="xsd:int">40000</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>255</A>
+                      <R>47</R>
+                      <G>222</G>
+                      <B>69</B>
+                      <ScA>1</ScA>
+                      <ScR>0.02842604</ScR>
+                      <ScG>0.730460763</ScG>
+                      <ScB>0.0595112368</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>123</A>
+                      <R>47</R>
+                      <G>222</G>
+                      <B>69</B>
+                      <ScA>0.482352942</ScA>
+                      <ScR>0.02842604</ScR>
+                      <ScG>0.730460763</ScG>
+                      <ScB>0.0595112368</ScB>
+                    </FillColor>
+                  </Value>
+                </Values>
+              </Chart>
+              <Chart Name="Стоимость автомобилей" Type="PieSeries">
+                <LabelsList>
+                  <string>BMW M5</string>
+                  <string>BMW X3</string>
+                  <string>Toyota Supra</string>
+                  <string>Huyndai Solaris</string>
+                  <string>Audi TT</string>
+                  <string>Scoda Octavia</string>
+                </LabelsList>
+                <Values>
+                  <Value>
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">2000000</anyType>
+                        <anyType xsi:type="xsd:int">2000000</anyType>
+                        <anyType xsi:type="xsd:int">1500000</anyType>
+                        <anyType xsi:type="xsd:int">1000000</anyType>
+                        <anyType xsi:type="xsd:int">2200000</anyType>
+                        <anyType xsi:type="xsd:int">1500000</anyType>
                       </anyType>
                     </ValuesList>
                     <StrokeColor>
@@ -51,6 +95,218 @@
             </Charts>
           </Panel>
         </Panels>
+      </Database>
+      <Database Name="Car_Filling_Station">
+        <Panels>
+          <Panel Name="sdfd">
+            <Charts>
+              <Chart Name="Без названия" Type="LineSeries">
+                <LabelsList>
+                  <string>ghbrjk</string>
+                  <string>fsdfsd</string>
+                  <string>dstret</string>
+                </LabelsList>
+                <Values>
+                  <Value Title="hghj">
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">3</anyType>
+                        <anyType xsi:type="xsd:int">4</anyType>
+                        <anyType xsi:type="xsd:int">5</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>0</A>
+                      <R>0</R>
+                      <G>0</G>
+                      <B>0</B>
+                      <ScA>0</ScA>
+                      <ScR>0</ScR>
+                      <ScG>0</ScG>
+                      <ScB>0</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>0</A>
+                      <R>0</R>
+                      <G>0</G>
+                      <B>0</B>
+                      <ScA>0</ScA>
+                      <ScR>0</ScR>
+                      <ScG>0</ScG>
+                      <ScB>0</ScB>
+                    </FillColor>
+                  </Value>
+                </Values>
+              </Chart>
+              <Chart Name="sadsad" Type="LineSeries">
+                <LabelsList>
+                  <string>ghbrjk</string>
+                  <string>fsdfsd</string>
+                  <string>dstret</string>
+                </LabelsList>
+                <Values>
+                  <Value Title="dsadsa">
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">3</anyType>
+                        <anyType xsi:type="xsd:int">4</anyType>
+                        <anyType xsi:type="xsd:int">5</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>255</A>
+                      <R>218</R>
+                      <G>52</G>
+                      <B>52</B>
+                      <ScA>1</ScA>
+                      <ScR>0.7011019</ScR>
+                      <ScG>0.0343398079</ScG>
+                      <ScB>0.0343398079</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>123</A>
+                      <R>218</R>
+                      <G>52</G>
+                      <B>52</B>
+                      <ScA>0.482352942</ScA>
+                      <ScR>0.7011019</ScR>
+                      <ScG>0.0343398079</ScG>
+                      <ScB>0.0343398079</ScB>
+                    </FillColor>
+                  </Value>
+                </Values>
+              </Chart>
+              <Chart Name="asdasd" Type="ColumnSeries">
+                <LabelsList>
+                  <string>ghbrjk</string>
+                  <string>fsdfsd</string>
+                  <string>dstret</string>
+                </LabelsList>
+                <Values>
+                  <Value Title="dsasd">
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">3</anyType>
+                        <anyType xsi:type="xsd:int">4</anyType>
+                        <anyType xsi:type="xsd:int">5</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>255</A>
+                      <R>205</R>
+                      <G>119</G>
+                      <B>119</B>
+                      <ScA>1</ScA>
+                      <ScR>0.610495567</ScR>
+                      <ScG>0.18447499</ScG>
+                      <ScB>0.18447499</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>123</A>
+                      <R>205</R>
+                      <G>119</G>
+                      <B>119</B>
+                      <ScA>0.482352942</ScA>
+                      <ScR>0.610495567</ScR>
+                      <ScG>0.18447499</ScG>
+                      <ScB>0.18447499</ScB>
+                    </FillColor>
+                  </Value>
+                </Values>
+              </Chart>
+              <Chart Name="aS" Type="PieSeries">
+                <LabelsList>
+                  <string>ghbrjk</string>
+                  <string>fsdfsd</string>
+                  <string>dstret</string>
+                </LabelsList>
+                <Values>
+                  <Value>
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">3</anyType>
+                        <anyType xsi:type="xsd:int">4</anyType>
+                        <anyType xsi:type="xsd:int">5</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>0</A>
+                      <R>0</R>
+                      <G>0</G>
+                      <B>0</B>
+                      <ScA>0</ScA>
+                      <ScR>0</ScR>
+                      <ScG>0</ScG>
+                      <ScB>0</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>0</A>
+                      <R>0</R>
+                      <G>0</G>
+                      <B>0</B>
+                      <ScA>0</ScA>
+                      <ScR>0</ScR>
+                      <ScG>0</ScG>
+                      <ScB>0</ScB>
+                    </FillColor>
+                  </Value>
+                </Values>
+              </Chart>
+              <Chart Name="ASD" Type="StepLineSeries">
+                <LabelsList>
+                  <string>ghbrjk</string>
+                  <string>fsdfsd</string>
+                  <string>dstret</string>
+                </LabelsList>
+                <Values>
+                  <Value Title="ASDSAD">
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">3</anyType>
+                        <anyType xsi:type="xsd:int">4</anyType>
+                        <anyType xsi:type="xsd:int">5</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>255</A>
+                      <R>218</R>
+                      <G>54</G>
+                      <B>54</B>
+                      <ScA>1</ScA>
+                      <ScR>0.7011019</ScR>
+                      <ScG>0.03688945</ScG>
+                      <ScB>0.03688945</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>123</A>
+                      <R>218</R>
+                      <G>54</G>
+                      <B>54</B>
+                      <ScA>0.482352942</ScA>
+                      <ScR>0.7011019</ScR>
+                      <ScG>0.03688945</ScG>
+                      <ScB>0.03688945</ScB>
+                    </FillColor>
+                  </Value>
+                </Values>
+              </Chart>
+            </Charts>
+          </Panel>
+        </Panels>
+      </Database>
+      <Database Name="Tkani">
+        <Panels>
+          <Panel Name="Панель">
+            <Charts />
+          </Panel>
+        </Panels>
+      </Database>
+    </Databases>
+  </Server>
+  <Server ServerType="PostgreSQL" ServerName="localhost" Login="postgres" Password="1212">
+    <Databases>
+      <Database Name="django_db">
+        <Panels />
       </Database>
     </Databases>
   </Server>

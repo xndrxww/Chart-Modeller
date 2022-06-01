@@ -104,6 +104,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Метод для получения списка графиков и диграмм на текущей панели
         private void GetCharts()
         {
             sp.Children.Clear();
@@ -132,6 +133,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Метод для вывода графиков и диаграмм на панель
         private void CreateChart(Chart chart)
         {
             TextBlock chartName = new TextBlock
@@ -281,6 +283,7 @@ namespace Chart_Modeller
             }
         }
 
+        //Метод для вывода круговых диаграмм на панель
         private void CreatePieChart(Value value, Chart chart)
         {
             PieChart = new PieChart
@@ -376,6 +379,7 @@ namespace Chart_Modeller
             PieChart.Series = SeriesCollection;
         }
 
+        //Обработчик события нажжатия на кнопку "Назад"
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
             PanelsPage panelsPage = new PanelsPage();
@@ -383,6 +387,7 @@ namespace Chart_Modeller
             MainWindow.MainFrameInstance.Navigate(panelsPage);
         }
 
+        //Метод для опрделения типа графика для последующего вывода на панель
         private Series CheckSeries(Chart chart)
         {
             if (chart.Type == "LineSeries")
