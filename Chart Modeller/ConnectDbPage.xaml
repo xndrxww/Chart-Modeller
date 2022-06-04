@@ -21,12 +21,12 @@
 
 
     <Grid>
-        <TextBlock Text="Подключение к серверу" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,210,0,0"/>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="249,336,0,0">
-            <hc:TextBox x:Name="serverTxt" Width="252" Height="40" FontSize="18" TextAlignment="Center" hc:InfoElement.Placeholder="Имя сервера"/>
-            <hc:TextBox x:Name="loginTxt" Width="252" Height="40" FontSize="18" TextAlignment="Center" hc:InfoElement.Placeholder="Логин" Margin="0,50,0,0"/>
-            <hc:TextBox x:Name="passwordTxt" Width="252" Height="40" FontSize="18" TextAlignment="Center" hc:InfoElement.Placeholder="Пароль" Margin="0,50,0,0"/>
-            <hc:ComboBox x:Name="serverTypeBox" Width="252" Margin="0,50,0,0" ItemTemplate="{StaticResource cmbTemplate}" SelectedValuePath="Name"/>
+        <TextBlock Text="Подключение к серверу" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,210,0,0"/>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="249,336,0,0" Width="260">
+            <hc:TextBox x:Name="serverTxt"  Height="40" FontSize="18" TextAlignment="Center" hc:InfoElement.Placeholder="Имя сервера"/>
+            <hc:TextBox x:Name="loginTxt" Height="40" FontSize="18" TextAlignment="Center" hc:InfoElement.Placeholder="Логин" Margin="0,50,0,0"/>
+            <hc:TextBox x:Name="passwordTxt" Height="40" FontSize="18" TextAlignment="Center" hc:InfoElement.Placeholder="Пароль" Margin="0,50,0,0"/>
+            <hc:ComboBox x:Name="serverTypeBox" Margin="0,50,0,0" ItemTemplate="{StaticResource cmbTemplate}" SelectedValuePath="Name"/>
             <Button x:Name="connectButton" Width="124" Height="40" FontSize="20" Click="connectButton_Click" Content="Войти" Margin="0,40,0,0" Background="#131C26" Foreground="White" BorderBrush="{x:Null}"/>
         </StackPanel>
 

@@ -68,14 +68,6 @@ namespace Chart_Modeller
                     {
                         foreach (var panel in database.Panels)
                         {
-                            Rectangle rectangle = new Rectangle
-                            {
-                                Margin = new Thickness(0, 0, 0, 80),
-                                Width = 1200,
-                                Height = 500,
-                                Fill = new SolidColorBrush(Color.FromRgb(0, 0, 0))
-                            };
-
                             Button panelButton = new Button
                             {
                                 Margin = new Thickness(0, 50, 0, 0),
@@ -118,7 +110,8 @@ namespace Chart_Modeller
         //Обработчик события при изменении выбранной секции в выпадающем списке
         private void dbBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            GetPanels(); 
+            GetPanels();
+            SetDefault();
         }
 
         //Метод открытия окна для создания панели
@@ -147,6 +140,19 @@ namespace Chart_Modeller
         private void exitButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrameInstance.Navigate(new ConnectDbPage());
+        }
+
+        private void SetDefault()
+        {
+            if (sp.Children.Count == 0)
+            {
+                defaultText.Text = $"У базы данных \"{dbBox.SelectedValue.ToString()}\" отсутствуют панели";
+                stackPanelDefault.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                stackPanelDefault.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

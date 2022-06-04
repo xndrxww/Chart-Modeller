@@ -42,7 +42,7 @@
 
             <StackPanel Margin="0,40,0,0">
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="15" Foreground="White">Название графика</TextBlock>
-                <hc:TextBox x:Name="chartNameTxt" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" MaxLength="50" hc:InfoElement.Placeholder="Название графика" Margin="35,15,25,0"></hc:TextBox>
+                <hc:TextBox x:Name="chartNameTxt" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" MaxLength="40" hc:InfoElement.Placeholder="Название графика" Margin="35,15,25,0"></hc:TextBox>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,40,0,0" HorizontalAlignment="Center">
@@ -52,7 +52,7 @@
         </StackPanel>
         <Rectangle HorizontalAlignment="Right" Width="250" Height="699" VerticalAlignment="Center" RadiusY="12" RadiusX="12" Fill="#131C26" Margin="0,100,25,101"/>
 
-        <Button x:Name="clearButton" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="130" Margin="100,0,0,440" Click="clearButton_Click" BorderBrush="{x:Null}">
+        <Button x:Name="clearButton" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="130" Margin="50,0,0,440" Click="clearButton_Click" BorderBrush="{x:Null}">
             <Grid>
                 <TextBlock  VerticalAlignment="Center" Margin="8,0,-8,0">Очистить график</TextBlock>
                 <Image Source="/Images/delete.png" VerticalAlignment="Center"  Margin="-11,0,89,0" Width="15"/>

@@ -121,6 +121,11 @@ namespace Chart_Modeller
                             {
                                 if (panel.Name == MainWindow.Panel.Name)
                                 {
+                                    if (panel.Charts.Count == 0)
+                                    {
+                                        SetDefault();
+                                    }
+
                                     foreach (var chart in panel.Charts)
                                     {
                                         CreateChart(chart);
@@ -149,7 +154,7 @@ namespace Chart_Modeller
                 Width = 70,
                 Height = 35,
                 HorizontalAlignment = HorizontalAlignment.Right,
-                ToolTip = "Удалить " + chartName.Text,
+                ToolTip = "Удалить " + "\"" + chartName.Text + "\"",
                 BorderBrush = null,
                 VerticalAlignment = VerticalAlignment.Center
             };
@@ -407,6 +412,11 @@ namespace Chart_Modeller
                 series = new StepLineSeries();
 
             return series;
+        }
+
+        private void SetDefault()
+        {
+            stackPanelDefault.Visibility = Visibility.Visible;
         }
     }
 }
