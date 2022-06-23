@@ -38,7 +38,7 @@
             </Grid.RenderTransform>
 
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="-63.757,106.684,-46.244,-106.684" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="-63.757,106.684,-46.244,-106.684">
                 <StackPanel>
                     <Border Width="800"
                     Height="50"

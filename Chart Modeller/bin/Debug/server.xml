@@ -2,18 +2,67 @@
 <ArrayOfServer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Server ServerType="MS SQL Server" ServerName="LAPTOP-VAME4LJ4\KUZNETSOV" Login="sa" Password="3232">
     <Databases>
-      <Database Name="Tkani">
+      <Database Name="Computer">
         <Panels>
-          <Panel Name="sadasd">
+          <Panel Name="Компы">
+            <Charts />
+          </Panel>
+        </Panels>
+      </Database>
+      <Database Name="Tours">
+        <Panels>
+          <Panel Name="ыв">
             <Charts />
           </Panel>
         </Panels>
       </Database>
       <Database Name="Car_Showroom">
         <Panels>
-          <Panel Name="Автомобили">
+          <Panel Name="ывваы">
             <Charts>
-              <Chart Name="Стоимость автомобилей" Type="LineSeries">
+              <Chart Name="Зарплата сотрудников" Type="ColumnSeries">
+                <LabelsList>
+                  <string>Консультант</string>
+                  <string>Начальник</string>
+                  <string>Главный директор</string>
+                  <string>Менеджер по продажам</string>
+                  <string>Кассир</string>
+                </LabelsList>
+                <Values>
+                  <Value Title="Зарплата">
+                    <ValuesList>
+                      <anyType xsi:type="ArrayOfAnyType">
+                        <anyType xsi:type="xsd:int">30000</anyType>
+                        <anyType xsi:type="xsd:int">70000</anyType>
+                        <anyType xsi:type="xsd:int">50000</anyType>
+                        <anyType xsi:type="xsd:int">40000</anyType>
+                        <anyType xsi:type="xsd:int">40000</anyType>
+                      </anyType>
+                    </ValuesList>
+                    <StrokeColor>
+                      <A>255</A>
+                      <R>153</R>
+                      <G>71</G>
+                      <B>232</B>
+                      <ScA>1</ScA>
+                      <ScR>0.318546772</ScR>
+                      <ScG>0.0630100146</ScG>
+                      <ScB>0.806952238</ScB>
+                    </StrokeColor>
+                    <FillColor>
+                      <A>123</A>
+                      <R>153</R>
+                      <G>71</G>
+                      <B>232</B>
+                      <ScA>0.482352942</ScA>
+                      <ScR>0.318546772</ScR>
+                      <ScG>0.0630100146</ScG>
+                      <ScB>0.806952238</ScB>
+                    </FillColor>
+                  </Value>
+                </Values>
+              </Chart>
+              <Chart Name="name" Type="LineSeries">
                 <LabelsList>
                   <string>BMW M5</string>
                   <string>BMW X3</string>
@@ -23,7 +72,7 @@
                   <string>Scoda Octavia</string>
                 </LabelsList>
                 <Values>
-                  <Value Title="Стоимость">
+                  <Value Title="qeret">
                     <ValuesList>
                       <anyType xsi:type="ArrayOfAnyType">
                         <anyType xsi:type="xsd:int">2000000</anyType>
@@ -36,201 +85,23 @@
                     </ValuesList>
                     <StrokeColor>
                       <A>255</A>
-                      <R>24</R>
-                      <G>222</G>
-                      <B>157</B>
+                      <R>26</R>
+                      <G>172</G>
+                      <B>117</B>
                       <ScA>1</ScA>
-                      <ScR>0.009134059</ScR>
-                      <ScG>0.730460763</ScG>
-                      <ScB>0.337163627</ScB>
+                      <ScR>0.010329823</ScR>
+                      <ScG>0.4125426</ScG>
+                      <ScB>0.177888423</ScB>
                     </StrokeColor>
                     <FillColor>
                       <A>123</A>
-                      <R>24</R>
-                      <G>222</G>
-                      <B>157</B>
+                      <R>26</R>
+                      <G>172</G>
+                      <B>117</B>
                       <ScA>0.482352942</ScA>
-                      <ScR>0.009134059</ScR>
-                      <ScG>0.730460763</ScG>
-                      <ScB>0.337163627</ScB>
-                    </FillColor>
-                  </Value>
-                </Values>
-              </Chart>
-              <Chart Name="Максимальная скорость автомобилей" Type="PieSeries">
-                <LabelsList>
-                  <string>BMW M5</string>
-                  <string>BMW X3</string>
-                  <string>Toyota Supra</string>
-                  <string>Huyndai Solaris</string>
-                  <string>Audi TT</string>
-                  <string>Scoda Octavia</string>
-                </LabelsList>
-                <Values>
-                  <Value>
-                    <ValuesList>
-                      <anyType xsi:type="ArrayOfAnyType">
-                        <anyType xsi:type="xsd:int">250</anyType>
-                        <anyType xsi:type="xsd:int">213</anyType>
-                        <anyType xsi:type="xsd:int">250</anyType>
-                        <anyType xsi:type="xsd:int">185</anyType>
-                        <anyType xsi:type="xsd:int">250</anyType>
-                        <anyType xsi:type="xsd:int">240</anyType>
-                      </anyType>
-                    </ValuesList>
-                    <StrokeColor>
-                      <A>0</A>
-                      <R>0</R>
-                      <G>0</G>
-                      <B>0</B>
-                      <ScA>0</ScA>
-                      <ScR>0</ScR>
-                      <ScG>0</ScG>
-                      <ScB>0</ScB>
-                    </StrokeColor>
-                    <FillColor>
-                      <A>0</A>
-                      <R>0</R>
-                      <G>0</G>
-                      <B>0</B>
-                      <ScA>0</ScA>
-                      <ScR>0</ScR>
-                      <ScG>0</ScG>
-                      <ScB>0</ScB>
-                    </FillColor>
-                  </Value>
-                </Values>
-              </Chart>
-            </Charts>
-          </Panel>
-        </Panels>
-      </Database>
-      <Database Name="Car_Filling_Station">
-        <Panels>
-          <Panel Name="gfytk">
-            <Charts>
-              <Chart Name="dsa" Type="LineSeries">
-                <LabelsList>
-                  <string>г. Санкт-Петербург, Богатырский проспект, 23</string>
-                  <string>г. Санкт-Петербург, Витебский проспект, 9к2 литера А</string>
-                  <string>г. Санкт-Петербург, Витебский проспект, 153</string>
-                  <string>г. Санкт-Петербург, Витебский проспект, 157</string>
-                  <string>г. Санкт-Петербург, Выборгская набережная, 57</string>
-                  <string>г. Санкт-Петербург, Выборгское шоссе, 6 Б, лит А</string>
-                  <string>г. Санкт-Петербург, Дальневосточный проспект, 20</string>
-                  <string>г. Санкт-Петербург, ул. Десантников, 13</string>
-                  <string>г. Санкт-Петербург, Ириновский проспект, 16</string>
-                  <string>г. Санкт-Петербург, ул. Коллонтай, 8</string>
-                  <string>г. Санкт-Петербург, Коломяжский проспект, 19</string>
-                  <string>г. Санкт-Петербург, ул. Коммуны, 14 литер А</string>
-                  <string>г. Санкт-Петербург, Лапинский проспект, 10</string>
-                  <string>г. Санкт-Петербург, Лахтинский проспект, 2к4</string>
-                  <string>г. Санкт-Петербург, Лахтинский проспект, 114</string>
-                  <string>г. Санкт-Петербург, Ленинский проспект, 61</string>
-                  <string>г. Санкт-Петербург, Малый проспект, 79</string>
-                  <string>г. Санкт-Петербург, Московское шоссе, М10, слева</string>
-                  <string>г. Санкт-Петербург, Московское шоссе, 11, лит.А, М10 справа</string>
-                  <string>г. Санкт-Петербург, Московское шоссе, 50, М10, 687-1 км, слева</string>
-                  <string>г. Санкт-Петербург, Московское шоссе, М10, слева</string>
-                  <string>г. Санкт-Петербург, Московское шоссе, 156 А, М10, слева</string>
-                  <string>г. Санкт-Петербург, Октябрьская набережная, 38, корп. 3</string>
-                  <string>г. Санкт-Петербург, Песочная набережная, 30</string>
-                  <string>г. Санкт-Петербург, Пискарёвский проспект, 135</string>
-                  <string>г. Санкт-Петербург, Приморское шоссе, 142</string>
-                  <string>г. Санкт-Петербург, Приморское шоссе, 251</string>
-                  <string>г. Санкт-Петербург, промзона «Парнас»,  1-й верхний переулок, 3А</string>
-                  <string>г. Санкт-Петербург, проспект Маршала Жукова, 23 литер А</string>
-                  <string>г. Санкт-Петербург, проспект Обуховской обороны, 138</string>
-                  <string>г. Санкт-Петербург, проспект Энгельса, 179</string>
-                  <string>г. Санкт-Петербург, Пулковское шоссе,71, Р23, справа</string>
-                  <string>г. Санкт-Петербург, ул. Руставели, 48А</string>
-                  <string>г. Санкт-Петербург, ул. Руставели, 54</string>
-                  <string>г. Санкт-Петербург, Рябовское шоссе, 115 к. 3,  лит. А,  а/д «Санкт-Петербург - станция Морье» (А128),  справа</string>
-                  <string>г. Санкт-Петербург, ул. Салова, 82</string>
-                  <string>г. Санкт-Петербург, ул. Седова, 1</string>
-                  <string>г. Санкт-Петербург, ул. Софийская</string>
-                  <string>г. Санкт-Петербург, Софийская ул., 17А</string>
-                  <string>г. Санкт-Петербург, Софийская ул., 60</string>
-                  <string>г. Санкт-Петербург, Софийская ул., 77</string>
-                  <string>г. Санкт-Петербург, Торфяная дорога, 10 литер А</string>
-                  <string>г. Санкт-Петербург, ул. Демьяна Бедного, 15</string>
-                  <string>г. Санкт-Петербург, ул. Планерная, 22</string>
-                  <string>г. Санкт-Петербург, ул. Студенческая, 15</string>
-                  <string>г. Санкт-Петербург, Шафировский проспект, 24А</string>
-                  <string>пос. Шушары,  Пулковское шоссе, д. 110, лит. А, Р23, слева</string>
-                </LabelsList>
-                <Values>
-                  <Value Title="sdasdas">
-                    <ValuesList>
-                      <anyType xsi:type="ArrayOfAnyType">
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                        <anyType xsi:type="xsd:int">1</anyType>
-                      </anyType>
-                    </ValuesList>
-                    <StrokeColor>
-                      <A>255</A>
-                      <R>178</R>
-                      <G>31</G>
-                      <B>31</B>
-                      <ScA>1</ScA>
-                      <ScR>0.4452012</ScR>
-                      <ScG>0.0137020834</ScG>
-                      <ScB>0.0137020834</ScB>
-                    </StrokeColor>
-                    <FillColor>
-                      <A>123</A>
-                      <R>178</R>
-                      <G>31</G>
-                      <B>31</B>
-                      <ScA>0.482352942</ScA>
-                      <ScR>0.4452012</ScR>
-                      <ScG>0.0137020834</ScG>
-                      <ScB>0.0137020834</ScB>
+                      <ScR>0.010329823</ScR>
+                      <ScG>0.4125426</ScG>
+                      <ScB>0.177888423</ScB>
                     </FillColor>
                   </Value>
                 </Values>
